@@ -1,0 +1,15 @@
+.pkr/
+bin/
+obj/
+publish/
+*.user
+*.suo
+
+# The downloaded reference package is not part of this public project.
+/技术参考/
+
+# Local IDE and OS files.
+.vs/
+.idea/
+Thumbs.db
+
