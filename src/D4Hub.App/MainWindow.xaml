@@ -8,28 +8,68 @@
         MinWidth="1180"
         MinHeight="720"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Opacity="0"
         Background="{StaticResource AppBackgroundBrush}"
         SourceInitialized="Window_SourceInitialized"
         Loaded="Window_Loaded"
+        ContentRendered="Window_ContentRendered"
+        StateChanged="Window_StateChanged"
         Closing="Window_Closing">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="68"
+                          ResizeBorderThickness="7"
+                          GlassFrameThickness="0"
+                          CornerRadius="0"
+                          UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
     <Window.InputBindings>
         <KeyBinding Key="S" Modifiers="Control+Shift" Command="{Binding SaveCommand}" />
     </Window.InputBindings>
 
-    <Grid Background="{StaticResource AppBackgroundBrush}">
+    <Border x:Name="WindowFrame"
+            BorderBrush="{StaticResource HairlineBrush}"
+            BorderThickness="1"
+            Background="{StaticResource AppBackgroundBrush}">
+    <Grid x:Name="RootGrid"
+          Background="{StaticResource AppBackgroundBrush}"
+          RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TranslateTransform X="0" Y="14" />
+        </Grid.RenderTransform>
         <Grid.RowDefinitions>
             <RowDefinition Height="68" />
             <RowDefinition Height="*" />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
+        <!-- 氛围光晕背景 -->
+        <Grid Grid.RowSpan="3" IsHitTestVisible="False">
+            <Ellipse Width="640"
+                     Height="430"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Top"
+                     Margin="0,-150,-170,0"
+                     Fill="{StaticResource AmbientGlowBrush}" />
+            <Ellipse Width="500"
+                     Height="400"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom"
+                     Margin="-160,0,0,-140"
+                     Fill="{StaticResource AmbientGlowCoolBrush}" />
+        </Grid>
+
         <Border BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,0,0,1">
-            <Grid Margin="24,0">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="12" ShadowDepth="3" Opacity="0.28" />
+            </Border.Effect>
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0,0,0" IsHitTestVisible="False">
                     <views:BrandMark Width="40" Height="40" Margin="0,0,11,0" />
                     <StackPanel VerticalAlignment="Center">
                         <TextBlock Text="DHub"
@@ -43,9 +83,21 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="UpdateButton"
+                            Style="{StaticResource BaseButton}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
+                            ToolTip="检查并安装 DHub 更新"
+                            Click="UpdateButton_Click"
+                            Margin="0,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE896;" Margin="0,0,7,0" />
+                            <TextBlock x:Name="UpdateButtonText" Text="检查更新" />
+                        </StackPanel>
+                    </Button>
                     <Button Style="{StaticResource BaseButton}"
                             Command="{Binding ImportCommand}"
                             Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
                             ToolTip="导入 BD 库"
                             Margin="0,0,8,0">
                         <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8B5;" />
@@ -53,6 +105,7 @@
                     <Button Style="{StaticResource BaseButton}"
                             Command="{Binding ExportCommand}"
                             Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
                             ToolTip="导出 BD 库"
                             Margin="0,0,8,0">
                         <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xEDE1;" />
@@ -60,6 +113,7 @@
                     <Button Style="{StaticResource BaseButton}"
                             Command="{Binding LoadScreenshotCommand}"
                             Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
                             ToolTip="从截图采集 BD 指纹并预览 HUD"
                             Margin="0,0,8,0">
                         <StackPanel Orientation="Horizontal">
@@ -70,6 +124,7 @@
                     <Button Style="{StaticResource BaseButton}"
                             Command="{Binding CaptureFingerprintCommand}"
                             Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
                             ToolTip="从当前游戏画面采集所选 BD 指纹"
                             Margin="0,0,8,0">
                         <StackPanel Orientation="Horizontal">
@@ -77,14 +132,72 @@
                             <TextBlock Text="游戏采集" />
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource PrimaryButton}"
-                            Command="{Binding ToggleTrackingCommand}"
-                            ToolTip="开始或暂停角色面板监测">
+                    <Button Command="{Binding ToggleTrackingCommand}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
+                            ToolTip="开始或暂停角色面板监测（快捷键 F2）">
+                        <Button.Effect>
+                            <DropShadowEffect Color="{StaticResource ColorAccent}"
+                                              BlurRadius="20"
+                                              ShadowDepth="0"
+                                              Opacity="0" />
+                        </Button.Effect>
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsTracking}" Value="True">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard RepeatBehavior="Forever">
+                                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)"
+                                                                     From="0.16"
+                                                                     To="0.5"
+                                                                     Duration="0:0:1.4"
+                                                                     AutoReverse="True">
+                                                        <DoubleAnimation.EasingFunction>
+                                                            <SineEase EasingMode="EaseInOut" />
+                                                        </DoubleAnimation.EasingFunction>
+                                                    </DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                        <DataTrigger.ExitActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" To="0" Duration="0:0:0.3" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.ExitActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE7F4;" Margin="0,0,7,0" />
                             <TextBlock Text="{Binding TrackingButtonText}" />
                         </StackPanel>
                     </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="14,0,0,0">
+                    <Border Width="1"
+                            Height="24"
+                            Margin="0,0,12,0"
+                            VerticalAlignment="Center"
+                            Background="{StaticResource SurfaceHoverBrush}"
+                            IsHitTestVisible="False" />
+                    <Button Style="{StaticResource CaptionButton}"
+                            Content="&#xE921;"
+                            ToolTip="最小化"
+                            Click="CaptionMinimize_Click" />
+                    <Button Style="{StaticResource CaptionButton}"
+                            ToolTip="最大化或还原"
+                            Click="CaptionMaximizeRestore_Click">
+                        <TextBlock x:Name="MaxRestoreGlyph" Text="&#xE922;" />
+                    </Button>
+                    <Button Style="{StaticResource CaptionCloseButton}"
+                            Content="&#xE8BB;"
+                            ToolTip="关闭"
+                            Click="CaptionClose_Click" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -159,7 +272,7 @@
                                 <ColumnDefinition Width="14" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" VerticalAlignment="Center" />
+                            <Ellipse Style="{StaticResource PulseDot}" VerticalAlignment="Center" />
                             <StackPanel Grid.Column="1">
                                 <TextBlock Text="本地模式" FontWeight="SemiBold" FontSize="11" />
                                 <TextBlock Text="可见画面识别" Foreground="{StaticResource TextMutedBrush}" FontSize="10" Margin="0,2,0,0" />
@@ -170,7 +283,31 @@
             </Border>
 
             <Grid Grid.Column="1"
+                  RenderTransformOrigin="0.5,0.5"
                   Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Grid.RenderTransform>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsHudPage}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.22" />
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="12" To="0" Duration="0:0:0.28">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="252" />
                 <ColumnDefinition Width="*" />
@@ -183,6 +320,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="12" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -201,38 +340,113 @@
                         </StackPanel>
                     </Grid>
 
-                    <ListBox Grid.Row="2"
-                             ItemsSource="{Binding Profiles}"
-                             SelectedItem="{Binding SelectedProfile}"
-                             ItemContainerStyle="{StaticResource NavigationItem}"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="26" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Border Width="18" Height="18" CornerRadius="4" Background="#2BD45945" VerticalAlignment="Center">
-                                        <TextBlock Text="◆" Foreground="{StaticResource AccentBrush}" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Border>
-                                    <StackPanel Grid.Column="1">
-                                        <TextBlock Text="{Binding Name}"
-                                                   FontWeight="SemiBold"
-                                                   TextTrimming="CharacterEllipsis" />
-                                        <TextBlock Text="{Binding ClassName}"
-                                                   Foreground="{StaticResource TextMutedBrush}"
-                                                   FontSize="10"
-                                                   TextTrimming="CharacterEllipsis" />
-                                    </StackPanel>
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox ItemsSource="{Binding ClassFilters}"
+                                  SelectedItem="{Binding SelectedClassFilter}"
+                                  DisplayMemberPath="Label"
+                                  Style="{StaticResource FilterComboBox}"
+                                  ToolTip="按职业筛选" />
+                        <ComboBox Grid.Column="2"
+                                  ItemsSource="{Binding SeasonFilters}"
+                                  SelectedItem="{Binding SelectedSeasonFilter}"
+                                  DisplayMemberPath="Label"
+                                  Style="{StaticResource FilterComboBox}"
+                                  ToolTip="按赛季模式筛选" />
+                        <ComboBox Grid.Row="2"
+                                  ItemsSource="{Binding DifficultyFilters}"
+                                  SelectedItem="{Binding SelectedDifficultyFilter}"
+                                  DisplayMemberPath="Label"
+                                  Style="{StaticResource FilterComboBox}"
+                                  ToolTip="按普通或专家模式筛选" />
+                        <ComboBox Grid.Row="2" Grid.Column="2"
+                                  ItemsSource="{Binding PurposeFilters}"
+                                  SelectedItem="{Binding SelectedPurposeFilter}"
+                                  DisplayMemberPath="Label"
+                                  Style="{StaticResource FilterComboBox}"
+                                  ToolTip="按玩法用途筛选" />
+                    </Grid>
 
-                    <StackPanel Grid.Row="3">
+                    <Grid Grid.Row="4">
+                        <ListBox x:Name="ProfileList"
+                                 ItemsSource="{Binding FilteredProfiles}"
+                                 SelectedItem="{Binding SelectedProfile}"
+                                 ItemContainerStyle="{StaticResource NavigationItem}"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 ScrollViewer.CanContentScroll="False"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="26" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border Width="18" Height="18" CornerRadius="4" Background="{StaticResource AccentSoftBrush}" VerticalAlignment="Center">
+                                            <TextBlock Text="◆" Foreground="{StaticResource AccentBrush}" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Text="{Binding Name}"
+                                                       FontWeight="SemiBold"
+                                                       TextTrimming="CharacterEllipsis" />
+                                            <TextBlock Text="{Binding ClassName}"
+                                                       Foreground="{StaticResource TextMutedBrush}"
+                                                       FontSize="10"
+                                                       TextTrimming="CharacterEllipsis" />
+                                            <TextBlock Text="{Binding MetadataSummary}"
+                                                       Foreground="{StaticResource TextMutedBrush}"
+                                                       FontSize="9"
+                                                       TextTrimming="CharacterEllipsis" />
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    IsHitTestVisible="False"
+                                    Margin="24">
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding HasItems, ElementName=ProfileList}" Value="False">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                            <TextBlock Text="&#xE8B7;"
+                                       FontFamily="{StaticResource IconFontFamily}"
+                                       FontSize="22"
+                                       Foreground="{StaticResource TextMutedBrush}"
+                                       HorizontalAlignment="Center"
+                                       Opacity="0.55" />
+                            <TextBlock Text="没有符合条件的 BD"
+                                       Foreground="{StaticResource TextSecondaryBrush}"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,8,0,0" />
+                            <TextBlock Text="调整筛选条件，或点击右上角新建"
+                                       Foreground="{StaticResource TextMutedBrush}"
+                                       FontSize="10"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,4,0,0" />
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Grid.Row="5">
                         <Border BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,1,0,0" Padding="2,14,2,0">
                             <StackPanel>
                                 <Grid Margin="0,0,0,10">
@@ -264,7 +478,7 @@
                                     <ColumnDefinition Width="14" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" />
+                                <Ellipse Style="{StaticResource PulseDot}" />
                                 <TextBlock Grid.Column="1"
                                            Text="纯屏幕识别 · 点击穿透"
                                            Foreground="{StaticResource TextSecondaryBrush}"
@@ -275,7 +489,7 @@
                 </Grid>
             </Border>
 
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" CanContentScroll="False">
                 <Grid Margin="24,20,24,22">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -287,11 +501,7 @@
                         <RowDefinition Height="*" MinHeight="380" />
                     </Grid.RowDefinitions>
 
-                    <Border Background="{StaticResource SurfaceBrush}"
-                            BorderBrush="{StaticResource HairlineBrush}"
-                            BorderThickness="1"
-                            CornerRadius="7"
-                            Padding="12,10">
+                    <ContentControl Style="{StaticResource AnimatedCard}" Padding="12,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="205" />
@@ -319,12 +529,53 @@
                                            TextTrimming="CharacterEllipsis" />
                             </StackPanel>
                             <Button Grid.Column="2"
-                                    Style="{StaticResource PrimaryButton}"
                                     Command="{Binding PasteD2CoreCommand}"
                                     Margin="0,0,7,0"
                                     VerticalAlignment="Top"
                                     ToolTip="读取剪贴板中的暗黑核链接并导入">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsD2CoreImporting}" Value="True">
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
                                 <StackPanel Orientation="Horizontal">
+                                    <Grid Width="13"
+                                          Height="13"
+                                          Margin="0,0,6,0"
+                                          VerticalAlignment="Center"
+                                          RenderTransformOrigin="0.5,0.5"
+                                          Visibility="{Binding IsD2CoreImporting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Grid.RenderTransform>
+                                            <RotateTransform Angle="0" />
+                                        </Grid.RenderTransform>
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsD2CoreImporting}" Value="True">
+                                                        <DataTrigger.EnterActions>
+                                                            <BeginStoryboard>
+                                                                <Storyboard RepeatBehavior="Forever">
+                                                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                                                     From="0"
+                                                                                     To="360"
+                                                                                     Duration="0:0:0.9" />
+                                                                </Storyboard>
+                                                            </BeginStoryboard>
+                                                        </DataTrigger.EnterActions>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+                                        <Ellipse Stroke="White"
+                                                 StrokeThickness="1.6"
+                                                 StrokeDashArray="9 31"
+                                                 StrokeStartLineCap="Round"
+                                                 StrokeEndLineCap="Round" />
+                                    </Grid>
                                     <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE77F;" Margin="0,0,6,0" />
                                     <TextBlock Text="粘贴并导入" />
                                 </StackPanel>
@@ -342,30 +593,67 @@
                                     Command="{Binding RefreshD2CoreCommand}"
                                     VerticalAlignment="Top"
                                     ToolTip="忽略缓存，从暗黑核刷新当前链接">
-                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE72C;" />
+                                <TextBlock x:Name="RefreshGlyph"
+                                           FontFamily="{StaticResource IconFontFamily}"
+                                           Text="&#xE72C;"
+                                           RenderTransformOrigin="0.5,0.5">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform Angle="0" />
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="RefreshGlyph"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                                 To="180"
+                                                                 Duration="0:0:0.32">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <CubicEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="RefreshGlyph"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                                 To="0"
+                                                                 Duration="0:0:0.32">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <CubicEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
                             </Button>
                         </Grid>
-                    </Border>
+                    </ContentControl>
 
                     <UniformGrid Grid.Row="2" Columns="3">
-                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="0,0,8,0" Padding="14,10">
+                        <ContentControl Style="{StaticResource AnimatedCard}" Margin="0,0,8,0" Padding="14,10">
                             <StackPanel>
                                 <TextBlock Text="游戏窗口" Style="{StaticResource CaptionText}" />
                                 <TextBlock Text="{Binding GameStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
                             </StackPanel>
-                        </Border>
-                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="4,0" Padding="14,10">
+                        </ContentControl>
+                        <ContentControl Style="{StaticResource AnimatedCard}" Margin="4,0" Padding="14,10">
                             <StackPanel>
                                 <TextBlock Text="角色面板" Style="{StaticResource CaptionText}" />
                                 <TextBlock Text="{Binding PanelStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
                             </StackPanel>
-                        </Border>
-                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="8,0,0,0" Padding="14,10">
+                        </ContentControl>
+                        <ContentControl Style="{StaticResource AnimatedCard}" Margin="8,0,0,0" Padding="14,10">
                             <StackPanel>
                                 <TextBlock Text="当前 BD" Style="{StaticResource CaptionText}" />
                                 <TextBlock Text="{Binding RecognitionStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
                             </StackPanel>
-                        </Border>
+                        </ContentControl>
                     </UniformGrid>
 
                     <Grid Grid.Row="4">
@@ -406,35 +694,56 @@
 
                         <StackPanel>
                             <TextBlock Text="装备槽" Style="{StaticResource SectionHeadingText}" Margin="0,0,0,9" />
-                            <ListBox ItemsSource="{Binding SelectedProfile.EquipmentRules}"
-                                     SelectedItem="{Binding SelectedRule}"
-                                     ItemContainerStyle="{StaticResource NavigationItem}"
-                                     Background="Transparent"
-                                     BorderThickness="0">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Text="{Binding SlotLabel}" FontWeight="SemiBold" />
-                                            <Ellipse Grid.Column="1" Width="6" Height="6" Fill="{StaticResource SuccessBrush}" VerticalAlignment="Center">
-                                                <Ellipse.Style>
-                                                    <Style TargetType="Ellipse">
-                                                        <Setter Property="Opacity" Value="1" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsEnabled}" Value="False">
-                                                                <Setter Property="Opacity" Value="0.2" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </Ellipse.Style>
-                                            </Ellipse>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                            <Grid>
+                                <ListBox x:Name="RuleList"
+                                         ItemsSource="{Binding SelectedProfile.EquipmentRules}"
+                                         SelectedItem="{Binding SelectedRule}"
+                                         ItemContainerStyle="{StaticResource NavigationItem}"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         ScrollViewer.CanContentScroll="False">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding SlotLabel}" FontWeight="SemiBold" />
+                                                <Ellipse Grid.Column="1" Width="6" Height="6" Fill="{StaticResource SuccessBrush}" VerticalAlignment="Center">
+                                                    <Ellipse.Style>
+                                                        <Style TargetType="Ellipse">
+                                                            <Setter Property="Opacity" Value="1" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                                                                    <Setter Property="Opacity" Value="0.2" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Ellipse.Style>
+                                                </Ellipse>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <TextBlock Text="选择或新建 BD 后配置装备槽"
+                                           Foreground="{StaticResource TextMutedBrush}"
+                                           FontSize="11"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,26,0,0"
+                                           IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding HasItems, ElementName=RuleList}" Value="False">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2">
@@ -477,7 +786,7 @@
                                              Width="130"
                                              HorizontalAlignment="Right"
                                              VerticalAlignment="Center"
-                                             Value="{Binding RecognitionConfidence, Mode=OneWay}" />
+                                             views:ProgressBarSmoother.SmoothValue="{Binding RecognitionConfidence, Mode=OneWay}" />
                             </Grid>
                         </StackPanel>
 
@@ -547,8 +856,32 @@
         </Grid>
 
             <Grid Grid.Column="1"
+                  RenderTransformOrigin="0.5,0.5"
                   Visibility="{Binding IsOverviewPage, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Grid.RenderTransform>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsOverviewPage}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.22" />
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="12" To="0" Duration="0:0:0.28">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="False">
                     <Grid Margin="34,30,34,28" MaxWidth="1120" HorizontalAlignment="Left">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -568,17 +901,12 @@
                                 <TextBlock Text="识别战局，走出自己的路。" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,5,0,0" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <Ellipse Width="7" Height="7" Fill="{StaticResource SuccessBrush}" Margin="0,0,7,0" />
+                                <Ellipse Style="{StaticResource PulseDot}" Width="7" Height="7" Margin="0,0,7,0" />
                                 <TextBlock Text="{Binding TrackingStatusText}" Style="{StaticResource CaptionText}" />
                             </StackPanel>
                         </Grid>
 
-                        <Border Grid.Row="2"
-                                Background="{StaticResource SurfaceElevatedBrush}"
-                                BorderBrush="{StaticResource AccentBrush}"
-                                BorderThickness="1"
-                                CornerRadius="7"
-                                Padding="17,14">
+                        <ContentControl Grid.Row="2" Style="{StaticResource AccentCard}" Padding="17,14">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50" />
@@ -614,59 +942,39 @@
                                     </StackPanel>
                                 </Button>
                             </Grid>
-                        </Border>
+                        </ContentControl>
 
                         <UniformGrid Grid.Row="4" Columns="3">
-                            <Border Background="{StaticResource SurfaceBrush}"
-                                    BorderBrush="{StaticResource HairlineBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="7"
-                                    Margin="0,0,8,0"
-                                    Padding="15,13">
+                            <ContentControl Style="{StaticResource AnimatedCard}" Margin="0,0,8,0" Padding="15,13">
                                 <StackPanel>
                                     <TextBlock Text="游戏窗口" Style="{StaticResource CaptionText}" />
                                     <TextBlock Text="{Binding GameStatus}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" TextTrimming="CharacterEllipsis" />
                                 </StackPanel>
-                            </Border>
-                            <Border Background="{StaticResource SurfaceBrush}"
-                                    BorderBrush="{StaticResource HairlineBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="7"
-                                    Margin="4,0"
-                                    Padding="15,13">
+                            </ContentControl>
+                            <ContentControl Style="{StaticResource AnimatedCard}" Margin="4,0" Padding="15,13">
                                 <StackPanel>
                                     <TextBlock Text="识别状态" Style="{StaticResource CaptionText}" />
                                     <TextBlock Text="{Binding RecognitionStatus}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" TextTrimming="CharacterEllipsis" />
                                 </StackPanel>
-                            </Border>
-                            <Border Background="{StaticResource SurfaceBrush}"
-                                    BorderBrush="{StaticResource HairlineBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="7"
-                                    Margin="8,0,0,0"
-                                    Padding="15,13">
+                            </ContentControl>
+                            <ContentControl Style="{StaticResource AnimatedCard}" Margin="8,0,0,0" Padding="15,13">
                                 <StackPanel>
                                     <TextBlock Text="构筑配置" Style="{StaticResource CaptionText}" />
                                     <TextBlock Text="{Binding ProfileCountText}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" />
                                 </StackPanel>
-                            </Border>
+                            </ContentControl>
                         </UniformGrid>
 
                         <TextBlock Grid.Row="6" Text="已接入功能" Style="{StaticResource SectionHeadingText}" />
 
-                        <Border Grid.Row="8"
-                                Background="{StaticResource SurfaceBrush}"
-                                BorderBrush="{StaticResource HairlineBrush}"
-                                BorderThickness="1"
-                                CornerRadius="7"
-                                Padding="20,18">
+                        <ContentControl Grid.Row="8" Style="{StaticResource AnimatedCard}" Padding="20,18">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Border Width="42" Height="42" Background="#2BD45945" CornerRadius="7" VerticalAlignment="Top">
+                                <Border Width="42" Height="42" Background="{StaticResource AccentSoftBrush}" CornerRadius="7" VerticalAlignment="Top">
                                     <TextBlock FontFamily="{StaticResource IconFontFamily}"
                                                Text="&#xE7F4;"
                                                Foreground="{StaticResource AccentBrush}"
@@ -690,7 +998,7 @@
                                     </Button>
                                 </StackPanel>
                             </Grid>
-                        </Border>
+                        </ContentControl>
                     </Grid>
                 </ScrollViewer>
             </Grid>
@@ -699,16 +1007,21 @@
         <Border Grid.Row="2" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,1,0,0">
             <Grid Margin="22,0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" Margin="0,0,7,0" />
+                    <Ellipse Style="{StaticResource PulseDot}" Margin="0,0,7,0" />
                     <TextBlock Text="DHub · 本地画面识别" Style="{StaticResource CaptionText}" />
                     <TextBlock Text=" · " Foreground="{StaticResource TextMutedBrush}" />
                     <TextBlock Text="{Binding SelectedProfileSummary}" Style="{StaticResource CaptionText}" />
                 </StackPanel>
-                <TextBlock Text="{Binding FingerprintStatus}"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Center"
-                           Style="{StaticResource CaptionText}" />
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock x:Name="UpdateStatusText"
+                               Text="更新服务就绪"
+                               Margin="0,0,16,0"
+                               Style="{StaticResource CaptionText}" />
+                    <TextBlock Text="{Binding FingerprintStatus}"
+                               Style="{StaticResource CaptionText}" />
+                </StackPanel>
             </Grid>
         </Border>
     </Grid>
+    </Border>
 </Window>

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "sourcePage": "https://www.d2core.com/d4/builds",
+  "observedAt": "2026-07-26T02:30:00+00:00",
+  "builds": [
+    {
+      "source": "d2core",
+      "buildId": "1ZCi",
+      "purposes": [
+        "general",
+        "pitPush",
+        "speedFarm"
+      ]
+    },
+    {
+      "source": "d2core",
+      "buildId": "21Sf",
+      "purposes": [
+        "general",
+        "pitPush",
+        "speedFarm"
+      ]
+    },
+    {
+      "source": "d2core",
+      "buildId": "1ZsP",
+      "purposes": [
+        "leveling",
+        "pitPush",
+        "speedFarm"
+      ]
+    },
+    {
+      "source": "d2core",
+      "buildId": "1Zep",
+      "purposes": [
+        "leveling",
+        "pitPush",
+        "speedFarm"
+      ]
+    },
+    {
+      "source": "d2core",
+      "buildId": "21SM",
+      "purposes": [
+        "general",
+        "pitPush",
+        "speedFarm"
+      ]
+    },
+    {
+      "source": "d2core",
+      "buildId": "1Zxa",
+      "purposes": [
+        "general",
+        "leveling",
+        "speedFarm"
+      ]
+    }
+  ]
+}

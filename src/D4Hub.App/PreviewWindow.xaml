@@ -9,15 +9,48 @@
         MinHeight="620"
         WindowStartupLocation="CenterOwner"
         Background="#FF0C0C0B">
-    <Grid Margin="16">
-        <Viewbox Stretch="Uniform">
-            <Canvas x:Name="PreviewCanvas" Background="#FF0C0C0B">
-                <Image x:Name="ScreenshotImage" Stretch="Fill" />
-                <views:HudOverlayView x:Name="HudPreview"
-                                      ProfileName="{Binding SelectedProfile.Name}"
-                                      Rules="{Binding SelectedProfile.EquipmentRules}"
-                                      DisplayMode="{Binding HudDisplayMode}" />
-            </Canvas>
-        </Viewbox>
+    <Grid x:Name="RootGrid"
+          Margin="16"
+          Opacity="0"
+          RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <ScaleTransform ScaleX="0.975" ScaleY="0.975" />
+        </Grid.RenderTransform>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.24" />
+                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <CubicEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <CubicEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+        <Border BorderBrush="{StaticResource HairlineBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                SnapsToDevicePixels="True">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="24" ShadowDepth="6" Opacity="0.45" />
+            </Border.Effect>
+            <Viewbox Stretch="Uniform">
+                <Canvas x:Name="PreviewCanvas" Background="#FF0C0C0B">
+                    <Image x:Name="ScreenshotImage" Stretch="Fill" />
+                    <views:HudOverlayView x:Name="HudPreview"
+                                          ProfileName="{Binding SelectedProfile.Name}"
+                                          Rules="{Binding SelectedProfile.EquipmentRules}"
+                                          DisplayMode="{Binding HudDisplayMode}" />
+                </Canvas>
+            </Viewbox>
+        </Border>
     </Grid>
 </Window>

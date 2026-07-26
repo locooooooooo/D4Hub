@@ -390,7 +390,23 @@ public sealed class BuildProfile : INotifyPropertyChanged
     public int? SourceVariantIndex { get; set; }
     public string SourceUrl { get; set; } = string.Empty;
     public string LibraryContentHash { get; set; } = string.Empty;
+    public int Season { get; set; }
+    public BuildSeasonMode SeasonMode { get; set; }
+    public BuildDifficultyMode DifficultyMode { get; set; }
+    public List<BuildPurpose> Purposes { get; set; } = new();
     public List<EquipmentItemRecord> ImportedEquipment { get; set; } = new();
+
+    [JsonIgnore]
+    public string MetadataSummary => string.Join(
+        " · ",
+        new[]
+        {
+            BuildMetadata.GetSeasonLabel(SeasonMode, Season),
+            BuildMetadata.GetDifficultyLabel(DifficultyMode),
+            string.Join("/", Purposes
+                .DefaultIfEmpty(BuildPurpose.General)
+                .Select(BuildMetadata.GetPurposeLabel))
+        });
 
     public BuildVisualFingerprint? Fingerprint { get; set; }
     public List<EquipmentAffixRule> EquipmentRules { get; set; } = new();
@@ -554,6 +570,11 @@ public sealed class CharacterPanelDetector
     private const ulong CharacterTitleHash = 0x00140C1C1E1E0200UL;
     private const double CharacterTitleMatchThreshold = 0.84;
     private static readonly double[] CharacterTitleScales = [0.85, 1.0, 1.15];
+    private static readonly (double X, double Y)[] CharacterTitleAnchors =
+    [
+        (0.031, 0.057),
+        (0.060, 0.013)
+    ];
 
     public PanelDetection Detect(PixelFrame frame)
     {
@@ -619,30 +640,33 @@ public sealed class CharacterPanelDetector
             return false;
         }
 
-        var expectedLeft = panelLeft + activeHeight * 0.031;
-        var expectedTop = activeTop + activeHeight * 0.057;
         var expectedWidth = activeHeight * 0.064;
         var expectedHeight = activeHeight * 0.026;
         var searchRadiusX = Math.Max(2, (int)Math.Round(activeHeight * 0.016));
         var searchRadiusY = Math.Max(2, (int)Math.Round(activeHeight * 0.014));
         var searchStep = Math.Max(1, activeHeight / 420);
 
-        foreach (var scaleX in CharacterTitleScales)
+        foreach (var anchor in CharacterTitleAnchors)
         {
-            foreach (var scaleY in CharacterTitleScales)
+            var expectedLeft = panelLeft + activeHeight * anchor.X;
+            var expectedTop = activeTop + activeHeight * anchor.Y;
+            foreach (var scaleX in CharacterTitleScales)
             {
-                var width = Math.Max(12, (int)Math.Round(expectedWidth * scaleX));
-                var height = Math.Max(8, (int)Math.Round(expectedHeight * scaleY));
-                for (var offsetY = -searchRadiusY; offsetY <= searchRadiusY; offsetY += searchStep)
+                foreach (var scaleY in CharacterTitleScales)
                 {
-                    for (var offsetX = -searchRadiusX; offsetX <= searchRadiusX; offsetX += searchStep)
+                    var width = Math.Max(12, (int)Math.Round(expectedWidth * scaleX));
+                    var height = Math.Max(8, (int)Math.Round(expectedHeight * scaleY));
+                    for (var offsetY = -searchRadiusY; offsetY <= searchRadiusY; offsetY += searchStep)
                     {
-                        var left = (int)Math.Round(expectedLeft + offsetX - (width - expectedWidth) / 2);
-                        var top = (int)Math.Round(expectedTop + offsetY - (height - expectedHeight) / 2);
-                        var match = MeasureCharacterTitleMatch(frame, left, top, width, height);
-                        if (match >= CharacterTitleMatchThreshold)
+                        for (var offsetX = -searchRadiusX; offsetX <= searchRadiusX; offsetX += searchStep)
                         {
-                            return true;
+                            var left = (int)Math.Round(expectedLeft + offsetX - (width - expectedWidth) / 2);
+                            var top = (int)Math.Round(expectedTop + offsetY - (height - expectedHeight) / 2);
+                            var match = MeasureCharacterTitleMatch(frame, left, top, width, height);
+                            if (match >= CharacterTitleMatchThreshold)
+                            {
+                                return true;
+                            }
                         }
                     }
                 }
@@ -983,6 +1007,29 @@ public static class HudProfileFactory
         profile.EquipmentRules ??= new List<EquipmentAffixRule>();
         profile.ImportedEquipment ??= new List<EquipmentItemRecord>();
         profile.LayoutTemplates ??= new List<HudLayoutTemplate>();
+        profile.Purposes ??= new List<BuildPurpose>();
+        if (string.Equals(profile.Source, "d2core", StringComparison.OrdinalIgnoreCase))
+        {
+            if (profile.Season <= 0)
+            {
+                var match = Regex.Match(profile.Variant ?? string.Empty, @"\bS(?<season>\d+)\b", RegexOptions.IgnoreCase);
+                if (match.Success && int.TryParse(match.Groups["season"].Value, out var season))
+                {
+                    profile.Season = season;
+                }
+            }
+
+            if (profile.SeasonMode == BuildSeasonMode.Unknown && profile.Season > 0)
+            {
+                profile.SeasonMode = BuildSeasonMode.Seasonal;
+            }
+
+            if (profile.Purposes.Count == 0)
+            {
+                profile.Purposes = BuildMetadata.ClassifyPurposes(profile.Name).ToList();
+            }
+        }
+
         var defaults = CreateDefaultRules(profile.ClassName);
         MigrateLegacyBarbarianWeaponRules(profile, defaults);
         if (!string.Equals(profile.Source, "d2core", StringComparison.OrdinalIgnoreCase))

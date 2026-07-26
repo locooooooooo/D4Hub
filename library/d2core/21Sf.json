@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "source": "d2core",
+  "buildId": "21Sf",
+  "canonicalUrl": "https://www.d2core.com/d4/planner?bd=21Sf",
+  "title": "s14法师说明书",
+  "className": "Sorcerer",
+  "season": 14,
+  "seasonMode": "seasonal",
+  "difficultyMode": "unknown",
+  "parserVersion": "d2core-v1",
+  "contentHash": "c608410a17160a4e8dc31ac067b213978c6de4aef02e982acbc90c2d51c4aa2e",
+  "sourceUpdatedAt": "2026-07-26T01:08:22.985+00:00",
+  "fetchedAt": "2026-07-26T02:35:21.3238989+00:00",
+  "variants": [
+    {
+      "index": 0,
+      "name": "s14法师终局心得",
+      "purposes": [
+        "general"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Sorc_102_x2",
+          "displayName": "火焰风暴的幻象",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Sorc_Special_Firewall",
+              "name": "至火墙",
+              "displayText": "+3 至火墙",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Chest_Unique_Sorc_002",
+          "displayName": "无限法衣",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_SkillRankBonus_Sorc_Special_Teleport",
+              "name": "至传送术",
+              "displayText": "+3 至传送术",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Affix_x1_legendary_sorc_141_x2",
+          "displayName": "元素星阵之威能",
+          "aspectName": "元素星阵之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_Damage_All_Greater",
+              "name": "全伤害增倍",
+              "displayText": "x20% 全伤害增倍",
+              "value": 0.2,
+              "minimum": 0.12,
+              "maximum": 0.2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_DoT_Greater",
+              "name": "持续性伤害增倍",
+              "displayText": "x60% 持续性伤害增倍",
+              "value": 0.6,
+              "minimum": 0.3,
+              "maximum": 0.6,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_DoT_Tier3",
+              "name": "持续性伤害",
+              "displayText": "回火 · +50% 持续性伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Sorc_100",
+          "displayName": "冰心长裤",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_sorc_142_x2",
+          "displayName": "附魔师之威能",
+          "aspectName": "附魔师之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_SkillRankBonus_Sorc_Special_Firewall",
+              "name": "至火墙",
+              "displayText": "+3 至火墙",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Mace",
+          "sourceKey": "1HMace_Unique_Sorc_100",
+          "displayName": "奥希凡",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_DoT",
+              "name": "持续性伤害增倍",
+              "displayText": "x30% 持续性伤害增倍",
+              "value": 0.3,
+              "minimum": 0.15,
+              "maximum": 0.3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Fast_Weapon_Damage_1HMace",
+              "name": "武器伤害",
+              "displayText": "+157 武器伤害",
+              "value": 157,
+              "minimum": 94,
+              "maximum": 157,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_AttackSpeed_Tier3",
+              "name": "攻击速度",
+              "displayText": "回火 · +[0.08 * 100|1%|] 攻击速度",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Affix_legendary_sorc_101_x2",
+          "displayName": "上古火焰之威能",
+          "aspectName": "上古火焰之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_SkillRankBonus_AllSkills",
+              "name": "至所有技能",
+              "displayText": "+2 至所有技能",
+              "value": 2,
+              "minimum": 1,
+              "maximum": 2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_DoT_Greater",
+              "name": "持续性伤害增倍",
+              "displayText": "x60% 持续性伤害增倍",
+              "value": 0.6,
+              "minimum": 0.3,
+              "maximum": 0.6,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Fire_Greater",
+              "name": "火焰 伤害增倍",
+              "displayText": "x24% 火焰 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_DoT_Tier3",
+              "name": "持续性伤害",
+              "displayText": "回火 · +50% 持续性伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_sorc_126_x2",
+          "displayName": "元素调和之威能",
+          "aspectName": "元素调和之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Damage_DoT",
+              "name": "持续性伤害增倍",
+              "displayText": "x30% 持续性伤害增倍",
+              "value": 0.3,
+              "minimum": 0.15,
+              "maximum": 0.3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Fire",
+              "name": "火焰 伤害增倍",
+              "displayText": "x10% 火焰 伤害增倍",
+              "value": 0.1,
+              "minimum": 0.07,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_DoT_Tier3",
+              "name": "持续性伤害",
+              "displayText": "回火 · +50% 持续性伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Sorc_104_x2",
+          "displayName": "卓格楠的苦闷",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "X2_SkillRankBonus_Sorc_Category_Pyromancy",
+              "name": "至爆焰技能",
+              "displayText": "+2 至爆焰技能",
+              "value": 2,
+              "minimum": 1,
+              "maximum": 2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_DoT",
+              "name": "持续性伤害增倍",
+              "displayText": "x30% 持续性伤害增倍",
+              "value": 0.3,
+              "minimum": 0.15,
+              "maximum": 0.3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_DoT_Tier3",
+              "name": "持续性伤害",
+              "displayText": "回火 · +50% 持续性伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "Focus",
+          "sourceKey": "Affix_legendary_generic_134_x2",
+          "displayName": "蠕动威能",
+          "aspectName": "蠕动威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_DoT",
+              "name": "持续性伤害增倍",
+              "displayText": "x30% 持续性伤害增倍",
+              "value": 0.3,
+              "minimum": 0.15,
+              "maximum": 0.3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Intelligence_Greater",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_AttackSpeed_Tier3",
+              "name": "攻击速度",
+              "displayText": "太古回火 · +[0.08 * 100|1%|] 攻击速度",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

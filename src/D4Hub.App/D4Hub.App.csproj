@@ -8,8 +8,20 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AssemblyName>D4Hub</AssemblyName>
     <RootNamespace>D4Hub.App</RootNamespace>
+    <StartupObject>D4Hub.App.App</StartupObject>
+    <Version>1.0.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Velopack" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(UpdateFeedUrl)' != ''">
+    <RuntimeHostConfigurationOption Include="D4Hub.UpdateFeedUrl" Value="$(UpdateFeedUrl)" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\D4Hub.Core\D4Hub.Core.csproj" />
   </ItemGroup>

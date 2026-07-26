@@ -1,17 +1,116 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-22T06:16:34.2073551+00:00",
+  "updatedAt": "2026-07-26T02:35:27.9759566+00:00",
   "builds": [
     {
       "source": "d2core",
+      "buildId": "1ZCi",
+      "title": "S14野蛮人终局Build【开荒+速刷+冲层全攻略】",
+      "className": "Barbarian",
+      "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "general",
+        "leveling",
+        "pitPush",
+        "speedFarm"
+      ],
+      "variantCount": 10,
+      "contentHash": "447ccd669319ad95866ee18e89739267cd512457536a267975636846b8599c7f",
+      "sourceUpdatedAt": "2026-07-12T07:27:30.174+00:00",
+      "path": "d2core/1ZCi.json"
+    },
+    {
+      "source": "d2core",
       "buildId": "1Zep",
-      "title": "S14正式服-7月20日更新-BUG斩杀BD-（冰箭雨-已有人嬗变到位突破150层深坑）",
+      "title": "S14正式服-7月26日微调更新（28号疾行斩杀修复），不管是毒箭雨还是冰，可配置路线有多种!",
       "className": "Rogue",
       "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "general",
+        "leveling",
+        "pitPush",
+        "speedFarm",
+        "bossing"
+      ],
       "variantCount": 10,
-      "contentHash": "83a8b930b7df8c7e3fab9929f195b8d8125ff83c9ea2d424dce4b0a20cf1422b",
-      "sourceUpdatedAt": "2026-07-20T15:33:05.999+00:00",
+      "contentHash": "8cfa3d159232a0ecb8245276a6e73ab5c123ab164569c328f602f23cce0cdd03",
+      "sourceUpdatedAt": "2026-07-26T01:38:54.18+00:00",
       "path": "d2core/1Zep.json"
+    },
+    {
+      "source": "d2core",
+      "buildId": "1ZsP",
+      "title": "【蓝萌君】S14德子 风暴狼德 - 全版本",
+      "className": "Druid",
+      "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "general",
+        "leveling",
+        "pitPush",
+        "speedFarm"
+      ],
+      "variantCount": 9,
+      "contentHash": "b839ae025302656c0eb8ae6cf02b19dcc469b71c7280c3d554a7fce6a3bf274a",
+      "sourceUpdatedAt": "2026-07-25T22:48:02.158+00:00",
+      "path": "d2core/1ZsP.json"
+    },
+    {
+      "source": "d2core",
+      "buildId": "1Zxa",
+      "title": "【加菲猫】S14灵巫·绝地反击·全攻略(世一构建 7.26 毒影更新)",
+      "className": "Spiritborn",
+      "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "general",
+        "leveling",
+        "pitPush",
+        "speedFarm"
+      ],
+      "variantCount": 10,
+      "contentHash": "a79748d672ad2ed0d569e93bb3af8f3134755c6d899b3e39c76c5904aa3111a6",
+      "sourceUpdatedAt": "2026-07-25T23:38:40.356+00:00",
+      "path": "d2core/1Zxa.json"
+    },
+    {
+      "source": "d2core",
+      "buildId": "21Sf",
+      "title": "s14法师说明书",
+      "className": "Sorcerer",
+      "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "general"
+      ],
+      "variantCount": 1,
+      "contentHash": "c608410a17160a4e8dc31ac067b213978c6de4aef02e982acbc90c2d51c4aa2e",
+      "sourceUpdatedAt": "2026-07-26T01:08:22.985+00:00",
+      "path": "d2core/21Sf.json"
+    },
+    {
+      "source": "d2core",
+      "buildId": "21SM",
+      "title": "纯招：天塔130，兼顾大世界速刷，适合手残党",
+      "className": "Necromancer",
+      "season": 14,
+      "seasonMode": "seasonal",
+      "difficultyMode": "unknown",
+      "purposes": [
+        "pitPush",
+        "speedFarm"
+      ],
+      "variantCount": 1,
+      "contentHash": "8937c463aa87bcf5a0f45a891f9625e84f6c41575debe5f7bd7906dab80e01e7",
+      "sourceUpdatedAt": "2026-07-25T15:49:59.248+00:00",
+      "path": "d2core/21SM.json"
     }
   ]
 }

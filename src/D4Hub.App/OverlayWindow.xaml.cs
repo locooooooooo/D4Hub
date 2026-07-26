@@ -16,6 +16,7 @@ public partial class OverlayWindow : Window
     private const uint SwpShowWindow = 0x0040;
     private static readonly IntPtr HwndTopmost = new(-1);
     private IntPtr _handle;
+    private bool _isLayoutEditing;
 
     public OverlayWindow(HudViewModel viewModel)
     {
@@ -55,21 +56,36 @@ public partial class OverlayWindow : Window
 
     public void SetLayoutEditing(bool isEditing)
     {
+        _isLayoutEditing = isEditing;
+        EnsureHandle();
+        ApplyInteractionStyle();
+    }
+
+    private void Window_SourceInitialized(object? sender, EventArgs e)
+    {
+        _handle = new WindowInteropHelper(this).Handle;
+        ApplyInteractionStyle();
+    }
+
+    private void EnsureHandle()
+    {
+        if (_handle == IntPtr.Zero)
+        {
+            _handle = new WindowInteropHelper(this).EnsureHandle();
+        }
+    }
+
+    private void ApplyInteractionStyle()
+    {
         if (_handle == IntPtr.Zero)
         {
             return;
         }
 
         var styles = GetWindowLongPtr(_handle, GwlExStyle).ToInt64();
-        styles = isEditing ? styles & ~WsExTransparent : styles | WsExTransparent;
+        styles |= WsExToolWindow | WsExNoActivate;
+        styles = _isLayoutEditing ? styles & ~WsExTransparent : styles | WsExTransparent;
         SetWindowLongPtr(_handle, GwlExStyle, new IntPtr(styles));
-    }
-
-    private void Window_SourceInitialized(object? sender, EventArgs e)
-    {
-        _handle = new WindowInteropHelper(this).Handle;
-        var styles = GetWindowLongPtr(_handle, GwlExStyle).ToInt64();
-        SetWindowLongPtr(_handle, GwlExStyle, new IntPtr(styles | WsExTransparent | WsExToolWindow | WsExNoActivate));
     }
 
     private void Window_Closing(object? sender, CancelEventArgs e)

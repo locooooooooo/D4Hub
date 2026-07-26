@@ -76,6 +76,20 @@ Create a framework-dependent Windows build:
 dotnet publish .\src\D4Hub.App\D4Hub.App.csproj -c Release -r win-x64 --self-contained false -o .\publish\win-x64
 ```
 
+Create an unsigned, local Windows installer and Velopack update-feed prototype.
+The script runs repository verification first, requires matching release notes
+under `docs/release-notes`, and verifies the generated package size and SHA-256:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build-release.ps1 -Version 1.0.0
+```
+
+Online update checks are disabled by default. After an update endpoint and
+release policy are approved, pass its absolute HTTPS URL with `-UpdateFeedUrl`.
+Portable directory builds remain offline and do not replace their own files.
+Local packaging, an unsigned installer, and a generated feed do not prove a
+signed, hosted, published, or player-accepted release.
+
 Refresh the repository public library for another D2Core build:
 
 ```powershell

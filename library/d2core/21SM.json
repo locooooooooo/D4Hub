@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "source": "d2core",
+  "buildId": "21SM",
+  "canonicalUrl": "https://www.d2core.com/d4/planner?bd=21SM",
+  "title": "纯招：天塔130，兼顾大世界速刷，适合手残党",
+  "className": "Necromancer",
+  "season": 14,
+  "seasonMode": "seasonal",
+  "difficultyMode": "unknown",
+  "parserVersion": "d2core-v1",
+  "contentHash": "8937c463aa87bcf5a0f45a891f9625e84f6c41575debe5f7bd7906dab80e01e7",
+  "sourceUpdatedAt": "2026-07-25T15:49:59.248+00:00",
+  "fetchedAt": "2026-07-26T02:35:26.1277913+00:00",
+  "variants": [
+    {
+      "index": 0,
+      "name": "目前版本大世界最舒服的BD，天塔还130",
+      "purposes": [
+        "pitPush",
+        "speedFarm"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Necro_101",
+          "displayName": "幽冥王冠",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "X2_SkillRankBonus_Necro_Category_Minion",
+              "name": "至爪牙技能",
+              "displayText": "+2 至爪牙技能",
+              "value": 2,
+              "minimum": 1,
+              "maximum": 2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_DamageTypePercent_Shadow",
+              "name": "暗影 伤害",
+              "displayText": "10.0%[x]暗影 伤害",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_ResolveStacks_Tier3",
+              "name": "决断层数上限",
+              "displayText": "回火 · +3 决断层数上限",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_paladin_031",
+          "displayName": "格林铁砧之威能",
+          "aspectName": "格林铁砧之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S11_FortifyGeneration",
+              "name": "强固生成量",
+              "displayText": "+15.0% 强固生成量",
+              "value": 0.15,
+              "minimum": 0.1,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_CoreStat_Intelligence_Lesser",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Fortify_Necro_Pet_Tier3",
+              "name": "仆从攻击强固你 3% 生命上限的几率",
+              "displayText": "回火 · +10.0% 仆从攻击强固你 3% 生命上限的几率",
+              "value": 0.1,
+              "minimum": 0.07,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Gloves_Unique_Necro_102",
+          "displayName": "纳兹之手",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Necro_Talent_SkeletonMage",
+              "name": "至骷髅法师",
+              "displayText": "+2 至骷髅法师",
+              "value": 2,
+              "minimum": 1,
+              "maximum": 2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Intelligence_Greater",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_DamageTypePercent_Shadow",
+              "name": "暗影 伤害",
+              "displayText": "10.0%[x]暗影 伤害",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_Vulnerable_Tier3",
+              "name": "易伤伤害",
+              "displayText": "回火 · +40% 易伤伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Necro_100",
+          "displayName": "血月马裤",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_DamageTypePercent_Shadow",
+              "name": "暗影 伤害",
+              "displayText": "10.0%[x]暗影 伤害",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S11_FortifyGeneration",
+              "name": "强固生成量",
+              "displayText": "+15.0% 强固生成量",
+              "value": 0.15,
+              "minimum": 0.1,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_ResolveStacks_Tier3",
+              "name": "决断层数上限",
+              "displayText": "回火 · +3 决断层数上限",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_necro_017",
+          "displayName": "虚空之威能",
+          "aspectName": "虚空之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_CritChance",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Mace",
+          "sourceKey": "Affix_legendary_barb_005_x2",
+          "displayName": "决斗家的威能",
+          "aspectName": "决斗家的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Fast_Weapon_Damage_1HMace",
+              "name": "武器伤害",
+              "displayText": "+157 武器伤害",
+              "value": 157,
+              "minimum": 94,
+              "maximum": 157,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Intelligence_Greater",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_Vulnerable_Tier3",
+              "name": "易伤伤害",
+              "displayText": "回火 · +40% 易伤伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Affix_legendary_necro_118",
+          "displayName": "控尸之威能",
+          "aspectName": "控尸之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Intelligence_Greater",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Shadow_Greater",
+              "name": "暗影 伤害增倍",
+              "displayText": "x24% 暗影 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Generic_to_Vulnerable_Tier3",
+              "name": "易伤伤害",
+              "displayText": "回火 · +40% 易伤伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_spiritborn_021_x1",
+          "displayName": "化劲之威能",
+          "aspectName": "化劲之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_AddQuality",
+              "name": "物品品质",
+              "displayText": "+15 物品品质",
+              "value": 15,
+              "minimum": 1,
+              "maximum": 15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Intelligence",
+              "name": "点智力",
+              "displayText": "121 点智力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_SkillRankBonus_AllSkills",
+              "name": "至所有技能",
+              "displayText": "+3 至所有技能",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "Shield",
+          "sourceKey": "1HShield_Unique_Necro_100",
+          "displayName": "警戒之墙",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Intelligence_Greater",
+              "name": "点智力",
+              "displayText": "180 点智力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_DamageReduction",
+              "name": "伤害减免",
+              "displayText": "15.0% 伤害减免",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Transfiguration_AddQuality_Lesser",
+              "name": "物品品质",
+              "displayText": "+10 物品品质",
+              "value": 10,
+              "minimum": 1,
+              "maximum": 10,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

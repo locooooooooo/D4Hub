@@ -13,6 +13,7 @@ public partial class TransmutationReminderWindow : Window
     private const long WsExToolWindow = 0x00000080L;
     private const long WsExNoActivate = 0x08000000L;
     private const uint SwpNoActivate = 0x0010;
+    private const uint SwpNoZOrder = 0x0004;
     private const uint SwpShowWindow = 0x0040;
     private static readonly IntPtr HwndTopmost = new(-1);
     private IntPtr _handle;
@@ -27,22 +28,39 @@ public partial class TransmutationReminderWindow : Window
 
     public void UpdatePlacement(TransmutationReminderPlacement placement)
     {
+        EnsureHandle();
+        ApplyPlacement(placement, show: false);
         if (!IsVisible)
         {
             Show();
         }
 
-        if (_handle != IntPtr.Zero)
+        ApplyPlacement(placement, show: true);
+    }
+
+    private void EnsureHandle()
+    {
+        if (_handle == IntPtr.Zero)
         {
-            SetWindowPos(
-                _handle,
-                HwndTopmost,
-                placement.Left,
-                placement.Top,
-                Math.Max(1, placement.Width),
-                Math.Max(1, placement.Height),
-                SwpNoActivate | SwpShowWindow);
+            _handle = new WindowInteropHelper(this).EnsureHandle();
         }
+    }
+
+    private void ApplyPlacement(TransmutationReminderPlacement placement, bool show)
+    {
+        if (_handle == IntPtr.Zero)
+        {
+            return;
+        }
+
+        SetWindowPos(
+            _handle,
+            show ? HwndTopmost : IntPtr.Zero,
+            placement.Left,
+            placement.Top,
+            Math.Max(1, placement.Width),
+            Math.Max(1, placement.Height),
+            SwpNoActivate | (show ? SwpShowWindow : SwpNoZOrder));
     }
 
     public void HideReminder()

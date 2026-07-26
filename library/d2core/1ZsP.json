@@ -1,0 +1,4617 @@
+{
+  "schemaVersion": 1,
+  "source": "d2core",
+  "buildId": "1ZsP",
+  "canonicalUrl": "https://www.d2core.com/d4/planner?bd=1ZsP",
+  "title": "【蓝萌君】S14德子 风暴狼德 - 全版本",
+  "className": "Druid",
+  "season": 14,
+  "seasonMode": "seasonal",
+  "difficultyMode": "unknown",
+  "parserVersion": "d2core-v1",
+  "contentHash": "b839ae025302656c0eb8ae6cf02b19dcc469b71c7280c3d554a7fce6a3bf274a",
+  "sourceUpdatedAt": "2026-07-25T22:48:02.158+00:00",
+  "fetchedAt": "2026-07-26T02:35:23.0483706+00:00",
+  "variants": [
+    {
+      "index": 0,
+      "name": "狼德 - 1-70级（主推）",
+      "purposes": [
+        "leveling"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "",
+          "displayName": "稀有头盔",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "",
+          "displayName": "稀有胸甲",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+1,962 护甲值",
+              "value": 1962,
+              "minimum": 1561,
+              "maximum": 1962,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "",
+          "displayName": "稀有手套",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "149 点意力",
+              "value": 149,
+              "minimum": 125,
+              "maximum": 149,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_All_Greater",
+              "name": "全伤害增倍",
+              "displayText": "x20% 全伤害增倍",
+              "value": 0.2,
+              "minimum": 0.12,
+              "maximum": 0.2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+1,830 生命上限",
+              "value": 1830,
+              "minimum": 1526,
+              "maximum": 1830,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Druid_Tag_Werewolf_Tier3",
+              "name": "狼人伤害",
+              "displayText": "回火 · +40.0% 狼人伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "",
+          "displayName": "稀有裤子",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+326 点全元素抗性",
+              "value": 326,
+              "minimum": 260,
+              "maximum": 326,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+1,962 护甲值",
+              "value": 1962,
+              "minimum": 1561,
+              "maximum": 1962,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "",
+          "displayName": "稀有靴子",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Staff",
+          "sourceKey": "",
+          "displayName": "稀有杖",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "298 点意力",
+              "value": 298,
+              "minimum": 125,
+              "maximum": 149,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+3,660 生命上限",
+              "value": 3660,
+              "minimum": 1526,
+              "maximum": 1830,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Weapon_Damage_2HStaff",
+              "name": "武器伤害",
+              "displayText": "+280 武器伤害",
+              "value": 280,
+              "minimum": 84,
+              "maximum": 140,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_LifePerHit_2H",
+              "name": "击中回复生命",
+              "displayText": "+1,578 击中回复生命",
+              "value": 1578,
+              "minimum": 657,
+              "maximum": 789,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Druid_Tag_Werewolf_Tier3",
+              "name": "狼人伤害",
+              "displayText": "回火 · +80.0% 狼人伤害",
+              "value": 0.8,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "",
+          "displayName": "稀有护符",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "149 点意力",
+              "value": 149,
+              "minimum": 125,
+              "maximum": 149,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_All_Greater",
+              "name": "全伤害增倍",
+              "displayText": "x20% 全伤害增倍",
+              "value": 0.2,
+              "minimum": 0.12,
+              "maximum": 0.2,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "",
+          "displayName": "稀有戒指",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.08 * 100|1%|] 攻击速度",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LuckyHit_Resource_Tier3",
+              "name": "幸运一击: 最多有 15% 几率恢复 主要资源",
+              "displayText": "回火 · 幸运一击: 最多有 15% 几率恢复 +12 主要资源",
+              "value": 12,
+              "minimum": 5,
+              "maximum": 12,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "",
+          "displayName": "稀有戒指",
+          "aspectName": "",
+          "itemPower": 850,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "99 点意力",
+              "value": 99,
+              "minimum": 83,
+              "maximum": 99,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,225 生命上限",
+              "value": 1225,
+              "minimum": 1016,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.08 * 100|1%|] 攻击速度",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LuckyHit_Resource_Tier3",
+              "name": "幸运一击: 最多有 15% 几率恢复 主要资源",
+              "displayText": "回火 · 幸运一击: 最多有 15% 几率恢复 +12 主要资源",
+              "value": 12,
+              "minimum": 5,
+              "maximum": 12,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "更新记录篇",
+      "purposes": [
+        "general"
+      ],
+      "equipment": []
+    },
+    {
+      "index": 2,
+      "name": "利爪前期 - 巅峰1-100级",
+      "purposes": [
+        "leveling"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_generic_117",
+          "displayName": "主宰的威能",
+          "aspectName": "主宰的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Affix_legendary_generic_027",
+          "displayName": "嚣狂威能",
+          "aspectName": "嚣狂威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning_Greater",
+              "name": "闪电 伤害增倍",
+              "displayText": "x24% 闪电 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Druid_Tag_Storm_Tier3",
+              "name": "风暴伤害",
+              "displayText": "回火 · +40.0% 风暴伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Affix_S05_BSK_Barbarian_001_x2",
+          "displayName": "愤怒掌控之威能",
+          "aspectName": "愤怒掌控之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_druid_028_x2",
+          "displayName": "超载威能",
+          "aspectName": "超载威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "Affix_legendary_druid_113_x2",
+          "displayName": "野性变形威能",
+          "aspectName": "野性变形威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_generic_131_x2",
+          "displayName": "橙红传令官之威能",
+          "aspectName": "橙红传令官之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LuckyHit_Resource_Tier3",
+              "name": "幸运一击: 最多有 15% 几率恢复 主要资源",
+              "displayText": "回火 · 幸运一击: 最多有 15% 几率恢复 +12 主要资源",
+              "value": 12,
+              "minimum": 5,
+              "maximum": 12,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_barb_005_x2",
+          "displayName": "决斗家的威能",
+          "aspectName": "决斗家的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "利爪中期 - 巅峰100-150级",
+      "purposes": [
+        "general"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_ResourceGain",
+              "name": "资源生成",
+              "displayText": "太古 · 15.0% 资源生成",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_generic_117",
+          "displayName": "主宰的威能",
+          "aspectName": "主宰的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resource_Per_Second_Spirit",
+              "name": "灵力回复",
+              "displayText": "4 灵力回复",
+              "value": 4,
+              "minimum": 3,
+              "maximum": 4,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Affix_legendary_generic_027",
+          "displayName": "嚣狂威能",
+          "aspectName": "嚣狂威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning_Greater",
+              "name": "闪电 伤害增倍",
+              "displayText": "x24% 闪电 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Damage_Druid_Tag_Storm_Tier3",
+              "name": "风暴伤害",
+              "displayText": "回火 · +40.0% 风暴伤害",
+              "value": 0.4,
+              "minimum": 0.2,
+              "maximum": 0.4,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Generic_102",
+          "displayName": "迪博特的意志",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_druid_028_x2",
+          "displayName": "超载威能",
+          "aspectName": "超载威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_LifePerHit_Greater",
+              "name": "击中回复生命",
+              "displayText": "+632 击中回复生命",
+              "value": 632,
+              "minimum": 526,
+              "maximum": 632,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Amulet_Unique_Druid_101",
+          "displayName": "凶邪新月",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Druid_01_x2",
+          "displayName": "艾蕊达哀歌",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_generic_131_x2",
+          "displayName": "橙红传令官之威能",
+          "aspectName": "橙红传令官之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_ResourceGain_Tier3",
+              "name": "资源生成",
+              "displayText": "太古回火 · 8.0% 资源生成",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "利爪中后期 - 浩劫版本（适合狂潮&罗盘）",
+      "purposes": [
+        "general"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Druid_102",
+          "displayName": "加斯伦的天命",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_ResourceGain",
+              "name": "资源生成",
+              "displayText": "15.0% 资源生成",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Gloves_Unique_Druid_01_x2",
+          "displayName": "黑暗嚎叫",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "太古回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Generic_102",
+          "displayName": "迪博特的意志",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_druid_059_x2",
+          "displayName": "汹涌风暴威能",
+          "aspectName": "汹涌风暴威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "1HAxe_Unique_Druid_100",
+          "displayName": "盈月当空",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Druid_Core_Shred",
+              "name": "至利爪撕扯",
+              "displayText": "+3 至利爪撕扯",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Amulet_Unique_Druid_101",
+          "displayName": "凶邪新月",
+          "aspectName": "超载威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Druid_01_x2",
+          "displayName": "艾蕊达哀歌",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning",
+              "name": "闪电 伤害增倍",
+              "displayText": "x10% 闪电 伤害增倍",
+              "value": 0.1,
+              "minimum": 0.07,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": false,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "利爪中后期 - 灰熊狂怒版本",
+      "purposes": [
+        "general"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Druid_102",
+          "displayName": "加斯伦的天命",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_ResourceGain",
+              "name": "资源生成",
+              "displayText": "15.0% 资源生成",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Gloves_Unique_Druid_01_x2",
+          "displayName": "黑暗嚎叫",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "太古回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Generic_102",
+          "displayName": "迪博特的意志",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_druid_059_x2",
+          "displayName": "汹涌风暴威能",
+          "aspectName": "汹涌风暴威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "太古 · +24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "太古回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "1HAxe_Unique_Druid_100",
+          "displayName": "盈月当空",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Druid_Core_Shred",
+              "name": "至利爪撕扯",
+              "displayText": "+3 至利爪撕扯",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Amulet_Unique_Druid_101",
+          "displayName": "凶邪新月",
+          "aspectName": "超载威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Druid_01_x2",
+          "displayName": "艾蕊达哀歌",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "1HTotem_Unique_Druid_01_x2",
+          "displayName": "伊菲的恐狼图腾",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Fast_Weapon_Damage_1HTotem",
+              "name": "武器伤害",
+              "displayText": "+157 武器伤害",
+              "value": 157,
+              "minimum": 94,
+              "maximum": 157,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "利爪后期-T12日常速刷保命版",
+      "purposes": [
+        "speedFarm"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Druid_102",
+          "displayName": "加斯伦的天命",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_ResourceGain",
+              "name": "资源生成",
+              "displayText": "15.0% 资源生成",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Gloves_Unique_Druid_01_x2",
+          "displayName": "黑暗嚎叫",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "太古回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Generic_102",
+          "displayName": "迪博特的意志",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "+2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Affix_legendary_druid_059_x2",
+          "displayName": "汹涌风暴威能",
+          "aspectName": "汹涌风暴威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "太古 · +24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_MovementSpeed_Generic_Tier3",
+              "name": "移动速度",
+              "displayText": "太古回火 · +25% 移动速度",
+              "value": 0.25,
+              "minimum": 0.15,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "1HAxe_Unique_Druid_100",
+          "displayName": "盈月当空",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Druid_Core_Shred",
+              "name": "至利爪撕扯",
+              "displayText": "+3 至利爪撕扯",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning_Greater",
+              "name": "闪电 伤害增倍",
+              "displayText": "x24% 闪电 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Druid_01_x2",
+          "displayName": "艾蕊达哀歌",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning",
+              "name": "闪电 伤害增倍",
+              "displayText": "x10% 闪电 伤害增倍",
+              "value": 0.1,
+              "minimum": 0.07,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LuckyHit_Resource_Tier3",
+              "name": "幸运一击: 最多有 15% 几率恢复 主要资源",
+              "displayText": "太古回火 · 幸运一击: 最多有 15% 几率恢复 +12 主要资源",
+              "value": 12,
+              "minimum": 5,
+              "maximum": 12,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "1HTotem_Unique_Druid_01_x2",
+          "displayName": "伊菲的恐狼图腾",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "+2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_Fast_Weapon_Damage_1HTotem",
+              "name": "武器伤害",
+              "displayText": "+157 武器伤害",
+              "value": 157,
+              "minimum": 94,
+              "maximum": 157,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "利爪-冲层版本（削弱后再次150层天塔）",
+      "purposes": [
+        "pitPush"
+      ],
+      "equipment": [
+        {
+          "sourceSlot": 0,
+          "sourceItemType": "Helm",
+          "sourceKey": "Helm_Unique_Druid_102",
+          "displayName": "加斯伦的天命",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_ResourceGain",
+              "name": "资源生成",
+              "displayText": "太古 · 15.0% 资源生成",
+              "value": 0.15,
+              "minimum": 0.11,
+              "maximum": 0.15,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CooldownReductionCDR",
+              "name": "冷却时间缩减",
+              "displayText": "8.0% 冷却时间缩减",
+              "value": 0.08,
+              "minimum": 0.05,
+              "maximum": 0.08,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 1,
+          "sourceItemType": "ChestArmor",
+          "sourceKey": "Affix_legendary_rogue_104",
+          "displayName": "衰弱毒素之威能",
+          "aspectName": "衰弱毒素之威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "太古 · 121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "太古 · +1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "太古 · +2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "+392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 2,
+          "sourceItemType": "Gloves",
+          "sourceKey": "Gloves_Unique_Druid_01_x2",
+          "displayName": "黑暗嚎叫",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning_Greater",
+              "name": "闪电 伤害增倍",
+              "displayText": "x24% 闪电 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_CritDamage_Generic_All_Tier3",
+              "name": "暴击伤害",
+              "displayText": "太古回火 · +50% 暴击伤害",
+              "value": 0.5,
+              "minimum": 0.3,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 3,
+          "sourceItemType": "Legs",
+          "sourceKey": "Pants_Unique_Generic_102",
+          "displayName": "迪博特的意志",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "太古 · 121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "太古 · +1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Armor_Greater",
+              "name": "护甲值",
+              "displayText": "太古 · +2,450 护甲值",
+              "value": 2450,
+              "minimum": 1963,
+              "maximum": 2450,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Resistance_All",
+              "name": "点全元素抗性",
+              "displayText": "太古 · +392 点全元素抗性",
+              "value": 392,
+              "minimum": 327,
+              "maximum": 392,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LifeMax_Tier3",
+              "name": "生命上限",
+              "displayText": "太古回火 · +1,500 生命上限",
+              "value": 1500,
+              "minimum": 1000,
+              "maximum": 1500,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 4,
+          "sourceItemType": "Boots",
+          "sourceKey": "Boots_Unique_Generic_001",
+          "displayName": "悔罪护胫",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_Movement_Speed",
+              "name": "移动速度",
+              "displayText": "+24% 移动速度",
+              "value": 0.24,
+              "minimum": 0.2,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CoreStat_Willpower",
+              "name": "点意力",
+              "displayText": "121 点意力",
+              "value": 121,
+              "minimum": 100,
+              "maximum": 121,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Life",
+              "name": "生命上限",
+              "displayText": "+1,450 生命上限",
+              "value": 1450,
+              "minimum": 1226,
+              "maximum": 1450,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Armor",
+              "name": "护甲值",
+              "displayText": "+1,225 护甲值",
+              "value": 1225,
+              "minimum": 981,
+              "maximum": 1225,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Duration_Generic_CC_All_Tier3",
+              "name": "控制持续时间",
+              "displayText": "太古回火 · +15.0% 控制持续时间",
+              "value": 0.15,
+              "minimum": 0.12,
+              "maximum": 0.15,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 1
+            }
+          ]
+        },
+        {
+          "sourceSlot": 5,
+          "sourceItemType": "Axe",
+          "sourceKey": "1HAxe_Unique_Druid_100",
+          "displayName": "盈月当空",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_SkillRankBonus_Druid_Core_Shred",
+              "name": "至利爪撕扯",
+              "displayText": "+3 至利爪撕扯",
+              "value": 3,
+              "minimum": 2,
+              "maximum": 3,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "太古 · 180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Life_Greater",
+              "name": "生命上限",
+              "displayText": "太古 · +2,200 生命上限",
+              "value": 2200,
+              "minimum": 1831,
+              "maximum": 2200,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 8,
+          "sourceItemType": "Amulet",
+          "sourceKey": "Affix_legendary_druid_104_x2",
+          "displayName": "大德鲁伊的威能",
+          "aspectName": "大德鲁伊的威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "+8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CritDamage_Greater",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x50% 暴击伤害增倍",
+              "value": 0.5,
+              "minimum": 0.26,
+              "maximum": 0.5,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Damage_to_Vulnerable_Greater",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x28% 易伤伤害增倍",
+              "value": 0.28,
+              "minimum": 0.16,
+              "maximum": 0.28,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "X2_DamageType_Lightning_Greater",
+              "name": "闪电 伤害增倍",
+              "displayText": "x24% 闪电 伤害增倍",
+              "value": 0.24,
+              "minimum": 0.14,
+              "maximum": 0.24,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 9,
+          "sourceItemType": "Ring",
+          "sourceKey": "Ring_Unique_Druid_01_x2",
+          "displayName": "艾蕊达哀歌",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "太古 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_AttackSpeed",
+              "name": "攻击速度",
+              "displayText": "+[0.1 * 100|1%|] 攻击速度",
+              "value": 0.1,
+              "minimum": 0.08,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CDR_Tier3",
+              "name": "冷却时间缩减",
+              "displayText": "太古回火 · 6.0% 冷却时间缩减",
+              "value": 0.06,
+              "minimum": 0.03,
+              "maximum": 0.06,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 10,
+          "sourceItemType": "Ring",
+          "sourceKey": "Affix_legendary_druid_049_x2",
+          "displayName": "碾碎威能",
+          "aspectName": "碾碎威能",
+          "itemPower": 900,
+          "isMythic": false,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CritChanceJewelry",
+              "name": "暴击几率",
+              "displayText": "+5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.035,
+              "maximum": 0.05,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_All",
+              "name": "全伤害增倍",
+              "displayText": "x10% 全伤害增倍",
+              "value": 0.1,
+              "minimum": 0.06,
+              "maximum": 0.1,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "S04_Damage_to_Vulnerable",
+              "name": "易伤伤害增倍",
+              "displayText": "太古 · x14% 易伤伤害增倍",
+              "value": 0.14,
+              "minimum": 0.08,
+              "maximum": 0.14,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_LuckyHit_Resource_Tier3",
+              "name": "幸运一击: 最多有 15% 几率恢复 主要资源",
+              "displayText": "太古回火 · 幸运一击: 最多有 15% 几率恢复 +12 主要资源",
+              "value": 12,
+              "minimum": 5,
+              "maximum": 12,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        },
+        {
+          "sourceSlot": 12,
+          "sourceItemType": "DruidOffhand",
+          "sourceKey": "1HTotem_Unique_Druid_01_x2",
+          "displayName": "伊菲的恐狼图腾",
+          "aspectName": "",
+          "itemPower": 900,
+          "isMythic": true,
+          "affixes": [
+            {
+              "sourceKey": "S04_CritChance",
+              "name": "暴击几率",
+              "displayText": "太古 · +8.5% 暴击几率",
+              "value": 0.085,
+              "minimum": 0.065,
+              "maximum": 0.085,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 1
+            },
+            {
+              "sourceKey": "S04_CritDamage",
+              "name": "暴击伤害增倍",
+              "displayText": "太古 · x25% 暴击伤害增倍",
+              "value": 0.25,
+              "minimum": 0.13,
+              "maximum": 0.25,
+              "isGreater": true,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_Fast_Weapon_Damage_1HTotem",
+              "name": "武器伤害",
+              "displayText": "+157 武器伤害",
+              "value": 157,
+              "minimum": 94,
+              "maximum": 157,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "X2_CoreStat_Willpower_Greater",
+              "name": "点意力",
+              "displayText": "180 点意力",
+              "value": 180,
+              "minimum": 150,
+              "maximum": 180,
+              "isGreater": false,
+              "isTempered": false,
+              "criticalUpgradeLevel": 0
+            },
+            {
+              "sourceKey": "Tempered_Generic_CritChance_Tier3",
+              "name": "暴击几率",
+              "displayText": "太古回火 · +5.0% 暴击几率",
+              "value": 0.05,
+              "minimum": 0.025,
+              "maximum": 0.05,
+              "isGreater": true,
+              "isTempered": true,
+              "criticalUpgradeLevel": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "战争计划 （含点法+顺序）",
+      "purposes": [
+        "general"
+      ],
+      "equipment": []
+    }
+  ]
+}

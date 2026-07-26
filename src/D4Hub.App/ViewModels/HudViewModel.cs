@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
@@ -18,6 +19,11 @@ public readonly record struct ScreenshotPreview(
     int ImageWidth,
     int ImageHeight,
     NormalizedRect PanelBounds);
+
+public sealed record BuildClassFilterOption(string Label, string? ClassName);
+public sealed record BuildSeasonFilterOption(string Label, BuildSeasonMode? Mode);
+public sealed record BuildDifficultyFilterOption(string Label, BuildDifficultyMode? Mode);
+public sealed record BuildPurposeFilterOption(string Label, BuildPurpose? Purpose);
 
 public enum HubWorkspace
 {
@@ -57,6 +63,10 @@ public sealed class HudViewModel : ObservableObject
     private Dictionary<EquipmentSlotKind, HudSlotLayout>? _layoutSnapshot;
     private HubWorkspace _activeWorkspace = HubWorkspace.Overview;
     private string _communityStatus = "抖音 @loco · QQ 群 736495487";
+    private BuildClassFilterOption _selectedClassFilter = new("全部职业", null);
+    private BuildSeasonFilterOption _selectedSeasonFilter = new("全部模式", null);
+    private BuildDifficultyFilterOption _selectedDifficultyFilter = new("全部难度", null);
+    private BuildPurposeFilterOption _selectedPurposeFilter = new("全部用途", null);
 
     public HudViewModel(
         IStateStore stateStore,
@@ -102,6 +112,7 @@ public sealed class HudViewModel : ObservableObject
         CopyCommunityGroupCommand = new RelayCommand(() => CopyCommunityGroupRequested?.Invoke());
 
         WireDocument();
+        RefreshFilterOptions();
     }
 
     public BuildDocument Document
@@ -113,8 +124,10 @@ public sealed class HudViewModel : ObservableObject
             _document = value;
             _document.EnsureValid();
             WireDocument();
+            RefreshFilterOptions();
             OnPropertyChanged();
             OnPropertyChanged(nameof(Profiles));
+            OnPropertyChanged(nameof(FilteredProfiles));
             OnPropertyChanged(nameof(ProfileCountText));
             OnPropertyChanged(nameof(HudDisplayMode));
             OnPropertyChanged(nameof(IsCompactHudMode));
@@ -123,6 +136,89 @@ public sealed class HudViewModel : ObservableObject
     }
 
     public IEnumerable<BuildProfile> Profiles => Document.Profiles;
+
+    public IEnumerable<BuildProfile> FilteredProfiles => Document.Profiles.Where(profile =>
+        (SelectedClassFilter.ClassName is null
+            || string.Equals(profile.ClassName, SelectedClassFilter.ClassName, StringComparison.Ordinal))
+        && (SelectedSeasonFilter.Mode is null || profile.SeasonMode == SelectedSeasonFilter.Mode)
+        && (SelectedDifficultyFilter.Mode is null || profile.DifficultyMode == SelectedDifficultyFilter.Mode)
+        && (SelectedPurposeFilter.Purpose is null || profile.Purposes.Contains(SelectedPurposeFilter.Purpose.Value)));
+
+    public ObservableCollection<BuildClassFilterOption> ClassFilters { get; } = new();
+
+    public IReadOnlyList<BuildSeasonFilterOption> SeasonFilters { get; } =
+    [
+        new("全部模式", null),
+        new("赛季模式", BuildSeasonMode.Seasonal),
+        new("永恒模式", BuildSeasonMode.Eternal),
+        new("未标注", BuildSeasonMode.Unknown)
+    ];
+
+    public IReadOnlyList<BuildDifficultyFilterOption> DifficultyFilters { get; } =
+    [
+        new("全部难度", null),
+        new("普通模式", BuildDifficultyMode.Standard),
+        new("专家模式", BuildDifficultyMode.Hardcore),
+        new("未标注", BuildDifficultyMode.Unknown)
+    ];
+
+    public IReadOnlyList<BuildPurposeFilterOption> PurposeFilters { get; } =
+    [
+        new("全部用途", null),
+        new("开荒", BuildPurpose.Leveling),
+        new("冲层", BuildPurpose.PitPush),
+        new("速刷", BuildPurpose.SpeedFarm),
+        new("首领", BuildPurpose.Bossing),
+        new("综合", BuildPurpose.General)
+    ];
+
+    public BuildClassFilterOption SelectedClassFilter
+    {
+        get => _selectedClassFilter;
+        set
+        {
+            if (value is not null && SetProperty(ref _selectedClassFilter, value))
+            {
+                ApplyProfileFilters();
+            }
+        }
+    }
+
+    public BuildSeasonFilterOption SelectedSeasonFilter
+    {
+        get => _selectedSeasonFilter;
+        set
+        {
+            if (value is not null && SetProperty(ref _selectedSeasonFilter, value))
+            {
+                ApplyProfileFilters();
+            }
+        }
+    }
+
+    public BuildDifficultyFilterOption SelectedDifficultyFilter
+    {
+        get => _selectedDifficultyFilter;
+        set
+        {
+            if (value is not null && SetProperty(ref _selectedDifficultyFilter, value))
+            {
+                ApplyProfileFilters();
+            }
+        }
+    }
+
+    public BuildPurposeFilterOption SelectedPurposeFilter
+    {
+        get => _selectedPurposeFilter;
+        set
+        {
+            if (value is not null && SetProperty(ref _selectedPurposeFilter, value))
+            {
+                ApplyProfileFilters();
+            }
+        }
+    }
 
     public HubWorkspace ActiveWorkspace
     {
@@ -961,6 +1057,8 @@ public sealed class HudViewModel : ObservableObject
         }
 
         OnPropertyChanged(nameof(Profiles));
+        RefreshFilterOptions();
+        OnPropertyChanged(nameof(FilteredProfiles));
         OnPropertyChanged(nameof(ProfileCountText));
         Save(false);
     }
@@ -987,6 +1085,11 @@ public sealed class HudViewModel : ObservableObject
     {
         OnPropertyChanged(nameof(SelectedProfileSummary));
         OnPropertyChanged(nameof(VisibleHudRules));
+        if (sender is BuildProfile && e.PropertyName == nameof(BuildProfile.ClassName))
+        {
+            RefreshFilterOptions();
+            OnPropertyChanged(nameof(FilteredProfiles));
+        }
         if (ReferenceEquals(sender, Document.Overlay)
             && e.PropertyName == nameof(OverlaySettings.HudDisplayMode))
         {
@@ -995,5 +1098,35 @@ public sealed class HudViewModel : ObservableObject
             OnPropertyChanged(nameof(IsValuesHudMode));
         }
         Save(false);
+    }
+
+    private void RefreshFilterOptions()
+    {
+        var selectedClassName = _selectedClassFilter.ClassName;
+        ClassFilters.Clear();
+        ClassFilters.Add(new BuildClassFilterOption("全部职业", null));
+        foreach (var className in Document.Profiles
+                     .Select(profile => profile.ClassName)
+                     .Where(className => !string.IsNullOrWhiteSpace(className))
+                     .Distinct(StringComparer.Ordinal)
+                     .OrderBy(className => className, StringComparer.Ordinal))
+        {
+            ClassFilters.Add(new BuildClassFilterOption(className, className));
+        }
+
+        _selectedClassFilter = ClassFilters.FirstOrDefault(option =>
+            string.Equals(option.ClassName, selectedClassName, StringComparison.Ordinal))
+            ?? ClassFilters[0];
+        OnPropertyChanged(nameof(SelectedClassFilter));
+    }
+
+    private void ApplyProfileFilters()
+    {
+        OnPropertyChanged(nameof(FilteredProfiles));
+        var visibleProfiles = FilteredProfiles.ToList();
+        if (visibleProfiles.Count > 0 && (SelectedProfile is null || !visibleProfiles.Contains(SelectedProfile)))
+        {
+            SelectedProfile = visibleProfiles[0];
+        }
     }
 }

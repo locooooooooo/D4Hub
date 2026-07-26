@@ -9,6 +9,29 @@ using System.Text.RegularExpressions;
 
 namespace D4Hub.Core;
 
+public enum BuildSeasonMode
+{
+    Unknown,
+    Seasonal,
+    Eternal
+}
+
+public enum BuildDifficultyMode
+{
+    Unknown,
+    Standard,
+    Hardcore
+}
+
+public enum BuildPurpose
+{
+    General,
+    Leveling,
+    PitPush,
+    SpeedFarm,
+    Bossing
+}
+
 public sealed record D2CoreBuildReference(string BuildId, int VariantIndex)
 {
     public string LibraryKey => $"d2core:{BuildId}";
@@ -93,6 +116,8 @@ public sealed class PublicBuildRecord
     public string Title { get; set; } = string.Empty;
     public string ClassName { get; set; } = string.Empty;
     public int Season { get; set; }
+    public BuildSeasonMode SeasonMode { get; set; }
+    public BuildDifficultyMode DifficultyMode { get; set; }
     public string ParserVersion { get; set; } = D2CoreBuildParser.ParserVersion;
     public string ContentHash { get; set; } = string.Empty;
     public DateTimeOffset SourceUpdatedAt { get; set; }
@@ -104,6 +129,7 @@ public sealed class BuildVariantRecord
 {
     public int Index { get; set; }
     public string Name { get; set; } = string.Empty;
+    public List<BuildPurpose> Purposes { get; set; } = new();
     public List<EquipmentItemRecord> Equipment { get; set; } = new();
 }
 
@@ -146,10 +172,94 @@ public sealed class BuildLibraryIndexEntry
     public string Title { get; set; } = string.Empty;
     public string ClassName { get; set; } = string.Empty;
     public int Season { get; set; }
+    public BuildSeasonMode SeasonMode { get; set; }
+    public BuildDifficultyMode DifficultyMode { get; set; }
+    public List<BuildPurpose> Purposes { get; set; } = new();
     public int VariantCount { get; set; }
     public string ContentHash { get; set; } = string.Empty;
     public DateTimeOffset SourceUpdatedAt { get; set; }
     public string Path { get; set; } = string.Empty;
+}
+
+public sealed class BuildLibraryDefaults
+{
+    public int SchemaVersion { get; set; } = 1;
+    public string SourcePage { get; set; } = string.Empty;
+    public DateTimeOffset ObservedAt { get; set; }
+    public List<BuildLibraryDefaultEntry> Builds { get; set; } = new();
+}
+
+public sealed class BuildLibraryDefaultEntry
+{
+    public string Source { get; set; } = "d2core";
+    public string BuildId { get; set; } = string.Empty;
+    public List<BuildPurpose> Purposes { get; set; } = new();
+}
+
+public static class BuildMetadata
+{
+    private static readonly (BuildPurpose Purpose, string[] Tokens)[] PurposeTokens =
+    [
+        (BuildPurpose.Leveling, ["开荒", "升级", "前期", "练级", "无暗金", "1-70"]),
+        (BuildPurpose.PitPush, ["冲层", "深坑", "高层", "突破", "天塔", "魔渊", "·冲", "冲】", "pit"]),
+        (BuildPurpose.SpeedFarm, ["速刷", "速通", "刷图", "大世界", "·速", "速】", "farm"]),
+        (BuildPurpose.Bossing, ["单体", "首领", "boss", "莉莉丝", "老墨"])
+    ];
+
+    public static IReadOnlyList<BuildPurpose> ClassifyPurposes(string? name)
+    {
+        var text = name?.Trim() ?? string.Empty;
+        var purposes = PurposeTokens
+            .Where(entry => entry.Tokens.Any(token => text.Contains(token, StringComparison.OrdinalIgnoreCase)))
+            .Select(entry => entry.Purpose)
+            .Distinct()
+            .ToList();
+        return purposes.Count == 0 ? [BuildPurpose.General] : purposes;
+    }
+
+    public static void Ensure(PublicBuildRecord record)
+    {
+        if (record.SeasonMode == BuildSeasonMode.Unknown && record.Season > 0)
+        {
+            record.SeasonMode = BuildSeasonMode.Seasonal;
+        }
+
+        record.Variants ??= new List<BuildVariantRecord>();
+        foreach (var variant in record.Variants)
+        {
+            variant.Purposes ??= new List<BuildPurpose>();
+            if (variant.Purposes.Count == 0)
+            {
+                variant.Purposes = ClassifyPurposes(variant.Name).ToList();
+            }
+
+            variant.Equipment ??= new List<EquipmentItemRecord>();
+        }
+    }
+
+    public static string GetSeasonLabel(BuildSeasonMode mode, int season) => mode switch
+    {
+        BuildSeasonMode.Seasonal when season > 0 => $"S{season} 赛季",
+        BuildSeasonMode.Seasonal => "赛季模式",
+        BuildSeasonMode.Eternal => "永恒模式",
+        _ => "赛季未标注"
+    };
+
+    public static string GetDifficultyLabel(BuildDifficultyMode mode) => mode switch
+    {
+        BuildDifficultyMode.Standard => "普通模式",
+        BuildDifficultyMode.Hardcore => "专家模式",
+        _ => "难度未标注"
+    };
+
+    public static string GetPurposeLabel(BuildPurpose purpose) => purpose switch
+    {
+        BuildPurpose.Leveling => "开荒",
+        BuildPurpose.PitPush => "冲层",
+        BuildPurpose.SpeedFarm => "速刷",
+        BuildPurpose.Bossing => "首领",
+        _ => "综合"
+    };
 }
 
 public sealed class D2CoreAffixDefinition
@@ -354,6 +464,7 @@ public static class D2CoreBuildParser
             buildId = reference.BuildId;
         }
 
+        var season = D2CoreAffixCatalog.GetInt32(data, "season");
         var record = new PublicBuildRecord
         {
             Source = "d2core",
@@ -361,11 +472,14 @@ public static class D2CoreBuildParser
             CanonicalUrl = $"https://www.d2core.com/d4/planner?bd={Uri.EscapeDataString(buildId)}",
             Title = D2CoreAffixCatalog.GetString(data, "title"),
             ClassName = D2CoreAffixCatalog.GetString(data, "char"),
-            Season = D2CoreAffixCatalog.GetInt32(data, "season"),
+            Season = season,
+            SeasonMode = ParseSeasonMode(data, season),
+            DifficultyMode = ParseDifficultyMode(data),
             SourceUpdatedAt = GetUnixTime(data, "_updateTime"),
             FetchedAt = fetchedAt,
             Variants = variants
         };
+        BuildMetadata.Ensure(record);
         record.ContentHash = ComputeContentHash(record);
         return record;
     }
@@ -390,8 +504,65 @@ public static class D2CoreBuildParser
         {
             Index = index,
             Name = D2CoreAffixCatalog.GetString(variant, "name"),
+            Purposes = BuildMetadata.ClassifyPurposes(D2CoreAffixCatalog.GetString(variant, "name")).ToList(),
             Equipment = equipment
         };
+    }
+
+    private static BuildSeasonMode ParseSeasonMode(JsonElement data, int season)
+    {
+        foreach (var propertyName in new[] { "seasonMode", "realm", "gameMode" })
+        {
+            var value = D2CoreAffixCatalog.GetString(data, propertyName);
+            if (value.Contains("eternal", StringComparison.OrdinalIgnoreCase)
+                || value.Contains("永恒", StringComparison.Ordinal))
+            {
+                return BuildSeasonMode.Eternal;
+            }
+
+            if (value.Contains("season", StringComparison.OrdinalIgnoreCase)
+                || value.Contains("赛季", StringComparison.Ordinal))
+            {
+                return BuildSeasonMode.Seasonal;
+            }
+        }
+
+        return data.TryGetProperty("season", out var seasonValue) && seasonValue.ValueKind == JsonValueKind.Number
+            ? season > 0 ? BuildSeasonMode.Seasonal : BuildSeasonMode.Eternal
+            : BuildSeasonMode.Unknown;
+    }
+
+    private static BuildDifficultyMode ParseDifficultyMode(JsonElement data)
+    {
+        foreach (var propertyName in new[] { "hardcore", "isHardcore", "expert" })
+        {
+            if (!data.TryGetProperty(propertyName, out var value)
+                || value.ValueKind is not (JsonValueKind.True or JsonValueKind.False))
+            {
+                continue;
+            }
+
+            return value.GetBoolean() ? BuildDifficultyMode.Hardcore : BuildDifficultyMode.Standard;
+        }
+
+        foreach (var propertyName in new[] { "difficultyMode", "difficulty" })
+        {
+            var value = D2CoreAffixCatalog.GetString(data, propertyName);
+            if (value.Contains("hardcore", StringComparison.OrdinalIgnoreCase)
+                || value.Contains("专家", StringComparison.Ordinal))
+            {
+                return BuildDifficultyMode.Hardcore;
+            }
+
+            if (value.Contains("standard", StringComparison.OrdinalIgnoreCase)
+                || value.Contains("normal", StringComparison.OrdinalIgnoreCase)
+                || value.Contains("普通", StringComparison.Ordinal))
+            {
+                return BuildDifficultyMode.Standard;
+            }
+        }
+
+        return BuildDifficultyMode.Unknown;
     }
 
     private static EquipmentItemRecord ParseEquipment(int sourceSlot, JsonElement item, D2CoreAffixCatalog affixCatalog)
@@ -442,6 +613,8 @@ public static class D2CoreBuildParser
             record.Title,
             record.ClassName,
             record.Season,
+            record.SeasonMode,
+            record.DifficultyMode,
             record.SourceUpdatedAt,
             record.Variants
         });
@@ -603,7 +776,13 @@ public sealed class FileBuildLibraryStore
         try
         {
             record = JsonSerializer.Deserialize<PublicBuildRecord>(File.ReadAllText(path), JsonOptions);
-            return record is not null && record.SchemaVersion == 1 && record.BuildId == buildId;
+            if (record is null || record.SchemaVersion != 1 || record.BuildId != buildId)
+            {
+                return false;
+            }
+
+            BuildMetadata.Ensure(record);
+            return true;
         }
         catch (JsonException)
         {
@@ -618,6 +797,7 @@ public sealed class FileBuildLibraryStore
             throw new InvalidOperationException("公共 BD 库是只读的。");
         }
 
+        BuildMetadata.Ensure(record);
         var recordPath = GetRecordPath(record.Source, record.BuildId);
         WriteAtomic(recordPath, JsonSerializer.Serialize(record, JsonOptions));
 
@@ -631,6 +811,13 @@ public sealed class FileBuildLibraryStore
             Title = record.Title,
             ClassName = record.ClassName,
             Season = record.Season,
+            SeasonMode = record.SeasonMode,
+            DifficultyMode = record.DifficultyMode,
+            Purposes = record.Variants
+                .SelectMany(variant => variant.Purposes)
+                .Distinct()
+                .OrderBy(purpose => purpose)
+                .ToList(),
             VariantCount = record.Variants.Count,
             ContentHash = record.ContentHash,
             SourceUpdatedAt = record.SourceUpdatedAt,
@@ -639,6 +826,42 @@ public sealed class FileBuildLibraryStore
         index.Builds = index.Builds.OrderBy(entry => entry.Source).ThenBy(entry => entry.BuildId).ToList();
         index.UpdatedAt = DateTimeOffset.UtcNow;
         WriteAtomic(indexPath, JsonSerializer.Serialize(index, JsonOptions));
+    }
+
+    public IReadOnlyList<PublicBuildRecord> LoadAll()
+    {
+        var index = LoadIndex(Path.Combine(_root, "index.json"));
+        var records = new List<PublicBuildRecord>();
+        foreach (var entry in index.Builds.OrderBy(entry => entry.Source).ThenBy(entry => entry.BuildId))
+        {
+            if (TryLoad(entry.Source, entry.BuildId, out var record))
+            {
+                records.Add(record!);
+            }
+        }
+
+        return records;
+    }
+
+    public IReadOnlyList<BuildLibraryDefaultEntry> LoadDefaults()
+    {
+        var path = Path.Combine(_root, "defaults.json");
+        if (!File.Exists(path))
+        {
+            return Array.Empty<BuildLibraryDefaultEntry>();
+        }
+
+        try
+        {
+            var defaults = JsonSerializer.Deserialize<BuildLibraryDefaults>(File.ReadAllText(path), JsonOptions);
+            return defaults is { SchemaVersion: 1 } && defaults.Builds is not null
+                ? defaults.Builds
+                : Array.Empty<BuildLibraryDefaultEntry>();
+        }
+        catch (JsonException)
+        {
+            return Array.Empty<BuildLibraryDefaultEntry>();
+        }
     }
 
     private string GetRecordPath(string source, string buildId)
@@ -688,6 +911,75 @@ public sealed class FileBuildLibraryStore
                 File.Delete(temporaryPath);
             }
         }
+    }
+}
+
+public static class BuildLibrarySeeder
+{
+    public static IReadOnlyList<BuildProfile> CreateProfiles(FileBuildLibraryStore library)
+    {
+        var defaults = library.LoadDefaults();
+        var defaultPurposes = defaults.ToDictionary(
+            entry => $"{entry.Source}:{entry.BuildId}",
+            entry => (IReadOnlyList<BuildPurpose>)(entry.Purposes ?? new List<BuildPurpose>()),
+            StringComparer.OrdinalIgnoreCase);
+        var records = library.LoadAll();
+        if (defaultPurposes.Count > 0)
+        {
+            records = records
+                .Where(record => defaultPurposes.ContainsKey($"{record.Source}:{record.BuildId}"))
+                .ToList();
+        }
+
+        return records
+            .OrderByDescending(record => record.Season)
+            .ThenBy(record => record.ClassName, StringComparer.Ordinal)
+            .ThenBy(record => record.Title, StringComparer.Ordinal)
+            .SelectMany(record => record.Variants
+                .Where(variant => variant.Equipment.Count > 0)
+                .OrderBy(variant => variant.Index)
+                .Select(variant => CreateProfile(
+                    record,
+                    variant.Index,
+                    defaultPurposes.GetValueOrDefault($"{record.Source}:{record.BuildId}", Array.Empty<BuildPurpose>()))))
+            .ToList();
+    }
+
+    public static int MergeMissingProfiles(BuildDocument document, IEnumerable<BuildProfile> defaults)
+    {
+        var added = 0;
+        foreach (var profile in defaults)
+        {
+            var exists = document.Profiles.Any(candidate =>
+                string.Equals(candidate.Source, profile.Source, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(candidate.SourceBuildId, profile.SourceBuildId, StringComparison.Ordinal)
+                && (candidate.SourceVariantIndex == profile.SourceVariantIndex
+                    || (candidate.SourceVariantIndex == profile.SourceVariantIndex + 1
+                        && string.Equals(candidate.SourceUrl, profile.SourceUrl, StringComparison.OrdinalIgnoreCase))));
+            if (exists)
+            {
+                continue;
+            }
+
+            document.Profiles.Add(profile);
+            added++;
+        }
+
+        return added;
+    }
+
+    private static BuildProfile CreateProfile(
+        PublicBuildRecord record,
+        int variantIndex,
+        IReadOnlyList<BuildPurpose> catalogPurposes)
+    {
+        var profile = D2CoreProfileMapper.CreateProfile(record, variantIndex);
+        profile.Purposes = profile.Purposes
+            .Concat(catalogPurposes)
+            .Distinct()
+            .OrderBy(purpose => purpose)
+            .ToList();
+        return profile;
     }
 }
 
@@ -776,6 +1068,7 @@ public static class D2CoreProfileMapper
 
     public static BuildProfile CreateProfile(PublicBuildRecord record, int variantIndex)
     {
+        BuildMetadata.Ensure(record);
         var variant = record.Variants.FirstOrDefault(candidate => candidate.Index == variantIndex)
             ?? throw new InvalidDataException($"暗黑核 BD 没有第 {variantIndex + 1} 个变体。");
         var defaults = HudProfileFactory.CreateDefaultRules(record.ClassName)
@@ -811,6 +1104,10 @@ public static class D2CoreProfileMapper
             Name = string.IsNullOrWhiteSpace(variant.Name) ? record.Title : variant.Name,
             ClassName = TranslateClass(record.ClassName),
             Variant = $"S{record.Season} · 暗黑核 {record.BuildId} / #{variantIndex + 1}",
+            Season = record.Season,
+            SeasonMode = record.SeasonMode,
+            DifficultyMode = record.DifficultyMode,
+            Purposes = variant.Purposes.ToList(),
             Source = "d2core",
             SourceBuildId = record.BuildId,
             SourceVariantIndex = variantIndex,
@@ -875,7 +1172,7 @@ public static class D2CoreProfileMapper
         "Necromancer" => "死灵法师",
         "Rogue" => "游侠",
         "Sorcerer" => "巫师",
-        "Spiritborn" => "魂灵师",
+        "Spiritborn" => "灵巫",
         "Paladin" => "圣骑士",
         "Warlock" => "术士",
         _ => className

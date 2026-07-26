@@ -23,6 +23,7 @@ var tests = new (string Name, Action Run)[]
     ("HUD layout reset restores defaults", HudLayoutResetRestoresDefaults),
     ("transmutation reminder requires the selected recipe", TransmutationReminderRequiresSelectedRecipe),
     ("character panel detection", CharacterPanelIsDetectedInSyntheticFrame),
+    ("1080p character panel title placement", CharacterPanelDetects1080pTitlePlacement),
     ("character panel requires character title", CharacterPanelRequiresCharacterTitle),
     ("letterboxed panel detection", LetterboxedCharacterPanelIsDetected),
     ("windowed screenshot panel detection", WindowedScreenshotPanelIsDetected),
@@ -41,6 +42,9 @@ var tests = new (string Name, Action Run)[]
     ("local update manifest rejects invalid and mismatched hash", LocalUpdateManifestRejectsInvalidAndMismatchedHash),
     ("D2Core URL normalization", D2CoreUrlSelectsRequestedVariant),
     ("D2Core public sample uses one-based var", D2CorePublicSampleUsesHumanVariantNumber),
+    ("D2Core metadata classification", D2CoreMetadataClassifiesModesAndPurposes),
+    ("bundled library seeds classified variants", BundledLibrarySeedsClassifiedVariants),
+    ("bundled defaults merge idempotently", BundledDefaultsMergeIdempotently),
     ("D2Core HUD text is compact", D2CoreHudTextIsCompact),
     ("HUD source markers can coexist", HudSourceMarkersCanCoexist),
     ("HUD transfigured poison affixes stay distinct and last", HudTransfiguredPoisonAffixesStayDistinctAndLast),
@@ -385,6 +389,20 @@ static void CharacterPanelIsDetectedInSyntheticFrame()
     Assert(detection.Confidence >= 0.55, $"panel confidence should be actionable, actual {detection.Confidence:F3}");
 }
 
+static void CharacterPanelDetects1080pTitlePlacement()
+{
+    var frame = CreateSyntheticGameFrame(
+        width: 1920,
+        height: 1080,
+        panelLeft: 1176,
+        characterTitleOffsetX: 0.060,
+        characterTitleOffsetY: 0.013);
+    var detection = new CharacterPanelDetector().Detect(frame);
+
+    Assert(Math.Abs(detection.Bounds.X - 0.6125) < 0.025, $"1080p panel boundary should be near 0.613, actual {detection.Bounds.X:F3}");
+    Assert(detection.Confidence >= 0.55, $"1080p title placement should be actionable, actual {detection.Confidence:F3}");
+}
+
 static void CharacterPanelRequiresCharacterTitle()
 {
     var frame = CreateSyntheticGameFrame(includeCharacterTitle: false);
@@ -675,6 +693,68 @@ static void D2CorePublicSampleUsesHumanVariantNumber()
     var profile = D2CoreProfileMapper.CreateProfile(record, reference.VariantIndex);
     Assert(profile.Variant.EndsWith("#6", StringComparison.Ordinal), "profile label should show #6");
     Assert(profile.SourceUrl.EndsWith("var=6", StringComparison.Ordinal), "profile source URL should remain var=6");
+}
+
+static void D2CoreMetadataClassifiesModesAndPurposes()
+{
+    var catalog = D2CoreAffixCatalog.FromJson("""
+        {
+          "affix": []
+        }
+        """);
+    var record = D2CoreBuildParser.Parse(
+        CreateD2CoreFixtureResponse(),
+        new D2CoreBuildReference("1Zep", 5),
+        catalog,
+        DateTimeOffset.Parse("2026-07-26T00:00:00Z"));
+
+    Assert(record.SeasonMode == BuildSeasonMode.Seasonal, "positive source season should classify as seasonal mode");
+    Assert(record.DifficultyMode == BuildDifficultyMode.Hardcore, "explicit source hardcore flag should classify as hardcore");
+    Assert(record.Variants[6].Purposes.SequenceEqual(new[] { BuildPurpose.Bossing }), "single-target boss variant should classify as bossing");
+
+    var mixed = BuildMetadata.ClassifyPurposes("开荒到速刷，随后冲层");
+    Assert(mixed.SequenceEqual(new[] { BuildPurpose.Leveling, BuildPurpose.PitPush, BuildPurpose.SpeedFarm }),
+        "variant names should retain every matching purpose in stable order");
+}
+
+static void BundledLibrarySeedsClassifiedVariants()
+{
+    var library = new FileBuildLibraryStore(Path.Combine(Environment.CurrentDirectory, "library"), isReadOnly: true);
+    var defaults = library.LoadDefaults();
+    var defaultIds = defaults.Select(entry => entry.BuildId).ToHashSet(StringComparer.Ordinal);
+    var records = library.LoadAll().Where(record => defaultIds.Contains(record.BuildId)).ToList();
+    var profiles = BuildLibrarySeeder.CreateProfiles(library);
+    var expectedProfileCount = records.Sum(record => record.Variants.Count(variant => variant.Equipment.Count > 0));
+    Assert(defaults.Count == 6, "default catalog should contain six currently verified class representatives");
+    Assert(profiles.Count == expectedProfileCount, "first-run seed should create one profile for every usable default variant");
+    Assert(profiles.All(profile => profile.Season == 14 && profile.SeasonMode == BuildSeasonMode.Seasonal),
+        "seeded profiles should preserve the current season mode");
+    Assert(profiles.Select(profile => profile.ClassName).Distinct().OrderBy(value => value).SequenceEqual(
+            new[] { "巫师", "德鲁伊", "死灵法师", "游侠", "灵巫", "野蛮人" }.OrderBy(value => value)),
+        "seeded profiles should cover every class verified from the current recommendation page");
+    Assert(profiles.Any(profile => profile.Purposes.Contains(BuildPurpose.Leveling)
+        && profile.Purposes.Contains(BuildPurpose.SpeedFarm)),
+        "catalog scene tags should retain combined leveling and speed-farm use");
+    Assert(profiles.Any(profile => profile.Purposes.Contains(BuildPurpose.PitPush)), "seed should include a pit-push profile");
+    Assert(profiles.Any(profile => profile.Purposes.Contains(BuildPurpose.Bossing)), "seed should include a boss profile");
+    Assert(profiles.All(profile => profile.DifficultyMode == BuildDifficultyMode.Unknown),
+        "missing provider difficulty metadata must remain unknown instead of being guessed");
+}
+
+static void BundledDefaultsMergeIdempotently()
+{
+    var document = BuildDocument.CreateStarter();
+    var selectedProfileId = document.SelectedProfileId;
+    var defaults = BuildLibrarySeeder.CreateProfiles(
+        new FileBuildLibraryStore(Path.Combine(Environment.CurrentDirectory, "library"), isReadOnly: true));
+
+    var firstAdded = BuildLibrarySeeder.MergeMissingProfiles(document, defaults);
+    var secondAdded = BuildLibrarySeeder.MergeMissingProfiles(document, defaults);
+
+    Assert(firstAdded == defaults.Count, "existing state should receive every missing bundled default");
+    Assert(secondAdded == 0, "repeated startup should not duplicate bundled defaults");
+    Assert(document.SelectedProfileId == selectedProfileId, "merging defaults must preserve the user's current selection");
+    Assert(document.Profiles.Count == defaults.Count + 1, "merging defaults must preserve the user's existing profiles");
 }
 
 static void D2CoreHudTextIsCompact()
@@ -1002,6 +1082,7 @@ static string CreateD2CoreFixtureResponse()
             title = "测试 BD",
             @char = "Rogue",
             season = 14,
+            hardcore = true,
             _updateTime = 1784561585999,
             variants
         }
@@ -1101,7 +1182,9 @@ static PixelFrame CreateSyntheticGameFrame(
     int activeTop = 0,
     int? activeBottom = null,
     int titleHeight = 0,
-    bool includeCharacterTitle = true)
+    bool includeCharacterTitle = true,
+    double characterTitleOffsetX = 0.031,
+    double characterTitleOffsetY = 0.057)
 {
     var contentBottom = activeBottom ?? height;
     var activeHeight = contentBottom - activeTop;
@@ -1151,17 +1234,31 @@ static PixelFrame CreateSyntheticGameFrame(
 
     if (includeCharacterTitle)
     {
-        DrawSyntheticCharacterTitle(pixels, width, panelLeft, activeTop, activeHeight);
+        DrawSyntheticCharacterTitle(
+            pixels,
+            width,
+            panelLeft,
+            activeTop,
+            activeHeight,
+            characterTitleOffsetX,
+            characterTitleOffsetY);
     }
 
     return new PixelFrame(width, height, pixels);
 }
 
-static void DrawSyntheticCharacterTitle(byte[] pixels, int frameWidth, int panelLeft, int activeTop, int activeHeight)
+static void DrawSyntheticCharacterTitle(
+    byte[] pixels,
+    int frameWidth,
+    int panelLeft,
+    int activeTop,
+    int activeHeight,
+    double titleOffsetX,
+    double titleOffsetY)
 {
     const ulong characterTitleHash = 0x00140C1C1E1E0200UL;
-    var left = (int)Math.Round(panelLeft + activeHeight * 0.031);
-    var top = (int)Math.Round(activeTop + activeHeight * 0.057);
+    var left = (int)Math.Round(panelLeft + activeHeight * titleOffsetX);
+    var top = (int)Math.Round(activeTop + activeHeight * titleOffsetY);
     var width = Math.Max(12, (int)Math.Round(activeHeight * 0.064));
     var height = Math.Max(8, (int)Math.Round(activeHeight * 0.026));
 

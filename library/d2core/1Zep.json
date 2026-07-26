@@ -3,17 +3,23 @@
   "source": "d2core",
   "buildId": "1Zep",
   "canonicalUrl": "https://www.d2core.com/d4/planner?bd=1Zep",
-  "title": "S14正式服-7月20日更新-BUG斩杀BD-（冰箭雨-已有人嬗变到位突破150层深坑）",
+  "title": "S14正式服-7月26日微调更新（28号疾行斩杀修复），不管是毒箭雨还是冰，可配置路线有多种!",
   "className": "Rogue",
   "season": 14,
+  "seasonMode": "seasonal",
+  "difficultyMode": "unknown",
   "parserVersion": "d2core-v1",
-  "contentHash": "83a8b930b7df8c7e3fab9929f195b8d8125ff83c9ea2d424dce4b0a20cf1422b",
-  "sourceUpdatedAt": "2026-07-20T15:33:05.999+00:00",
-  "fetchedAt": "2026-07-22T06:16:34.1430075+00:00",
+  "contentHash": "8cfa3d159232a0ecb8245276a6e73ab5c123ab164569c328f602f23cce0cdd03",
+  "sourceUpdatedAt": "2026-07-26T01:38:54.18+00:00",
+  "fetchedAt": "2026-07-26T02:35:24.6382374+00:00",
   "variants": [
     {
       "index": 0,
       "name": "毒刃舞刀扇-速刷120层-开荒到速刷轻松成型",
+      "purposes": [
+        "leveling",
+        "speedFarm"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -856,6 +862,9 @@
     {
       "index": 1,
       "name": "穿透大狙-毒灌-138+，弹弹箭",
+      "purposes": [
+        "general"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -1577,6 +1586,9 @@
     {
       "index": 2,
       "name": "溶解-索命陷阱-130+",
+      "purposes": [
+        "general"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -2309,6 +2321,9 @@
     {
       "index": 3,
       "name": "毒灌箭雨-130速刷-140+",
+      "purposes": [
+        "speedFarm"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -2676,9 +2691,9 @@
         {
           "sourceSlot": 5,
           "sourceItemType": "Crossbow2H",
-          "sourceKey": "Affix_legendary_generic_134_x2",
-          "displayName": "蠕动威能",
-          "aspectName": "蠕动威能",
+          "sourceKey": "Affix_legendary_generic_014",
+          "displayName": "心如止水之威能",
+          "aspectName": "心如止水之威能",
           "itemPower": 900,
           "isMythic": false,
           "affixes": [
@@ -3129,6 +3144,9 @@
     {
       "index": 4,
       "name": "碧蓝-弹弹箭-冰灌穿透-135+",
+      "purposes": [
+        "general"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -3982,6 +4000,9 @@
     {
       "index": 5,
       "name": "双核心-刃舞+穿透-毒灌冲层-140+",
+      "purposes": [
+        "pitPush"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -4780,6 +4801,9 @@
     {
       "index": 6,
       "name": "刃舞刀扇-单体王-打老墨",
+      "purposes": [
+        "bossing"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -5567,6 +5591,9 @@
     {
       "index": 7,
       "name": "冰箭雨-善变到位-目前已经突破150层深坑",
+      "purposes": [
+        "pitPush"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -6343,6 +6370,9 @@
     {
       "index": 8,
       "name": "BUG侠-疾行斩-斩杀配置",
+      "purposes": [
+        "general"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
@@ -6564,6 +6594,9 @@
     {
       "index": 9,
       "name": "冰箭雨-传奇装",
+      "purposes": [
+        "general"
+      ],
       "equipment": [
         {
           "sourceSlot": 0,
