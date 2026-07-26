@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-22T06:16:34.2073551+00:00",
+  "builds": [
+    {
+      "source": "d2core",
+      "buildId": "1Zep",
+      "title": "S14正式服-7月20日更新-BUG斩杀BD-（冰箭雨-已有人嬗变到位突破150层深坑）",
+      "className": "Rogue",
+      "season": 14,
+      "variantCount": 10,
+      "contentHash": "83a8b930b7df8c7e3fab9929f195b8d8125ff83c9ea2d424dce4b0a20cf1422b",
+      "sourceUpdatedAt": "2026-07-20T15:33:05.999+00:00",
+      "path": "d2core/1Zep.json"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "governanceDocument": "docs/product-governance/free-product-social-conversion.md",
+  "decisionDrafts": [
+    "D4HUB-SOCIAL-D001",
+    "D4HUB-SOCIAL-D002",
+    "D4HUB-SOCIAL-D003",
+    "D4HUB-SOCIAL-D004",
+    "D4HUB-SOCIAL-D005",
+    "D4HUB-SOCIAL-D006",
+    "D4HUB-SOCIAL-D007",
+    "D4HUB-SOCIAL-D008",
+    "D4HUB-SOCIAL-D009",
+    "D4HUB-SOCIAL-D010"
+  ],
+  "currentAuthorization": "governance-only",
+  "productImplementation": false,
+  "productTested": false,
+  "ownerAccepted": false,
+  "releaseAuthorized": false
+}

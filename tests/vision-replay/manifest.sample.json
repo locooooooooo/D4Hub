@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "evidenceClass": "smoke",
+  "cases": [
+    {
+      "id": "replace-with-local-smoke-frame",
+      "image": "../../.artifacts/v0.2-real-frames/replace-with-local-frame.png",
+      "captureSpace": "unknown",
+      "expectedWidth": 1404,
+      "expectedHeight": 841,
+      "panelThreshold": 0.55,
+      "expectedDecision": "accepted",
+      "expectedPanel": {
+        "x": { "min": 0.60, "max": 0.66 },
+        "y": { "min": 0.00, "max": 0.05 },
+        "width": { "min": 0.34, "max": 0.40 },
+        "height": { "min": 0.95, "max": 1.00 }
+      }
+    }
+  ]
+}

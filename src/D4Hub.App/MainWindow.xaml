@@ -1,0 +1,714 @@
+<Window x:Class="D4Hub.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:D4Hub.App.Views"
+        Title="DHub · 个人工作台"
+        Width="1420"
+        Height="860"
+        MinWidth="1180"
+        MinHeight="720"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AppBackgroundBrush}"
+        SourceInitialized="Window_SourceInitialized"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control+Shift" Command="{Binding SaveCommand}" />
+    </Window.InputBindings>
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,0,0,1">
+            <Grid Margin="24,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <views:BrandMark Width="40" Height="40" Margin="0,0,11,0" />
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="DHub"
+                                   FontFamily="{StaticResource DisplayFontFamily}"
+                                   FontSize="20"
+                                   FontWeight="SemiBold" />
+                        <TextBlock Text="{Binding WorkspaceSubtitle}"
+                                   Foreground="{StaticResource TextSecondaryBrush}"
+                                   FontSize="11" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Style="{StaticResource BaseButton}"
+                            Command="{Binding ImportCommand}"
+                            Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            ToolTip="导入 BD 库"
+                            Margin="0,0,8,0">
+                        <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8B5;" />
+                    </Button>
+                    <Button Style="{StaticResource BaseButton}"
+                            Command="{Binding ExportCommand}"
+                            Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            ToolTip="导出 BD 库"
+                            Margin="0,0,8,0">
+                        <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xEDE1;" />
+                    </Button>
+                    <Button Style="{StaticResource BaseButton}"
+                            Command="{Binding LoadScreenshotCommand}"
+                            Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            ToolTip="从截图采集 BD 指纹并预览 HUD"
+                            Margin="0,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE91B;" Margin="0,0,7,0" />
+                            <TextBlock Text="截图采集" />
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource BaseButton}"
+                            Command="{Binding CaptureFingerprintCommand}"
+                            Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            ToolTip="从当前游戏画面采集所选 BD 指纹"
+                            Margin="0,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE722;" Margin="0,0,7,0" />
+                            <TextBlock Text="游戏采集" />
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource PrimaryButton}"
+                            Command="{Binding ToggleTrackingCommand}"
+                            ToolTip="开始或暂停角色面板监测">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE7F4;" Margin="0,0,7,0" />
+                            <TextBlock Text="{Binding TrackingButtonText}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="196" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Background="{StaticResource SidebarBrush}"
+                    BorderBrush="{StaticResource HairlineBrush}"
+                    BorderThickness="0,0,1,0">
+                <Grid Margin="14,18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <views:BrandMark Width="25" Height="25" Margin="0,0,8,0" />
+                            <TextBlock Text="DHub" Style="{StaticResource SectionHeadingText}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Text="PERSONAL WORKSPACE" Foreground="{StaticResource TextMutedBrush}" FontSize="10" Margin="1,4,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Text="功能" Style="{StaticResource CaptionText}" Margin="10,0,0,7" />
+                        <RadioButton GroupName="HubNavigation"
+                                     Style="{StaticResource HubNavigationItem}"
+                                     IsChecked="{Binding IsOverviewPage, Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE80F;" FontSize="15" Margin="0,0,10,0" />
+                                <TextBlock Text="概览" />
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton GroupName="HubNavigation"
+                                     Style="{StaticResource HubNavigationItem}"
+                                     IsChecked="{Binding IsHudPage, Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE7F4;" FontSize="15" Margin="0,0,10,0" />
+                                <TextBlock Text="HUD 叠层" />
+                            </StackPanel>
+                        </RadioButton>
+                        <TextBlock Text="规划中" Style="{StaticResource CaptionText}" Margin="10,15,0,7" />
+                        <RadioButton Style="{StaticResource HubNavigationItem}" IsEnabled="False">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8B7;" FontSize="15" Margin="0,0,10,0" />
+                                <TextBlock Text="构筑资料" />
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton Style="{StaticResource HubNavigationItem}" IsEnabled="False">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE7C3;" FontSize="15" Margin="0,0,10,0" />
+                                <TextBlock Text="会话记录" />
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+
+                    <Border Grid.Row="4"
+                            Background="#17243732"
+                            BorderBrush="#4A77BBA7"
+                            BorderThickness="1"
+                            CornerRadius="6"
+                            Padding="10,9">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="14" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" VerticalAlignment="Center" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="本地模式" FontWeight="SemiBold" FontSize="11" />
+                                <TextBlock Text="可见画面识别" Foreground="{StaticResource TextMutedBrush}" FontSize="10" Margin="0,2,0,0" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1"
+                  Visibility="{Binding IsHudPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="252" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Background="{StaticResource SidebarBrush}"
+                    BorderBrush="{StaticResource HairlineBrush}"
+                    BorderThickness="0,0,1,0">
+                <Grid Margin="16,18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="12" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Text="BD 库" Style="{StaticResource SectionHeadingText}" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Style="{StaticResource IconButton}"
+                                    Command="{Binding AddProfileCommand}"
+                                    Content="&#xE710;"
+                                    ToolTip="新建 BD" />
+                            <Button Style="{StaticResource IconButton}"
+                                    Command="{Binding RemoveProfileCommand}"
+                                    Content="&#xE74D;"
+                                    ToolTip="删除所选 BD"
+                                    Margin="5,0,0,0" />
+                        </StackPanel>
+                    </Grid>
+
+                    <ListBox Grid.Row="2"
+                             ItemsSource="{Binding Profiles}"
+                             SelectedItem="{Binding SelectedProfile}"
+                             ItemContainerStyle="{StaticResource NavigationItem}"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border Width="18" Height="18" CornerRadius="4" Background="#2BD45945" VerticalAlignment="Center">
+                                        <TextBlock Text="◆" Foreground="{StaticResource AccentBrush}" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="{Binding Name}"
+                                                   FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Text="{Binding ClassName}"
+                                                   Foreground="{StaticResource TextMutedBrush}"
+                                                   FontSize="10"
+                                                   TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel Grid.Row="3">
+                        <Border BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,1,0,0" Padding="2,14,2,0">
+                            <StackPanel>
+                                <Grid Margin="0,0,0,10">
+                                    <TextBlock Text="自动贴附" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                                    <CheckBox IsChecked="{Binding Document.Overlay.AutoAttach}"
+                                              HorizontalAlignment="Right"
+                                              ToolTip="检测到角色面板后自动显示 HUD" />
+                                </Grid>
+                                <TextBlock Text="面板置信度" Style="{StaticResource CaptionText}" />
+                                <Slider Minimum="0.35"
+                                        Maximum="0.95"
+                                        Value="{Binding Document.Overlay.PanelConfidenceThreshold}"
+                                        ToolTip="角色面板检测阈值" />
+                                <TextBlock Text="BD 置信度" Style="{StaticResource CaptionText}" Margin="0,5,0,0" />
+                                <Slider Minimum="0.5"
+                                        Maximum="0.95"
+                                        Value="{Binding Document.Overlay.BuildConfidenceThreshold}"
+                                        ToolTip="BD 指纹匹配阈值" />
+                            </StackPanel>
+                        </Border>
+                        <Border Background="#17243732"
+                                BorderBrush="#4A77BBA7"
+                                BorderThickness="1"
+                                CornerRadius="6"
+                                Margin="0,12,0,0"
+                                Padding="10,8">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="14" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" />
+                                <TextBlock Grid.Column="1"
+                                           Text="纯屏幕识别 · 点击穿透"
+                                           Foreground="{StaticResource TextSecondaryBrush}"
+                                           FontSize="11" />
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                <Grid Margin="24,20,24,22">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="12" />
+                        <RowDefinition Height="76" />
+                        <RowDefinition Height="18" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" MinHeight="380" />
+                    </Grid.RowDefinitions>
+
+                    <Border Background="{StaticResource SurfaceBrush}"
+                            BorderBrush="{StaticResource HairlineBrush}"
+                            BorderThickness="1"
+                            CornerRadius="7"
+                            Padding="12,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="205" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="暗黑核 BD 一键导入" Style="{StaticResource CaptionText}" />
+                                <TextBlock Text="公共库优先 · 只在缺失或刷新时联网"
+                                           Foreground="{StaticResource TextMutedBrush}"
+                                           FontSize="10"
+                                           Margin="0,3,0,0" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="12,0,8,0">
+                                <TextBox Text="{Binding D2CoreUrl, UpdateSourceTrigger=PropertyChanged}"
+                                         Style="{StaticResource TextField}"
+                                         VerticalContentAlignment="Center"
+                                         ToolTip="粘贴 https://www.d2core.com/d4/planner?bd=...&amp;var=..." />
+                                <TextBlock Text="{Binding D2CoreStatus}"
+                                           Foreground="{StaticResource TextSecondaryBrush}"
+                                           FontSize="10"
+                                           Margin="1,4,1,0"
+                                           TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                            <Button Grid.Column="2"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Command="{Binding PasteD2CoreCommand}"
+                                    Margin="0,0,7,0"
+                                    VerticalAlignment="Top"
+                                    ToolTip="读取剪贴板中的暗黑核链接并导入">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE77F;" Margin="0,0,6,0" />
+                                    <TextBlock Text="粘贴并导入" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="3"
+                                    Style="{StaticResource BaseButton}"
+                                    Command="{Binding ImportD2CoreCommand}"
+                                    Margin="0,0,7,0"
+                                    VerticalAlignment="Top"
+                                    ToolTip="导入输入框中的暗黑核链接">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8B5;" />
+                            </Button>
+                            <Button Grid.Column="4"
+                                    Style="{StaticResource BaseButton}"
+                                    Command="{Binding RefreshD2CoreCommand}"
+                                    VerticalAlignment="Top"
+                                    ToolTip="忽略缓存，从暗黑核刷新当前链接">
+                                <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE72C;" />
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <UniformGrid Grid.Row="2" Columns="3">
+                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="0,0,8,0" Padding="14,10">
+                            <StackPanel>
+                                <TextBlock Text="游戏窗口" Style="{StaticResource CaptionText}" />
+                                <TextBlock Text="{Binding GameStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </Border>
+                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="4,0" Padding="14,10">
+                            <StackPanel>
+                                <TextBlock Text="角色面板" Style="{StaticResource CaptionText}" />
+                                <TextBlock Text="{Binding PanelStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </Border>
+                        <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="1" CornerRadius="7" Margin="8,0,0,0" Padding="14,10">
+                            <StackPanel>
+                                <TextBlock Text="当前 BD" Style="{StaticResource CaptionText}" />
+                                <TextBlock Text="{Binding RecognitionStatus}" FontWeight="SemiBold" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </Border>
+                    </UniformGrid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="12" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="12" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="BD 名称" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedProfile.Name, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}"
+                                     FontSize="16"
+                                     FontWeight="SemiBold" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="职业" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedProfile.ClassName, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="4">
+                            <TextBlock Text="变体" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedProfile.Variant, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}" />
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170" />
+                            <ColumnDefinition Width="18" />
+                            <ColumnDefinition Width="*" MinWidth="280" />
+                            <ColumnDefinition Width="22" />
+                            <ColumnDefinition Width="270" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="装备槽" Style="{StaticResource SectionHeadingText}" Margin="0,0,0,9" />
+                            <ListBox ItemsSource="{Binding SelectedProfile.EquipmentRules}"
+                                     SelectedItem="{Binding SelectedRule}"
+                                     ItemContainerStyle="{StaticResource NavigationItem}"
+                                     Background="Transparent"
+                                     BorderThickness="0">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding SlotLabel}" FontWeight="SemiBold" />
+                                            <Ellipse Grid.Column="1" Width="6" Height="6" Fill="{StaticResource SuccessBrush}" VerticalAlignment="Center">
+                                                <Ellipse.Style>
+                                                    <Style TargetType="Ellipse">
+                                                        <Setter Property="Opacity" Value="1" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                                                                <Setter Property="Opacity" Value="0.2" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Ellipse.Style>
+                                            </Ellipse>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2">
+                            <Grid Margin="0,0,0,9">
+                                <TextBlock Text="词缀规则" Style="{StaticResource SectionHeadingText}" />
+                                <CheckBox IsChecked="{Binding SelectedRule.IsEnabled}"
+                                          Content="显示"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Center" />
+                            </Grid>
+                            <TextBlock Text="装备槽名称" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedRule.SlotLabel, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}"
+                                     Margin="0,0,0,12" />
+                            <TextBlock Text="装备名称" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedRule.ItemName, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}"
+                                     Margin="0,0,0,12" />
+                            <TextBlock Text="必要词缀" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedRule.MandatoryText, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     MinHeight="78"
+                                     VerticalContentAlignment="Top"
+                                     Margin="0,0,0,12" />
+                            <TextBlock Text="备选词缀" Style="{StaticResource CaptionText}" Margin="1,0,0,5" />
+                            <TextBox Text="{Binding SelectedRule.OptionalText, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource TextField}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     MinHeight="68"
+                                     VerticalContentAlignment="Top" />
+                            <Grid Margin="0,16,0,0">
+                                <StackPanel>
+                                    <TextBlock Text="BD 视觉指纹" Style="{StaticResource CaptionText}" />
+                                    <TextBlock Text="{Binding FingerprintStatus}" FontWeight="SemiBold" Margin="0,4,0,0" />
+                                </StackPanel>
+                                <ProgressBar Style="{StaticResource ThinProgressBar}"
+                                             Width="130"
+                                             HorizontalAlignment="Right"
+                                             VerticalAlignment="Center"
+                                             Value="{Binding RecognitionConfidence, Mode=OneWay}" />
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="4">
+                            <Grid Margin="0,0,0,9">
+                                <TextBlock Text="角色面板 HUD"
+                                           Style="{StaticResource SectionHeadingText}"
+                                           VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource BaseButton}"
+                                            Command="{Binding BeginLayoutEditingCommand}"
+                                            MinHeight="32"
+                                            Padding="10,0"
+                                            Margin="0,0,8,0"
+                                            ToolTip="按当前 BD 与游戏分辨率校准 HUD 位置">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontFamily="{StaticResource IconFontFamily}"
+                                                       Text="&#xE7C8;"
+                                                       Margin="0,0,6,0" />
+                                            <TextBlock Text="调整位置" />
+                                        </StackPanel>
+                                    </Button>
+                                    <Border Background="{StaticResource SurfaceBrush}"
+                                            BorderBrush="{StaticResource HairlineBrush}"
+                                            BorderThickness="1"
+                                            CornerRadius="6"
+                                            Padding="2">
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton Content="简略"
+                                                         GroupName="HudDisplayMode"
+                                                         Style="{StaticResource HudModeSegmentButton}"
+                                                         IsChecked="{Binding IsCompactHudMode, Mode=TwoWay}" />
+                                            <RadioButton Content="数值"
+                                                         GroupName="HudDisplayMode"
+                                                         Style="{StaticResource HudModeSegmentButton}"
+                                                         IsChecked="{Binding IsValuesHudMode, Mode=TwoWay}" />
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                            <Border Background="#FF0C0C0B"
+                                    BorderBrush="{StaticResource HairlineBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="7"
+                                    Padding="7">
+                                <Viewbox Height="410" Stretch="Uniform">
+                                    <views:HudOverlayView Width="695"
+                                                          Height="1060"
+                                                          ProfileName="{Binding SelectedProfile.Name}"
+                                                          Rules="{Binding SelectedProfile.EquipmentRules}"
+                                                          DisplayMode="{Binding HudDisplayMode}" />
+                                </Viewbox>
+                            </Border>
+                            <Grid Margin="1,8,1,0">
+                                <TextBlock Text="{Binding LayoutStatus}"
+                                           Style="{StaticResource CaptionText}"
+                                           TextTrimming="CharacterEllipsis"
+                                           TextWrapping="NoWrap" />
+                                <TextBlock Text="{Binding LayoutResolutionLabel}"
+                                           HorizontalAlignment="Right"
+                                           Style="{StaticResource CaptionText}" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+            <Grid Grid.Column="1"
+                  Visibility="{Binding IsOverviewPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid Margin="34,30,34,28" MaxWidth="1120" HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="96" />
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="概览" Style="{StaticResource HeadingText}" />
+                                <TextBlock Text="识别战局，走出自己的路。" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,5,0,0" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Ellipse Width="7" Height="7" Fill="{StaticResource SuccessBrush}" Margin="0,0,7,0" />
+                                <TextBlock Text="{Binding TrackingStatusText}" Style="{StaticResource CaptionText}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Border Grid.Row="2"
+                                Background="{StaticResource SurfaceElevatedBrush}"
+                                BorderBrush="{StaticResource AccentBrush}"
+                                BorderThickness="1"
+                                CornerRadius="7"
+                                Padding="17,14">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <views:BrandMark Width="40" Height="40" VerticalAlignment="Center" />
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="关注 loco，加入玩家群" FontSize="16" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding CommunityStatus}"
+                                               Foreground="{StaticResource TextSecondaryBrush}"
+                                               FontSize="12"
+                                               Margin="0,4,0,0" />
+                                </StackPanel>
+                                <Button Grid.Column="2"
+                                        Style="{StaticResource PrimaryButton}"
+                                        Command="{Binding CopyDouyinHandleCommand}"
+                                        Margin="14,0,8,0"
+                                        ToolTip="复制抖音号 @loco">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="抖音 @loco" />
+                                        <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8C8;" Margin="7,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="3"
+                                        Style="{StaticResource BaseButton}"
+                                        Command="{Binding CopyCommunityGroupCommand}"
+                                        ToolTip="复制 QQ 群号 736495487">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="QQ群 736495487" />
+                                        <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE8C8;" Margin="7,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <UniformGrid Grid.Row="4" Columns="3">
+                            <Border Background="{StaticResource SurfaceBrush}"
+                                    BorderBrush="{StaticResource HairlineBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="7"
+                                    Margin="0,0,8,0"
+                                    Padding="15,13">
+                                <StackPanel>
+                                    <TextBlock Text="游戏窗口" Style="{StaticResource CaptionText}" />
+                                    <TextBlock Text="{Binding GameStatus}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" TextTrimming="CharacterEllipsis" />
+                                </StackPanel>
+                            </Border>
+                            <Border Background="{StaticResource SurfaceBrush}"
+                                    BorderBrush="{StaticResource HairlineBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="7"
+                                    Margin="4,0"
+                                    Padding="15,13">
+                                <StackPanel>
+                                    <TextBlock Text="识别状态" Style="{StaticResource CaptionText}" />
+                                    <TextBlock Text="{Binding RecognitionStatus}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" TextTrimming="CharacterEllipsis" />
+                                </StackPanel>
+                            </Border>
+                            <Border Background="{StaticResource SurfaceBrush}"
+                                    BorderBrush="{StaticResource HairlineBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="7"
+                                    Margin="8,0,0,0"
+                                    Padding="15,13">
+                                <StackPanel>
+                                    <TextBlock Text="构筑配置" Style="{StaticResource CaptionText}" />
+                                    <TextBlock Text="{Binding ProfileCountText}" FontSize="16" FontWeight="SemiBold" Margin="0,7,0,0" />
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+
+                        <TextBlock Grid.Row="6" Text="已接入功能" Style="{StaticResource SectionHeadingText}" />
+
+                        <Border Grid.Row="8"
+                                Background="{StaticResource SurfaceBrush}"
+                                BorderBrush="{StaticResource HairlineBrush}"
+                                BorderThickness="1"
+                                CornerRadius="7"
+                                Padding="20,18">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Border Width="42" Height="42" Background="#2BD45945" CornerRadius="7" VerticalAlignment="Top">
+                                    <TextBlock FontFamily="{StaticResource IconFontFamily}"
+                                               Text="&#xE7F4;"
+                                               Foreground="{StaticResource AccentBrush}"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="HUD 叠层" FontSize="17" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding PanelStatus}" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,4,0,0" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding SelectedProfileSummary}" Style="{StaticResource CaptionText}" VerticalAlignment="Center" Margin="0,0,14,0" />
+                                    <Button Style="{StaticResource PrimaryButton}"
+                                            Command="{Binding OpenHudWorkspaceCommand}"
+                                            ToolTip="打开 HUD 工作台">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="打开" />
+                                            <TextBlock FontFamily="{StaticResource IconFontFamily}" Text="&#xE72A;" Margin="7,0,0,0" />
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+
+        <Border Grid.Row="2" BorderBrush="{StaticResource HairlineBrush}" BorderThickness="0,1,0,0">
+            <Grid Margin="22,0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessBrush}" Margin="0,0,7,0" />
+                    <TextBlock Text="DHub · 本地画面识别" Style="{StaticResource CaptionText}" />
+                    <TextBlock Text=" · " Foreground="{StaticResource TextMutedBrush}" />
+                    <TextBlock Text="{Binding SelectedProfileSummary}" Style="{StaticResource CaptionText}" />
+                </StackPanel>
+                <TextBlock Text="{Binding FingerprintStatus}"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource CaptionText}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

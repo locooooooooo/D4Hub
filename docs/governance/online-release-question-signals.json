@@ -1,0 +1,171 @@
+[
+  {
+    "id": "distribution-stack",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Which packaging and update stack may the implementation prototype use?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "MSIX/App Installer and Velopack both require isolated evidence before committing the product and supply chain.",
+    "options": [
+      { "value": "prototype-msix-and-velopack", "label": "Prototype both", "impact": "Allows non-production comparison without choosing the production stack." },
+      { "value": "msix-appinstaller", "label": "MSIX/App Installer", "impact": "Commits the prototype to Windows package identity and App Installer behavior." },
+      { "value": "velopack", "label": "Velopack", "impact": "Introduces a third-party desktop update tool into the prototype supply chain." },
+      { "value": "clickonce", "label": "ClickOnce", "impact": "Uses the simpler .NET deployment route with reduced channel and rollback flexibility." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks implementation of the packaging/update stack." }
+    ],
+    "blockedActions": ["prototype_distribution_stack"]
+  },
+  {
+    "id": "release-hosting",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Which hosting and budget boundary may serve immutable update artifacts and channel manifests?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Hosting creates recurring cost, production infrastructure, access logs, availability commitments, and privileged credentials.",
+    "options": [
+      { "value": "github-releases", "label": "GitHub Releases", "impact": "Uses GitHub availability and access-log boundaries with limited channel control." },
+      { "value": "object-storage-cdn", "label": "Object storage/CDN", "impact": "Adds cloud cost and operations but supports immutable paths and controlled promotion." },
+      { "value": "owner-hosted-static", "label": "Owner-hosted static", "impact": "Places TLS, uptime, logs, capacity, and incident response on Owner-managed infrastructure." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks external hosting and production update endpoints." }
+    ],
+    "blockedActions": ["provision_release_hosting"]
+  },
+  {
+    "id": "signing-certificate",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Which Windows code-signing certificate identity, certificate class, supplier, cost, and renewal policy may D4Hub use?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Certificate procurement changes cost, legal identity, player trust, SmartScreen expectations, and renewal risk.",
+    "options": [
+      { "value": "standard-organization", "label": "Standard organization certificate", "impact": "Uses an organization identity with supplier cost and reputation-building requirements." },
+      { "value": "ev-or-managed-signing", "label": "EV/managed signing", "impact": "Raises cost and operational constraints in exchange for stronger custody and reputation options." },
+      { "value": "individual-available-option", "label": "Eligible individual option", "impact": "Depends on supplier and jurisdiction eligibility and exposes the selected legal identity." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks certificate purchase and real signing." }
+    ],
+    "blockedActions": ["purchase_signing_certificate", "sign_release_artifacts"]
+  },
+  {
+    "id": "key-custody",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "Which private-key custody, CI identity, release approval, rotation, and emergency revocation model may be used?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Exportable long-lived keys in ordinary CI secrets create unacceptable fleet-wide compromise risk.",
+    "options": [
+      { "value": "managed-signing-oidc-two-person", "label": "Managed signing + OIDC + two-person approval", "impact": "Uses short-lived CI identity, non-exportable keys, and separate release approval." },
+      { "value": "hardware-token-offline-release", "label": "Hardware token offline release", "impact": "Keeps keys off CI but makes releases more manual and device-dependent." },
+      { "value": "hsm-self-managed", "label": "Self-managed HSM", "impact": "Provides strong custody with greater infrastructure and operational cost." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks production signing configuration." }
+    ],
+    "blockedActions": ["configure_signing_keys", "configure_production_release_identity"]
+  },
+  {
+    "id": "runtime-packaging",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Which .NET runtime packaging policy may be used for player installers?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "The choice affects installer size, patch bandwidth, runtime prerequisites, support, and vulnerability servicing.",
+    "options": [
+      { "value": "self-contained-x64", "label": "Self-contained x64", "impact": "Simplifies first install but increases artifact and update size." },
+      { "value": "framework-dependent-x64", "label": "Framework-dependent x64", "impact": "Reduces application size but requires Desktop Runtime detection and support." },
+      { "value": "dual-packages", "label": "Offer both", "impact": "Increases release matrix, documentation, storage, and validation cost." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks production package format finalization." }
+    ],
+    "blockedActions": ["finalize_runtime_packaging"]
+  },
+  {
+    "id": "supported-windows",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "Which minimum Windows version, architecture set, and support lifetime may the public release promise?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "The current README statement is not a lifecycle-backed public support commitment and Windows 10 support varies by edition and program.",
+    "options": [
+      { "value": "windows11-x64", "label": "Windows 11 x64", "impact": "Narrows support and testing to the current Windows client generation." },
+      { "value": "windows10-supported-plus-11-x64", "label": "Supported Windows 10 + 11 x64", "impact": "Broadens reach but requires an explicit Windows 10 servicing eligibility rule and larger test matrix." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks the public minimum-system promise." }
+    ],
+    "blockedActions": ["publish_system_requirements"]
+  },
+  {
+    "id": "telemetry-crash-policy",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Which telemetry and crash-reporting boundary may D4Hub adopt?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Data collection and third-party processing require explicit purpose, consent, retention, access, deletion, and vendor decisions.",
+    "options": [
+      { "value": "local-diagnostics-only", "label": "Local diagnostics only", "impact": "Keeps automatic telemetry and crash uploads disabled; players export a redacted bundle manually." },
+      { "value": "separate-opt-in-crash-only", "label": "Separate opt-in crash reports", "impact": "Adds a crash processor and consent flow without usage analytics." },
+      { "value": "separate-opt-in-minimal-telemetry", "label": "Separate opt-in minimal telemetry", "impact": "Adds approved event schemas, consent, retention, deletion, and processor governance." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps automatic collection blocked." }
+    ],
+    "blockedActions": ["collect_player_data", "integrate_telemetry_service", "integrate_crash_service"]
+  },
+  {
+    "id": "channels-rollout",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Which update channels, rollout grouping, stop thresholds, and device-identifier policy may be used?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Random device cohorts can create persistent identifiers and every rollout policy creates player-impact and incident obligations.",
+    "options": [
+      { "value": "explicit-preview-then-stable", "label": "Explicit preview then stable", "impact": "Uses opt-in preview players and manual channel promotion without permanent device IDs." },
+      { "value": "signed-random-cohorts", "label": "Signed random cohorts", "impact": "Adds cohort logic and a separately governed identifier/privacy design." },
+      { "value": "stable-only", "label": "Stable only", "impact": "Simplifies channels but reduces pre-release player evidence and increases blast radius." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks production rollout policy." }
+    ],
+    "blockedActions": ["configure_release_channels", "roll_out_to_players"]
+  },
+  {
+    "id": "support-eol",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "Which supported-version window, incident response target, final artifact retention, and service exit commitment may be promised?",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Support and end-of-life promises create ongoing cost and player rights that must be explicitly owned.",
+    "options": [
+      { "value": "current-plus-previous-stable", "label": "Current + previous stable", "impact": "Keeps a bounded recovery window but requires two-version incident and compatibility support." },
+      { "value": "current-stable-only", "label": "Current stable only", "impact": "Reduces maintenance but increases forced-upgrade and rollback pressure." },
+      { "value": "fixed-time-window", "label": "Fixed time window", "impact": "Requires Owner to set and fund a concrete support duration and response target." },
+      { "value": "defer", "label": "Decide later", "impact": "Blocks public support and EOL commitments." }
+    ],
+    "blockedActions": ["publish_support_policy", "publish_eol_policy"]
+  },
+  {
+    "id": "production-release-authorization",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Does the Owner authorize a specific production signing, upload, public release, or real-player distribution now?",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "This governance phase explicitly excludes signing and release; future production authorization must bind a version, digest, channel, rollout, and stop conditions.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Only valid in a later digest-bound Owner decision naming the exact release candidate and conditions." },
+      { "value": "revise", "label": "Revise", "impact": "Returns the production proposal for changes without authorizing release." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps signing, upload, public release, and player distribution blocked." }
+    ],
+    "blockedActions": ["sign_production_artifacts", "upload_production_artifacts", "publish_release", "distribute_to_real_players"]
+  }
+]

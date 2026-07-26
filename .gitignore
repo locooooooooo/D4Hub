@@ -1,4 +1,6 @@
 .pkr/
+.tools/
+.artifacts/
 bin/
 obj/
 publish/
@@ -12,4 +14,3 @@ publish/
 .vs/
 .idea/
 Thumbs.db
-

@@ -1,0 +1,7 @@
+{
+  "action": "submit",
+  "answers": {
+    "decision-direction": "defer",
+    "protected-decision": "defer"
+  }
+}

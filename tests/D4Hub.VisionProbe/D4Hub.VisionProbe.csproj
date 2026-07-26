@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\D4Hub.Core\D4Hub.Core.csproj" />
+    <ProjectReference Include="..\..\src\D4Hub.App\D4Hub.App.csproj" />
+  </ItemGroup>
+</Project>

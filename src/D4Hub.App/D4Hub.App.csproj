@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>D4Hub</AssemblyName>
+    <RootNamespace>D4Hub.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D4Hub.Core\D4Hub.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Hud\*.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\library\**\*.json">
+      <Link>library\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

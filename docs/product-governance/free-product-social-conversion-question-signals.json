@@ -1,0 +1,174 @@
+[
+  {
+    "id": "core-free-contract",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "Approve the proposed core-free contract, including all capabilities currently listed in the D4Hub README plus security, compatibility, accessibility, export, and privacy controls, or return it for revision?",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "No social-conversion implementation should begin until the Owner freezes the functions that can never be gated.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Freezes the proposed core-free contract for the MVP." },
+      { "value": "revise", "label": "Revise", "impact": "Keeps implementation blocked while the contract is corrected." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps all social-conversion actions blocked." }
+    ],
+    "blockedActions": ["implement_social_conversion", "release_social_conversion"]
+  },
+  {
+    "id": "benefit-definition",
+    "dimension": "scope",
+    "status": "unknown",
+    "prompt": "State the exact first benefit or content package: name, included items, format, version, value, validity period, quantity, source, and license.",
+    "questionType": "blank",
+    "materiality": "protected",
+    "recommendation": "Defer until a low-risk, non-monetary, non-lottery community content package with traceable licensing is specified.",
+    "recommendationReason": "An undefined benefit cannot be advertised, fulfilled, tested, or assessed for consumer and copyright risk.",
+    "options": [],
+    "blockedActions": ["implement_social_conversion", "release_social_conversion"]
+  },
+  {
+    "id": "eligible-audience",
+    "dimension": "scope",
+    "status": "unknown",
+    "prompt": "Define who may claim the first benefit, including existing/new users, adults, age-unknown users, supported regions, and supported languages.",
+    "questionType": "blank",
+    "materiality": "protected",
+    "recommendation": "Limit any future pilot to adults in a reviewed region; keep all core functions and an equivalent claim route available to everyone else.",
+    "recommendationReason": "Audience determines minors, regional, consumer, and operational obligations.",
+    "options": [],
+    "blockedActions": ["implement_social_conversion", "collect_personal_data", "release_social_conversion"]
+  },
+  {
+    "id": "official-channel-boundary",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Identify the exact Douyin account and community platform/channel, their legal or operating subject, authorized administrators, moderation owner, and recovery contact.",
+    "questionType": "blank",
+    "materiality": "protected",
+    "recommendation": "Do not display an account, QR code, invite link, or official-channel claim until a single accountable channel registry is approved.",
+    "recommendationReason": "Unregistered channels create impersonation, platform, moderation, and account-recovery risk.",
+    "options": [],
+    "blockedActions": ["connect_third_party_service", "release_social_conversion"]
+  },
+  {
+    "id": "verification-and-fulfillment",
+    "dimension": "decision",
+    "status": "unknown",
+    "prompt": "Choose the MVP claim and fulfillment method.",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "manual_batch",
+    "recommendationReason": "A public or manually issued batch with honest declaration avoids account login, scraping, OCR, unofficial APIs, and hidden tracking.",
+    "options": [
+      { "value": "manual_batch", "label": "Manual batch", "impact": "Uses honest declaration or a public/manual batch and accepts limited sharing risk." },
+      { "value": "formal_api_later", "label": "Formal API later", "impact": "Requires a separate platform, consent, privacy, security, and Owner decision before implementation." },
+      { "value": "do_not_proceed", "label": "Do not proceed", "impact": "Cancels the conversion MVP while preserving the free product." }
+    ],
+    "blockedActions": ["implement_social_conversion", "connect_third_party_service", "release_social_conversion"]
+  },
+  {
+    "id": "equivalent-alternative-route",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "Choose and approve the equivalent claim route for users who cannot or do not want to use Douyin or the community platform.",
+    "questionType": "single_choice",
+    "materiality": "protected",
+    "recommendation": "anonymous_official_download",
+    "recommendationReason": "An anonymous official download is the lowest-friction equivalent and does not require a cross-platform identity.",
+    "options": [
+      { "value": "anonymous_official_download", "label": "Anonymous download", "impact": "Provides the same content, validity, and support without an account." },
+      { "value": "same_sla_manual", "label": "Same-SLA manual", "impact": "Uses one necessary contact channel with the same delivery SLA and support." },
+      { "value": "revise_model", "label": "Revise model", "impact": "Keeps implementation blocked until a genuinely equivalent route exists." }
+    ],
+    "blockedActions": ["implement_social_conversion", "release_social_conversion"]
+  },
+  {
+    "id": "personal-data-policy",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Approve a data dictionary that names every collected field, purpose, storage location, access role, retention period, backup deletion method, and user deletion SLA.",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "The proposed 30/90-day limits and minimal ticket fields are recommendations, not an authorized privacy policy.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Approves only the attached explicit data dictionary, not unspecified future fields." },
+      { "value": "revise", "label": "Revise", "impact": "Returns the data policy for minimization or compliance correction." },
+      { "value": "defer", "label": "Decide later", "impact": "Prohibits real personal-data collection." }
+    ],
+    "blockedActions": ["collect_personal_data", "connect_third_party_service", "release_social_conversion"]
+  },
+  {
+    "id": "minors-and-regions",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Approve the treatment of minors, age-unknown users, and each supported region after appropriate compliance review.",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "The safe current state is offline design only until age and regional rules are explicitly reviewed.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Approves only the reviewed audience and region matrix supplied with the decision." },
+      { "value": "revise", "label": "Revise", "impact": "Keeps affected audiences excluded while the matrix is corrected." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps real outreach and collection blocked." }
+    ],
+    "blockedActions": ["collect_personal_data", "release_social_conversion"]
+  },
+  {
+    "id": "support-appeal-community",
+    "dimension": "constraint",
+    "status": "unknown",
+    "prompt": "State the support channel, staffed hours, first-response and resolution SLA, appeal owner, emergency-stop owner, community rules, enforcement ladder, and administrator recusal rule.",
+    "questionType": "blank",
+    "materiality": "protected",
+    "recommendation": "Defer launch until a named owner can meet a two-business-day response and five-business-day resolution or progress-update target.",
+    "recommendationReason": "A real claim path without support, appeal, moderation, and manual fallback creates avoidable user-rights harm.",
+    "options": [],
+    "blockedActions": ["implement_social_conversion", "release_social_conversion"]
+  },
+  {
+    "id": "platform-terms-content-license-disclaimer",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "Approve the documented platform-terms review, content and trademark licenses, privacy notice, activity rules, and final non-endorsement disclaimer.",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "Disclaimers cannot replace platform permission, content rights, truthful advertising, privacy duties, or consumer obligations.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Confirms the supplied review evidence and final public wording." },
+      { "value": "revise", "label": "Revise", "impact": "Returns one or more legal or policy artifacts for correction." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps all real-channel and release actions blocked." }
+    ],
+    "blockedActions": ["connect_third_party_service", "release_social_conversion"]
+  },
+  {
+    "id": "success-and-stop-metrics",
+    "dimension": "acceptance",
+    "status": "unknown",
+    "prompt": "Define the aggregate success thresholds, failure thresholds, maximum support load, pilot duration, and mandatory stop conditions without creating personal profiles.",
+    "questionType": "blank",
+    "materiality": "protected",
+    "recommendation": "Use only aggregate exposure, route choice, successful delivery, appeal, deletion-request, and stop-event counts; stop on any core gating, undisclosed collection, platform warning, rights issue, or unmanageable support load.",
+    "recommendationReason": "A pilot needs falsifiable continuation and stop criteria before any real user is exposed.",
+    "options": [],
+    "blockedActions": ["collect_personal_data", "release_social_conversion"]
+  },
+  {
+    "id": "protected-decision",
+    "dimension": "protected-action",
+    "status": "unknown",
+    "prompt": "After the preceding artifacts and AC-01 through AC-09 have independent evidence, should Owner authorize a separate real-user pilot and its signing, release, and third-party connections?",
+    "questionType": "approval",
+    "materiality": "protected",
+    "recommendation": "defer",
+    "recommendationReason": "This governance phase has no implementation, test, acceptance, platform, signing, or release evidence.",
+    "options": [
+      { "value": "approve", "label": "Approve", "impact": "Authorizes only the separately specified pilot; it does not approve broader rollout or automated verification." },
+      { "value": "revise", "label": "Revise", "impact": "Returns the pilot plan for a narrower or safer scope." },
+      { "value": "defer", "label": "Decide later", "impact": "Keeps implementation, data, integration, signing, and release blocked." }
+    ],
+    "blockedActions": ["implement_social_conversion", "collect_personal_data", "connect_third_party_service", "release_social_conversion"]
+  }
+]

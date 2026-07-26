@@ -1,0 +1,34 @@
+<UserControl x:Class="D4Hub.App.Views.BrandMark"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="48"
+             Height="48"
+             IsHitTestVisible="False"
+             SnapsToDevicePixels="True">
+    <Viewbox Stretch="Uniform">
+        <Grid Width="48" Height="48">
+            <Ellipse Margin="2"
+                     Fill="{StaticResource SurfaceElevatedBrush}"
+                     Stroke="{StaticResource AccentBrush}"
+                     StrokeThickness="2" />
+            <Path Data="M24,6 L42,24 L24,42 L6,24 Z"
+                  Stroke="{StaticResource AccentBrush}"
+                  StrokeThickness="2.5"
+                  StrokeLineJoin="Round" />
+            <Path Data="M15,24 L24,15 L33,24 L24,33 Z"
+                  Stroke="{StaticResource TextSecondaryBrush}"
+                  StrokeThickness="1.4"
+                  StrokeLineJoin="Round" />
+            <Path Data="M24,6 L24,15 M42,24 L33,24 M24,42 L24,33 M6,24 L15,24"
+                  Stroke="{StaticResource TextMutedBrush}"
+                  StrokeThickness="1.4"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round" />
+            <Ellipse Width="8"
+                     Height="8"
+                     Fill="{StaticResource SuccessBrush}"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center" />
+        </Grid>
+    </Viewbox>
+</UserControl>

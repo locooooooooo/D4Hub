@@ -1,0 +1,16 @@
+{
+  "action": "submit",
+  "answers": {
+    "protected-decision": "defer",
+    "open-behavior": "defer",
+    "initial-catalog": "当前暂缓，未批准任何首批外部资源。",
+    "bundled-revocation-risk": "defer",
+    "brand-assets": "defer",
+    "content-access": "defer",
+    "remote-manifest": "defer",
+    "data-collection": "defer",
+    "commercial-model": "defer",
+    "operations-owner": "当前暂缓，未指定地区、语言、复核责任人或下架响应时限。",
+    "workspace-sequencing": "defer"
+  }
+}

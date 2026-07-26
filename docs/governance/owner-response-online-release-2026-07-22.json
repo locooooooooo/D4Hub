@@ -1,0 +1,15 @@
+{
+  "action": "submit",
+  "answers": {
+    "distribution-stack": "defer",
+    "release-hosting": "defer",
+    "signing-certificate": "defer",
+    "key-custody": "defer",
+    "runtime-packaging": "defer",
+    "supported-windows": "defer",
+    "telemetry-crash-policy": "defer",
+    "channels-rollout": "defer",
+    "support-eol": "defer",
+    "production-release-authorization": "defer"
+  }
+}
