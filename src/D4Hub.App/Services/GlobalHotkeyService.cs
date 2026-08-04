@@ -35,6 +35,17 @@ public sealed class GlobalHotkeyService : IDisposable
         return true;
     }
 
+    /// <summary>注销全部已注册热键（保留 hook）；用于热键配置变更后整体重注册。</summary>
+    public void UnregisterAll()
+    {
+        foreach (var id in _handlers.Keys)
+        {
+            UnregisterHotKey(_source.Handle, id);
+        }
+
+        _handlers.Clear();
+    }
+
     public void Dispose()
     {
         foreach (var id in _handlers.Keys)

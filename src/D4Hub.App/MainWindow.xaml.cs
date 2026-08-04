@@ -1,4 +1,6 @@
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -6,6 +8,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using D4Hub.App.Services;
 using D4Hub.App.ViewModels;
+using D4Hub.Core;
+using Microsoft.Web.WebView2.Core;
 using Microsoft.Win32;
 using Velopack;
 
@@ -15,19 +19,27 @@ public partial class MainWindow : Window
 {
     private readonly HudViewModel _viewModel;
     private readonly DispatcherTimer _pollTimer;
+    private readonly RealtimeCaptureLifecycle _realtimeCaptureLifecycle;
     private readonly UpdateManager? _updateManager;
     private UpdateInfo? _availableUpdate;
     private bool _isUpdateReady;
     private bool _isUpdateBusy;
     private GlobalHotkeyService? _hotkeyService;
     private OverlayWindow? _overlayWindow;
+    private StatisticsOverlayWindow? _statisticsOverlayWindow;
     private TransmutationReminderWindow? _transmutationReminderWindow;
+    private MapOverlayWindow? _mapOverlayWindow;
     private PreviewWindow? _previewWindow;
+    private readonly ExternalResourceEntry? _helltidesResource;
+    private bool _isHelltidesWebViewInitializing;
+    private bool _isHelltidesWebViewReady;
+    private int _blockedHelltidesRequestCount;
 
     public MainWindow(HudViewModel viewModel)
     {
         InitializeComponent();
         _viewModel = viewModel;
+        _helltidesResource = viewModel.HelltidesResource;
         DataContext = viewModel;
 
         var configuredUpdateFeed = AppContext.GetData("D4Hub.UpdateFeedUrl") as string;
@@ -72,6 +84,7 @@ public partial class MainWindow : Window
         _viewModel.ImportRequested = ImportProfiles;
         _viewModel.ExportRequested = ExportProfiles;
         _viewModel.PasteD2CoreRequested = PasteAndImportD2Core;
+        _viewModel.LootFilters.CopyRequested = CopyLootFilter;
         _viewModel.CopyDouyinHandleRequested = () => CopyCommunityText(
             "loco",
             "已复制抖音号 @loco，去抖音搜索关注。");
@@ -80,14 +93,25 @@ public partial class MainWindow : Window
             "已复制 QQ 群号 736495487。");
         _viewModel.HudPlacementChanged = placement => Dispatcher.Invoke(() => _overlayWindow?.UpdatePlacement(placement));
         _viewModel.HudHidden = () => Dispatcher.Invoke(() => _overlayWindow?.HideHud());
+        _viewModel.StatisticsHudPlacementChanged = placement =>
+            Dispatcher.Invoke(() => _statisticsOverlayWindow?.UpdatePlacement(placement));
+        _viewModel.StatisticsHudHidden = () =>
+            Dispatcher.Invoke(() => _statisticsOverlayWindow?.HideHud());
         _viewModel.TransmutationReminderPlacementChanged = placement =>
             Dispatcher.Invoke(() => _transmutationReminderWindow?.UpdatePlacement(placement));
         _viewModel.TransmutationReminderHidden = () =>
             Dispatcher.Invoke(() => _transmutationReminderWindow?.HideReminder());
+        _viewModel.MapHudPlacementChanged = placement =>
+            Dispatcher.Invoke(() => _mapOverlayWindow?.UpdatePlacement(placement));
+        _viewModel.MapHudHidden = () =>
+            Dispatcher.Invoke(() => _mapOverlayWindow?.HideHud());
+        _viewModel.MapHudRefreshRequested = () =>
+            Dispatcher.Invoke(() => _mapOverlayWindow?.RefreshMap());
         _viewModel.PreviewReady = ShowPreview;
         _viewModel.LayoutEditingChanged = isEditing => Dispatcher.Invoke(() =>
         {
             _overlayWindow?.SetLayoutEditing(isEditing);
+            _mapOverlayWindow?.SetLayoutEditing(isEditing);
             if (isEditing)
             {
                 _overlayWindow?.Show();
@@ -105,23 +129,74 @@ public partial class MainWindow : Window
             Interval = TimeSpan.FromMilliseconds(300)
         };
         _pollTimer.Tick += (_, _) => _viewModel.PollLive();
+        _realtimeCaptureLifecycle = new RealtimeCaptureLifecycle(
+            _pollTimer.Start,
+            _pollTimer.Stop);
     }
 
     private void Window_SourceInitialized(object? sender, EventArgs e)
     {
         _hotkeyService = new GlobalHotkeyService(this);
+        _viewModel.MapHudSettings.PropertyChanged += OnMapHudSettingChanged;
+        RegisterGlobalHotkeys();
+    }
+
+    /// <summary>
+    /// 注册全局热键：F2 跟踪开关 + 地图 HUD 三个可配置热键（切换显隐/重绘/重置）。
+    /// 配置变更时整体重注册；单个热键注册失败（被占用）不影响其余。
+    /// </summary>
+    private void RegisterGlobalHotkeys()
+    {
+        if (_hotkeyService is null)
+        {
+            return;
+        }
+
+        _hotkeyService.UnregisterAll();
         _hotkeyService.TryRegister(
             Key.F2,
             ModifierKeys.None,
             () => Dispatcher.Invoke(() => _viewModel.ToggleTrackingCommand.Execute(null)));
+        RegisterMapHotkey(_viewModel.MapHudSettings.HotkeyToggle, _viewModel.ToggleMapHudVisibility);
+        RegisterMapHotkey(_viewModel.MapHudSettings.HotkeyRedraw, _viewModel.RedrawMap);
+        RegisterMapHotkey(_viewModel.MapHudSettings.HotkeyResetPlacement, _viewModel.ResetMapPlacement);
+    }
+
+    private void RegisterMapHotkey(string keyName, Action action)
+    {
+        if (string.IsNullOrWhiteSpace(keyName)
+            || !Enum.TryParse<Key>(keyName, ignoreCase: true, out var key)
+            || key == Key.None)
+        {
+            return;
+        }
+
+        _hotkeyService?.TryRegister(key, ModifierKeys.None, () => Dispatcher.Invoke(action));
+    }
+
+    private void OnMapHudSettingChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName is not (nameof(MapHudSettings.HotkeyToggle)
+            or nameof(MapHudSettings.HotkeyRedraw)
+            or nameof(MapHudSettings.HotkeyResetPlacement)))
+        {
+            return;
+        }
+
+        Dispatcher.BeginInvoke(new Action(RegisterGlobalHotkeys));
     }
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        _overlayWindow = new OverlayWindow(_viewModel);
-        _transmutationReminderWindow = new TransmutationReminderWindow(_viewModel);
-        _pollTimer.Start();
-        _viewModel.PollLive();
+        _overlayWindow ??= new OverlayWindow(_viewModel);
+        _statisticsOverlayWindow ??= new StatisticsOverlayWindow(_viewModel);
+        _transmutationReminderWindow ??= new TransmutationReminderWindow(_viewModel);
+        _mapOverlayWindow ??= new MapOverlayWindow(_viewModel);
+        if (_realtimeCaptureLifecycle.Start())
+        {
+            _viewModel.PollLive();
+        }
+
         await CheckForUpdatesAsync(showResult: false);
     }
 
@@ -319,7 +394,8 @@ public partial class MainWindow : Window
 
     private void Window_Closing(object? sender, CancelEventArgs e)
     {
-        _pollTimer.Stop();
+        _realtimeCaptureLifecycle.Stop();
+        HelltidesWebView.Dispose();
         _viewModel.CancelLayoutEditing();
         _viewModel.Save(false);
         _hotkeyService?.Dispose();
@@ -328,6 +404,12 @@ public partial class MainWindow : Window
         {
             _overlayWindow.AllowClose = true;
             _overlayWindow.Close();
+        }
+
+        if (_statisticsOverlayWindow is not null)
+        {
+            _statisticsOverlayWindow.AllowClose = true;
+            _statisticsOverlayWindow.Close();
         }
 
         if (_transmutationReminderWindow is not null)
@@ -350,6 +432,257 @@ public partial class MainWindow : Window
         var maximized = WindowState == WindowState.Maximized;
         MaxRestoreGlyph.Text = maximized ? "\uE923" : "\uE922";
         WindowFrame.BorderThickness = maximized ? new Thickness(0) : new Thickness(1);
+    }
+
+    private async void ResourcesNavigation_Checked(object sender, RoutedEventArgs e) =>
+        await EnsureHelltidesWebViewAsync();
+
+    private async Task EnsureHelltidesWebViewAsync()
+    {
+        if (_helltidesResource is null)
+        {
+            ShowHelltidesError("地图资源不可用", "内置资源清单未通过校验，已阻止网页加载。");
+            return;
+        }
+
+        if (_isHelltidesWebViewReady)
+        {
+            if (HelltidesWebView.Source is null)
+            {
+                NavigateHelltidesHome();
+            }
+
+            return;
+        }
+
+        if (_isHelltidesWebViewInitializing)
+        {
+            return;
+        }
+
+        _isHelltidesWebViewInitializing = true;
+        ShowHelltidesLoading();
+        try
+        {
+            var userDataFolder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "D4Hub",
+                "WebView2");
+            var environment = await CoreWebView2Environment.CreateAsync(userDataFolder: userDataFolder);
+            var controllerOptions = environment.CreateCoreWebView2ControllerOptions();
+            controllerOptions.IsInPrivateModeEnabled = true;
+            await HelltidesWebView.EnsureCoreWebView2Async(environment, controllerOptions);
+            await ConfigureHelltidesWebViewAsync();
+            _isHelltidesWebViewReady = true;
+            UpdateHelltidesPrivacyStatus();
+            NavigateHelltidesHome();
+        }
+        catch (Exception)
+        {
+            ShowHelltidesError(
+                "内嵌地图无法启动",
+                "请检查网络以及 Microsoft Edge WebView2 Runtime，或使用系统浏览器打开。");
+        }
+        finally
+        {
+            _isHelltidesWebViewInitializing = false;
+        }
+    }
+
+    private async Task ConfigureHelltidesWebViewAsync()
+    {
+        var core = HelltidesWebView.CoreWebView2;
+        core.Settings.AreDevToolsEnabled = false;
+        core.Settings.AreDefaultContextMenusEnabled = false;
+        core.Settings.IsStatusBarEnabled = false;
+        core.Profile.PreferredTrackingPreventionLevel = CoreWebView2TrackingPreventionLevel.Strict;
+        core.AddWebResourceRequestedFilter("*", CoreWebView2WebResourceContext.All);
+        core.WebResourceRequested += (_, args) =>
+        {
+            if (!HelltidesPrivacyPolicy.ShouldBlockRequest(args.Request.Uri))
+            {
+                return;
+            }
+
+            args.Response = core.Environment.CreateWebResourceResponse(
+                Stream.Null,
+                204,
+                "No Content",
+                "Content-Length: 0\r\nCache-Control: no-store");
+            _blockedHelltidesRequestCount++;
+            UpdateHelltidesPrivacyStatus();
+        };
+        await core.AddScriptToExecuteOnDocumentCreatedAsync(HelltidesPrivacyPolicy.DomSanitizerScript);
+
+        core.NavigationStarting += (_, args) =>
+        {
+            if (!IsAllowedHelltidesNavigation(args.Uri))
+            {
+                args.Cancel = true;
+                Dispatcher.BeginInvoke(() => ConfirmAndOpenExternalUri(args.Uri));
+                return;
+            }
+
+            ShowHelltidesLoading();
+        };
+        core.NavigationCompleted += (_, args) =>
+        {
+            if (args.IsSuccess)
+            {
+                HelltidesLoadingOverlay.Visibility = Visibility.Collapsed;
+                HelltidesErrorOverlay.Visibility = Visibility.Collapsed;
+                HelltidesWebView.Visibility = Visibility.Visible;
+                return;
+            }
+
+            ShowHelltidesError("地图暂时无法加载", "Helltides.com 没有完成响应，请稍后重试。");
+        };
+        core.NewWindowRequested += (_, args) =>
+        {
+            args.Handled = true;
+            Dispatcher.BeginInvoke(() => ConfirmAndOpenExternalUri(args.Uri));
+        };
+        core.DownloadStarting += (_, args) =>
+        {
+            args.Cancel = true;
+            Dispatcher.BeginInvoke(() => MessageBox.Show(
+                this,
+                "内嵌地图不允许下载文件。",
+                "DHub 地图工具",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information));
+        };
+        core.PermissionRequested += (_, args) =>
+        {
+            args.State = CoreWebView2PermissionState.Deny;
+            args.Handled = true;
+        };
+    }
+
+    private void UpdateHelltidesPrivacyStatus()
+    {
+        HelltidesPrivacyStatusText.Text =
+            $"隐私模式 · 临时会话 · 已拦截 {_blockedHelltidesRequestCount} 个追踪/广告请求";
+    }
+
+    private void NavigateHelltidesHome()
+    {
+        if (_helltidesResource is null || !_isHelltidesWebViewReady)
+        {
+            return;
+        }
+
+        ShowHelltidesLoading();
+        HelltidesWebView.CoreWebView2.Navigate(_helltidesResource.GetLaunchUri().AbsoluteUri);
+    }
+
+    private bool IsAllowedHelltidesNavigation(string candidate)
+    {
+        if (_helltidesResource is null
+            || !Uri.TryCreate(candidate, UriKind.Absolute, out var uri)
+            || !string.Equals(uri.Scheme, Uri.UriSchemeHttps, StringComparison.Ordinal)
+            || !string.IsNullOrEmpty(uri.UserInfo)
+            || !uri.IsDefaultPort)
+        {
+            return false;
+        }
+
+        var allowedHost = _helltidesResource.GetLaunchUri().IdnHost;
+        return string.Equals(uri.IdnHost, allowedHost, StringComparison.Ordinal);
+    }
+
+    private void ShowHelltidesLoading()
+    {
+        HelltidesWebView.Visibility = Visibility.Collapsed;
+        HelltidesErrorOverlay.Visibility = Visibility.Collapsed;
+        HelltidesLoadingOverlay.Visibility = Visibility.Visible;
+    }
+
+    private void ShowHelltidesError(string title, string message)
+    {
+        HelltidesWebView.Visibility = Visibility.Collapsed;
+        HelltidesLoadingOverlay.Visibility = Visibility.Collapsed;
+        HelltidesErrorTitle.Text = title;
+        HelltidesErrorMessage.Text = message;
+        HelltidesErrorOverlay.Visibility = Visibility.Visible;
+    }
+
+    private async void RetryHelltides_Click(object sender, RoutedEventArgs e)
+    {
+        if (_isHelltidesWebViewReady)
+        {
+            NavigateHelltidesHome();
+            return;
+        }
+
+        await EnsureHelltidesWebViewAsync();
+    }
+
+    private async void ReloadHelltides_Click(object sender, RoutedEventArgs e)
+    {
+        if (!_isHelltidesWebViewReady)
+        {
+            await EnsureHelltidesWebViewAsync();
+            return;
+        }
+
+        ShowHelltidesLoading();
+        HelltidesWebView.Reload();
+    }
+
+    private void OpenHelltidesInBrowser_Click(object sender, RoutedEventArgs e)
+    {
+        if (_helltidesResource is null)
+        {
+            ShowHelltidesError("地图资源不可用", "内置资源清单未通过校验，已阻止网页打开。");
+            return;
+        }
+
+        ConfirmAndOpenExternalUri(_helltidesResource.GetLaunchUri().AbsoluteUri);
+    }
+
+    private void ConfirmAndOpenExternalUri(string candidate)
+    {
+        if (!Uri.TryCreate(candidate, UriKind.Absolute, out var uri)
+            || !string.Equals(uri.Scheme, Uri.UriSchemeHttps, StringComparison.Ordinal)
+            || !string.IsNullOrEmpty(uri.UserInfo)
+            || !uri.IsDefaultPort
+            || uri.HostNameType != UriHostNameType.Dns)
+        {
+            MessageBox.Show(
+                this,
+                "该链接未通过 HTTPS 安全校验，已阻止打开。",
+                "DHub 地图工具",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+            return;
+        }
+
+        var result = MessageBox.Show(
+            this,
+            $"即将在系统默认浏览器打开第三方站点：\n\n{uri.IdnHost}\n\n离开 DHub 后，内容、Cookie 和隐私处理由该站点负责。继续打开？",
+            "打开第三方站点",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Question,
+            MessageBoxResult.No);
+        if (result != MessageBoxResult.Yes)
+        {
+            return;
+        }
+
+        try
+        {
+            Process.Start(new ProcessStartInfo(uri.AbsoluteUri) { UseShellExecute = true });
+        }
+        catch (Exception)
+        {
+            MessageBox.Show(
+                this,
+                "系统浏览器未能打开该地址。",
+                "DHub 地图工具",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+        }
     }
 
     private void SelectScreenshot()
@@ -445,6 +778,72 @@ public partial class MainWindow : Window
         catch (Exception)
         {
             _viewModel.SetCommunityStatus("复制失败，请手动记录页面中的账号或群号。");
+        }
+    }
+
+    private void CopyLootFilter(string code)
+    {
+        try
+        {
+            Clipboard.SetText(code);
+        }
+        catch (Exception)
+        {
+            _viewModel.LootFilters.SetStatus("复制失败，请检查系统剪贴板状态。");
+        }
+    }
+
+    private void MapImageBrowse_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFolderDialog
+        {
+            Title = "选择地图底图目录（每区域一张 {区域key}.png）"
+        };
+        if (dialog.ShowDialog(this) == true)
+        {
+            _viewModel.MapHudSettings.MapImagePath = dialog.FolderName;
+        }
+    }
+
+    private void PoiBrowse_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFileDialog
+        {
+            Title = "选择社区 POI JSON 文件",
+            Filter = "JSON 文件 (*.json)|*.json",
+            CheckFileExists = true
+        };
+        if (dialog.ShowDialog(this) == true)
+        {
+            _viewModel.MapHudSettings.PoiDataPath = dialog.FileName;
+        }
+    }
+
+    private void AudioBrowse_Click(object sender, RoutedEventArgs e)
+    {
+        var slot = (sender as FrameworkElement)?.Tag as string;
+        var dialog = new OpenFileDialog
+        {
+            Title = "选择音频提醒文件",
+            Filter = "音频文件 (*.wav;*.mp3)|*.wav;*.mp3",
+            CheckFileExists = true
+        };
+        if (dialog.ShowDialog(this) != true || slot is null)
+        {
+            return;
+        }
+
+        switch (slot)
+        {
+            case "boss":
+                _viewModel.MapHudSettings.AudioBossPath = dialog.FileName;
+                break;
+            case "elite":
+                _viewModel.MapHudSettings.AudioElitePath = dialog.FileName;
+                break;
+            case "blue":
+                _viewModel.MapHudSettings.AudioBluePath = dialog.FileName;
+                break;
         }
     }
 }

@@ -12,6 +12,8 @@
         Focusable="False"
         Background="Transparent"
         Topmost="True"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
         SourceInitialized="Window_SourceInitialized"
         Closing="Window_Closing">
     <Border Margin="1"

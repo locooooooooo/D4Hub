@@ -25,9 +25,14 @@ $ReleaseDirectory = [IO.Path]::GetFullPath($ReleaseDirectory)
 $toolDirectory = Join-Path $root '.tools\velopack'
 $vpk = Join-Path $toolDirectory 'vpk.exe'
 $releaseNotes = Join-Path $root "docs\release-notes\$Version.md"
+$appIcon = Join-Path $root 'src\D4Hub.App\Assets\AppIcon.ico'
 
 if (-not (Test-Path -LiteralPath $releaseNotes -PathType Leaf)) {
     throw "Release notes are required: $releaseNotes"
+}
+
+if (-not (Test-Path -LiteralPath $appIcon -PathType Leaf)) {
+    throw "Application icon is required: $appIcon"
 }
 
 if (-not [string]::IsNullOrWhiteSpace($UpdateFeedUrl)) {
@@ -95,6 +100,7 @@ try {
         --mainExe D4Hub.exe `
         --packTitle D4Hub `
         --packAuthors loco `
+        --icon $appIcon `
         --releaseNotes $releaseNotes `
         --framework net8-x64-desktop `
         --shortcuts StartMenuRoot,Desktop `

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -11,13 +11,28 @@
     <StartupObject>D4Hub.App.App</StartupObject>
     <Version>1.0.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <EnablePaddleCombatExperiment Condition="'$(EnablePaddleCombatExperiment)' == ''">false</EnablePaddleCombatExperiment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnablePaddleCombatExperiment)' == 'true'">
+    <DefineConstants>$(DefineConstants);PADDLE_COMBAT_EXPERIMENT</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Remove="App.xaml" />
     <Page Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" />
     <PackageReference Include="Velopack" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnablePaddleCombatExperiment)' == 'true'">
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
+    <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.3.1.70" />
+    <PackageReference Include="Sdcb.PaddleOCR" Version="3.3.1" />
+    <PackageReference Include="Sdcb.PaddleOCR.Models.Local" Version="3.3.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnablePaddleCombatExperiment)' != 'true'">
+    <Compile Remove="Services\PaddleCombatTextSpottingEngine.cs" />
   </ItemGroup>
   <ItemGroup Condition="'$(UpdateFeedUrl)' != ''">
     <RuntimeHostConfigurationOption Include="D4Hub.UpdateFeedUrl" Value="$(UpdateFeedUrl)" />
@@ -26,11 +41,49 @@
     <ProjectReference Include="..\D4Hub.Core\D4Hub.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\AppIcon.ico" />
     <Resource Include="Assets\Hud\*.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\library\**\*.json">
       <Link>library\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\library\combat-text-models\**\*.onnx">
+      <Link>library\combat-text-models\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\Diablo4Companion\LICENSE">
+      <Link>third_party\Diablo4Companion\LICENSE</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\Diablo4Companion\NOTICE.md">
+      <Link>third_party\Diablo4Companion\NOTICE.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\Diablo4Companion\SOURCE_MANIFEST.json">
+      <Link>third_party\Diablo4Companion\SOURCE_MANIFEST.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\Diablo4Companion\visual-assets\VISUAL_ASSETS_MANIFEST.json">
+      <Link>third_party\Diablo4Companion\visual-assets\VISUAL_ASSETS_MANIFEST.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\PaddleOCR\NOTICE.md"
+             Condition="'$(EnablePaddleCombatExperiment)' == 'true'">
+      <Link>third_party\PaddleOCR\NOTICE.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\third_party\PaddleOCR\LICENSE-APACHE-2.0.txt"
+             Condition="'$(EnablePaddleCombatExperiment)' == 'true'">
+      <Link>third_party\PaddleOCR\LICENSE-APACHE-2.0.txt</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

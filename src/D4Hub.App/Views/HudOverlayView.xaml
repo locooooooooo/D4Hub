@@ -5,15 +5,45 @@
              xmlns:views="clr-namespace:D4Hub.App.Views"
              x:Name="Root"
              IsHitTestVisible="{Binding IsEditing, ElementName=Root}"
+             SnapsToDevicePixels="True"
+             UseLayoutRounding="True"
              Background="Transparent">
     <UserControl.Resources>
+        <SolidColorBrush x:Key="HudSurfaceBrush"
+                         Color="{StaticResource ColorSurface}"
+                         Opacity="0.88" />
+        <SolidColorBrush x:Key="HudEditSurfaceBrush"
+                         Color="{StaticResource ColorSurfaceElevated}"
+                         Opacity="0.72" />
+        <SolidColorBrush x:Key="HudEditHoverBrush"
+                         Color="{StaticResource ColorSuccess}"
+                         Opacity="0.18" />
+
+        <Style x:Key="HudRuleFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Margin="-6"
+                                BorderBrush="{StaticResource TextPrimaryBrush}"
+                                BorderThickness="1"
+                                CornerRadius="4" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="AffixText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#FFCFD5DB" />
+            <Setter Property="FontFamily" Value="{StaticResource AppFontFamily}" />
             <Setter Property="FontSize" Value="11.5" />
             <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="LineHeight" Value="14" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="TextWrapping" Value="NoWrap" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+            <Setter Property="ClipToBounds" Value="True" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+            <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="#FF000000"
@@ -113,6 +143,7 @@
         </Style>
 
         <Style x:Key="AffixSourceBadgeText" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource AppFontFamily}" />
             <Setter Property="FontSize" Value="7.5" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -124,35 +155,66 @@
             <Setter Property="Height" Value="11" />
             <Setter Property="Margin" Value="2,0,0,0" />
             <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="IsHitTestVisible" Value="False" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
         </Style>
     </UserControl.Resources>
 
-    <Viewbox Stretch="Uniform">
+    <Viewbox Stretch="Uniform"
+             StretchDirection="Both"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch">
         <Canvas x:Name="DesignCanvas"
                 Width="695"
                 Height="1060"
                 Background="Transparent"
+                ClipToBounds="True"
                 MouseMove="DesignCanvas_MouseMove"
                 MouseLeftButtonUp="DesignCanvas_MouseLeftButtonUp"
                 LostMouseCapture="DesignCanvas_LostMouseCapture">
-            <Border Canvas.Left="238"
+            <Border x:Name="ProfileHeader"
+                    Canvas.Left="238"
                     Canvas.Top="12"
                     Width="277"
                     Height="32"
-                    Background="#C9171512"
-                    BorderBrush="#8C77BBA7"
+                    Background="{StaticResource HudSurfaceBrush}"
+                    BorderBrush="{StaticResource SuccessBrush}"
                     BorderThickness="1"
                     CornerRadius="5"
                     Padding="10,0">
-                <TextBlock Text="{Binding ProfileName, ElementName=Root}"
-                           VerticalAlignment="Center"
-                           FontSize="13"
-                           FontWeight="SemiBold"
-                           Foreground="White"
-                           TextAlignment="Center"
-                           TextTrimming="CharacterEllipsis" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding ProfileName, ElementName=Root}"
+                               VerticalAlignment="Center"
+                               FontFamily="{StaticResource AppFontFamily}"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               TextAlignment="Center"
+                               TextTrimming="CharacterEllipsis" />
+                    <StackPanel x:Name="EditingIndicator"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Visibility="{Binding IsEditing, ElementName=Root, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Ellipse Width="5"
+                                 Height="5"
+                                 Margin="0,0,4,0"
+                                 Fill="{StaticResource SuccessBrush}" />
+                        <TextBlock Text="调整中"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{StaticResource AppFontFamily}"
+                                   FontSize="9"
+                                   FontWeight="SemiBold"
+                                   Foreground="{StaticResource TextSecondaryBrush}" />
+                    </StackPanel>
+                </Grid>
             </Border>
 
             <ItemsControl ItemsSource="{Binding Rules, ElementName=Root}">
@@ -175,15 +237,23 @@
                 </ItemsControl.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Width="{Binding DisplayWidth}"
+                        <Grid x:Name="RuleRoot"
+                              Width="{Binding DisplayWidth}"
                               Background="Transparent"
-                              MouseLeftButtonDown="Rule_MouseLeftButtonDown">
+                              AutomationProperties.Name="{Binding SlotLabel, StringFormat={}{0} 词缀位置}"
+                              FocusVisualStyle="{StaticResource HudRuleFocusVisual}"
+                              MouseLeftButtonDown="Rule_MouseLeftButtonDown"
+                              PreviewKeyDown="Rule_PreviewKeyDown">
                             <ItemsControl ItemsSource="{Binding DisplayLines}"
-                                          Width="{Binding DisplayWidth}">
+                                          Width="{Binding DisplayWidth}"
+                                          ClipToBounds="True"
+                                          IsHitTestVisible="False">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Grid Width="{Binding DataContext.DisplayWidth, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
-                                          Height="14">
+                                          Height="14"
+                                          ClipToBounds="True"
+                                          SnapsToDevicePixels="True">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
@@ -274,33 +344,38 @@
                             </ItemsControl>
                             <Border x:Name="EditFrame"
                                     Margin="-5"
-                                    Background="#20211F1B"
-                                    BorderBrush="#FF77BBA7"
+                                    Background="{StaticResource HudEditSurfaceBrush}"
+                                    BorderBrush="{StaticResource SuccessBrush}"
                                     BorderThickness="1"
-                                    CornerRadius="3"
+                                    CornerRadius="4"
                                     IsHitTestVisible="False"
                                     Visibility="Collapsed">
                                 <Border HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
-                                        Margin="0,-17,-1,0"
+                                        MaxWidth="96"
+                                        Margin="0"
                                         Padding="4,1"
-                                        Background="#E5211F1B"
-                                        BorderBrush="#FF77BBA7"
-                                        BorderThickness="1"
-                                        CornerRadius="2">
+                                        Background="{StaticResource SurfaceElevatedBrush}"
+                                        CornerRadius="0,3,0,3">
                                     <TextBlock Text="{Binding SlotLabel}"
                                                Foreground="White"
+                                               FontFamily="{StaticResource AppFontFamily}"
                                                FontSize="9"
-                                               FontWeight="SemiBold" />
+                                               FontWeight="SemiBold"
+                                               TextTrimming="CharacterEllipsis" />
                                 </Border>
                             </Border>
                             <Grid.Style>
                                 <Style TargetType="Grid">
                                     <Setter Property="Cursor" Value="Arrow" />
+                                    <Setter Property="Focusable" Value="False" />
+                                    <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding IsEditing, RelativeSource={RelativeSource AncestorType={x:Type views:HudOverlayView}}}"
                                                      Value="True">
                                             <Setter Property="Cursor" Value="SizeAll" />
+                                            <Setter Property="Focusable" Value="True" />
+                                            <Setter Property="KeyboardNavigation.IsTabStop" Value="True" />
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -322,6 +397,16 @@
                                     </BeginStoryboard>
                                 </DataTrigger.EnterActions>
                             </DataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEditing, RelativeSource={RelativeSource AncestorType={x:Type views:HudOverlayView}}}"
+                                               Value="True" />
+                                    <Condition Binding="{Binding IsMouseOver, ElementName=RuleRoot}"
+                                               Value="True" />
+                                </MultiDataTrigger.Conditions>
+                                <Setter TargetName="EditFrame" Property="Background" Value="{StaticResource HudEditHoverBrush}" />
+                                <Setter TargetName="EditFrame" Property="BorderThickness" Value="2" />
+                            </MultiDataTrigger>
                         </DataTemplate.Triggers>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

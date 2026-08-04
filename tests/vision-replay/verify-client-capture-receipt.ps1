@@ -6,8 +6,15 @@ $ErrorActionPreference = "Stop"
 
 $repositoryRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $solution = Join-Path $repositoryRoot "D4Hub.sln"
-$fixtureExecutable = Join-Path $repositoryRoot "tests\D4Hub.GameWindowFixture\bin\Release\net8.0-windows\D4Hub.GameWindowFixture.exe"
-$probeExecutable = Join-Path $repositoryRoot "tests\D4Hub.VisionProbe\bin\Release\net8.0-windows\D4Hub.VisionProbe.exe"
+$usesArtifactsOutput = $env:UseArtifactsOutput -eq 'true' -and -not [string]::IsNullOrWhiteSpace($env:ArtifactsPath)
+if ($usesArtifactsOutput) {
+    $fixtureExecutable = Join-Path $env:ArtifactsPath "bin\D4Hub.GameWindowFixture\release\D4Hub.GameWindowFixture.exe"
+    $probeExecutable = Join-Path $env:ArtifactsPath "bin\D4Hub.VisionProbe\release\D4Hub.VisionProbe.exe"
+}
+else {
+    $fixtureExecutable = Join-Path $repositoryRoot "tests\D4Hub.GameWindowFixture\bin\Release\net8.0-windows\D4Hub.GameWindowFixture.exe"
+    $probeExecutable = Join-Path $repositoryRoot "tests\D4Hub.VisionProbe\bin\Release\net8.0-windows10.0.19041.0\D4Hub.VisionProbe.exe"
+}
 $fixtureImage = Join-Path $repositoryRoot "src\D4Hub.App\Assets\Hud\Source\marker-masterworked-source.png"
 $temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("d4hub-v10-e03-" + [Guid]::NewGuid().ToString("N"))
 $fixtureTitle = [System.Text.Encoding]::UTF8.GetString(

@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "regions": [
+    {
+      "key": "dry_steppes",
+      "name": "干旱草原",
+      "markers": [
+        { "category": "chest", "x": 0.22, "y": 0.15 },
+        { "category": "chest", "x": 0.28, "y": 0.18 },
+        { "category": "chest", "x": 0.25, "y": 0.22 },
+        { "category": "elite", "x": 0.35, "y": 0.18, "label": "精锐宝箱" },
+        { "category": "elite", "x": 0.44, "y": 0.18, "label": "精锐宝箱" },
+        { "category": "event", "x": 0.18, "y": 0.18 },
+        { "category": "event", "x": 0.38, "y": 0.14 },
+        { "category": "ritual", "x": 0.24, "y": 0.28 },
+        { "category": "ritual", "x": 0.36, "y": 0.32 },
+        { "category": "dungeon", "x": 0.12, "y": 0.15 },
+        { "category": "dungeon", "x": 0.20, "y": 0.12 }
+      ]
+    },
+    {
+      "key": "fractured_peaks",
+      "name": "碎峰岭",
+      "markers": [
+        { "category": "chest", "x": 0.20, "y": 0.20 },
+        { "category": "chest", "x": 0.28, "y": 0.18 },
+        { "category": "elite", "x": 0.30, "y": 0.15, "label": "精锐宝箱" },
+        { "category": "event", "x": 0.18, "y": 0.25 },
+        { "category": "ritual", "x": 0.25, "y": 0.28 },
+        { "category": "dungeon", "x": 0.15, "y": 0.12 }
+      ]
+    }
+  ]
+}

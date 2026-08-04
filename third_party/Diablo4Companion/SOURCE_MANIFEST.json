@@ -1,0 +1,131 @@
+{
+  "$schema": "d4hub.third-party-source-manifest.v1",
+  "upstream": {
+    "repository": "https://github.com/josdemmers/Diablo4Companion",
+    "gitTree": "b0bfad89a7474676ad9b291c488603fd0a44e52c",
+    "archiveSha256": "70BE6436C02D95DBC87CE5BEAF1F34C7F4B45DF2A75ED07A9E3772F6164821EE",
+    "license": "MIT",
+    "retrievedForAudit": "2026-07-27"
+  },
+  "copiedFiles": [
+    {
+      "source": "LICENSE",
+      "destination": "third_party/Diablo4Companion/LICENSE",
+      "copyMode": "verbatim",
+      "sourceSha256": "1921C035859329AE2A2202CE3861A0BC0E173C0FC0AAD7D7A98B53ABAF244F06",
+      "destinationSha256": "1921C035859329AE2A2202CE3861A0BC0E173C0FC0AAD7D7A98B53ABAF244F06"
+    },
+    {
+      "source": "downloads/systempresets/images/1080p_SMF/config.json",
+      "destination": "third_party/Diablo4Companion/calibration/1080p_SMF.json",
+      "copyMode": "semantic-json-copy-reformatted",
+      "sourceSha256": "4065C7B67C5744BC6EECE281DCD688C6CB69D1C9B2EF4EF79BB776E45B769EBF",
+      "destinationSha256": "96544033B35CA2C40DD57A8A34500BB8E743215E974D3B1FCCA813991234BDE7"
+    },
+    {
+      "source": "downloads/systempresets/images/1440p_HSF/config.json",
+      "destination": "third_party/Diablo4Companion/calibration/1440p_HSF.json",
+      "copyMode": "semantic-json-copy-reformatted",
+      "sourceSha256": "14302C2A25E3492B4DF6D96BA26132424B8A84DAEAA662F0D3F7093801FFF23A",
+      "destinationSha256": "3C9B158F17CE0D57D2407FD85EED894ABDFF6DD83A6BC65F50032CD63F70D9D4"
+    },
+    {
+      "source": "downloads/systempresets/images/1440p_SMF_zhCN/config.json",
+      "destination": "third_party/Diablo4Companion/calibration/1440p_SMF_zhCN.json",
+      "copyMode": "semantic-json-copy-reformatted",
+      "sourceSha256": "200D2848B8A490375001CD775B895B6A11055C49B8431F3E4712F82B69AA3B8E",
+      "destinationSha256": "E8F2556A20529A27D24E21C0E464DA923D36C5B731C5FB448C980517608F8AAF"
+    },
+    {
+      "source": "downloads/systempresets/images/2160p_HSF/config.json",
+      "destination": "third_party/Diablo4Companion/calibration/2160p_HSF.json",
+      "copyMode": "semantic-json-copy-reformatted",
+      "sourceSha256": "27503506E164759DF4F7DFF0739E798B20FF6B042EE3E3F8CB62207D05E6AC35",
+      "destinationSha256": "F2EC294BA80D7F11205D8485026F99544E5992EB73DFACDA35B8548D0138A52A"
+    }
+  ],
+  "visualAssetsManifest": {
+    "path": "third_party/Diablo4Companion/visual-assets/VISUAL_ASSETS_MANIFEST.json",
+    "status": "source-only-research-assets",
+    "releaseInclusion": "excluded-from-build-and-publish",
+    "assetCount": 407,
+    "totalBytes": 15865651,
+    "sha256": "92CF6494155314C7C2571656D17A5A80EC3592311461D811335D9B6355029334"
+  },
+  "sourceEvidence": [
+    {
+      "source": "downloads/systempresets/systempresets.json",
+      "purpose": "resolution, display mode, font size, readiness, and language mapping",
+      "sha256": "44830CF4FF8DA34673F7542E1E50D9A4A73BD4A733FD992679A64266859D0689"
+    },
+    {
+      "source": "D4Companion.Entities/SettingsD4.cs",
+      "purpose": "default text match and normalized squared-difference thresholds",
+      "sha256": "FD4954E7EFED1B55838340A665AB8F687C102C77E6C502D2DF6D6392A1C00E14"
+    }
+  ],
+  "d4hubDerivedFiles": [
+    {
+      "path": "third_party/Diablo4Companion/NOTICE.md",
+      "sha256": "5B209DABF95D55114DC780FBA9E26DE437CE953384B47F4B07AB0F37C8388072"
+    },
+    {
+      "path": "library/vision-presets/diablo4companion-baselines.v1.json",
+      "sha256": "190113E970C9660167DE84875AB325686C25F657C0461DC009544D132F22A6F9"
+    },
+    {
+      "path": "library/vision-presets/README.md",
+      "sha256": "48F5A7EFBA11499D7A3FDD7B81742EF0EEC329BF56710E7A4463EC3691FB4E96"
+    },
+    {
+      "path": "third_party/Diablo4Companion/visual-assets/VISUAL_ASSETS_MANIFEST.json",
+      "sha256": "92CF6494155314C7C2571656D17A5A80EC3592311461D811335D9B6355029334"
+    }
+  ],
+  "auditCounts": {
+    "calibrationConfigJson": {
+      "inspected": 10,
+      "copied": 4,
+      "skipped": 6
+    },
+    "visualAssets": {
+      "inspected": 407,
+      "copied": 407,
+      "skipped": 0,
+      "presetPngIncludedInCount": 289
+    },
+    "gameCatalogJson": {
+      "inspected": 112,
+      "copied": 0,
+      "skipped": 112
+    },
+    "presetZipArchives": {
+      "inspected": 10,
+      "copied": 0,
+      "skipped": 10
+    },
+    "tesseractTrainedData": {
+      "inspected": 13,
+      "copied": 0,
+      "skipped": 13
+    }
+  },
+  "exclusions": [
+    {
+      "category": "visual-assets",
+      "reason": "Imported into a source-only research directory with per-file hashes; the runtime and publish pipeline exclude these game-derived images because the MIT notice does not establish underlying game-image redistribution rights."
+    },
+    {
+      "category": "game-data-catalogs",
+      "reason": "Not needed for calibration, and underlying game localization/data provenance is not established by the MIT notice."
+    },
+    {
+      "category": "preset-archives",
+      "reason": "Archives contain excluded game-derived PNG templates."
+    },
+    {
+      "category": "tesseract-trained-data",
+      "reason": "Not needed by the current Windows OCR path and requires separate third-party license accounting."
+    }
+  ]
+}

@@ -182,6 +182,8 @@ public sealed class OverlaySettings : INotifyPropertyChanged
     private double _panelConfidenceThreshold = 0.55;
     private double _buildConfidenceThreshold = 0.72;
     private HudDisplayMode _hudDisplayMode = HudDisplayMode.Compact;
+    private bool _damageStatisticsHudEnabled = true;
+    private bool _statisticsHudCompact;
 
     public double Opacity
     {
@@ -230,6 +232,21 @@ public sealed class OverlaySettings : INotifyPropertyChanged
         get => _hudDisplayMode;
         set => SetField(ref _hudDisplayMode, value);
     }
+
+    public bool DamageStatisticsHudEnabled
+    {
+        get => _damageStatisticsHudEnabled;
+        set => SetField(ref _damageStatisticsHudEnabled, value);
+    }
+
+    public bool StatisticsHudCompact
+    {
+        get => _statisticsHudCompact;
+        set => SetField(ref _statisticsHudCompact, value);
+    }
+
+    /// <summary>开荒地图 HUD 持久化设置；旧存档缺失时由 ViewModel 兜底创建。</summary>
+    public MapHudSettings? MapHud { get; set; } = new();
 
     public event PropertyChangedEventHandler? PropertyChanged;
 

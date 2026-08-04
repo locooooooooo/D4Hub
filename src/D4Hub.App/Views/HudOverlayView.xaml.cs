@@ -33,6 +33,7 @@ public partial class HudOverlayView : UserControl
         new PropertyMetadata(false));
 
     private EquipmentAffixRule? _draggedRule;
+    private FrameworkElement? _draggedElement;
     private Point _dragOffset;
 
     public HudOverlayView()
@@ -73,7 +74,9 @@ public partial class HudOverlayView : UserControl
 
         var point = e.GetPosition(DesignCanvas);
         _draggedRule = rule;
+        _draggedElement = (FrameworkElement)sender;
         _dragOffset = new Point(point.X - rule.AnchorX, point.Y - rule.AnchorY);
+        _draggedElement.Focus();
         DesignCanvas.CaptureMouse();
         e.Handled = true;
     }
@@ -86,27 +89,68 @@ public partial class HudOverlayView : UserControl
         }
 
         var point = e.GetPosition(DesignCanvas);
-        _draggedRule.AnchorX = Math.Round(Math.Clamp(
+        MoveRule(
+            _draggedRule,
             point.X - _dragOffset.X,
-            0,
-            HudLayoutMetrics.DesignWidth - _draggedRule.DisplayWidth));
-        _draggedRule.AnchorY = Math.Round(Math.Clamp(
             point.Y - _dragOffset.Y,
-            46,
-            HudLayoutMetrics.DesignHeight - 20));
+            _draggedElement?.ActualHeight ?? 0);
+        e.Handled = true;
+    }
+
+    private void Rule_PreviewKeyDown(object sender, KeyEventArgs e)
+    {
+        if (!IsEditing || sender is not FrameworkElement { DataContext: EquipmentAffixRule rule } element)
+        {
+            return;
+        }
+
+        var step = Keyboard.Modifiers.HasFlag(ModifierKeys.Shift) ? 10 : 1;
+        var (deltaX, deltaY) = e.Key switch
+        {
+            Key.Left => (-step, 0),
+            Key.Right => (step, 0),
+            Key.Up => (0, -step),
+            Key.Down => (0, step),
+            _ => (0, 0)
+        };
+        if (deltaX == 0 && deltaY == 0)
+        {
+            return;
+        }
+
+        MoveRule(rule, rule.AnchorX + deltaX, rule.AnchorY + deltaY, element.ActualHeight);
         e.Handled = true;
     }
 
     private void DesignCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) => EndDrag();
 
-    private void DesignCanvas_LostMouseCapture(object sender, MouseEventArgs e) => _draggedRule = null;
+    private void DesignCanvas_LostMouseCapture(object sender, MouseEventArgs e)
+    {
+        _draggedRule = null;
+        _draggedElement = null;
+    }
 
     private void EndDrag()
     {
         _draggedRule = null;
+        _draggedElement = null;
         if (DesignCanvas.IsMouseCaptured)
         {
             DesignCanvas.ReleaseMouseCapture();
         }
+    }
+
+    private static void MoveRule(EquipmentAffixRule rule, double x, double y, double renderedHeight)
+    {
+        var width = double.IsFinite(rule.DisplayWidth)
+            ? Math.Clamp(rule.DisplayWidth, 1, HudLayoutMetrics.DesignWidth)
+            : 1;
+        var height = double.IsFinite(renderedHeight)
+            ? Math.Clamp(renderedHeight, 20, HudLayoutMetrics.DesignHeight - 46)
+            : 20;
+        var maxX = Math.Max(0, HudLayoutMetrics.DesignWidth - width);
+        var maxY = Math.Max(46, HudLayoutMetrics.DesignHeight - height - 5);
+        rule.AnchorX = Math.Round(Math.Clamp(x, 0, maxX));
+        rule.AnchorY = Math.Round(Math.Clamp(y, 46, maxY));
     }
 }

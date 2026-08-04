@@ -7,6 +7,8 @@ public readonly record struct TransmutationSceneDetection(
 
 public sealed class TransmutationSceneDetector
 {
+    private const double DetectionThreshold = 0.74;
+
     public TransmutationSceneDetection Detect(PixelFrame frame)
     {
         var recipe = FindSelectedRecipe(frame);
@@ -19,7 +21,7 @@ public sealed class TransmutationSceneDetector
         }
 
         return new TransmutationSceneDetection(
-            recipe.Value.Confidence >= 0.82,
+            recipe.Value.Confidence >= DetectionThreshold,
             recipe.Value.Confidence,
             recipe.Value.Bounds);
     }
@@ -70,7 +72,7 @@ public sealed class TransmutationSceneDetector
                 group.Top / (double)frame.Height,
                 (group.Right - group.Left + 2d) / frame.Width,
                 (group.Bottom - group.Top + 2d) / frame.Height);
-            var confidence = ScoreRecipeBounds(bounds, group.Density, group.LineCount);
+            var confidence = ScoreRecipeBounds(frame, bounds, group);
             if (confidence < 0.45 || (best is not null && confidence <= best.Value.Confidence))
             {
                 continue;
@@ -106,15 +108,97 @@ public sealed class TransmutationSceneDetector
         yield return group;
     }
 
-    private static double ScoreRecipeBounds(NormalizedRect bounds, double density, int lineCount)
+    private static double ScoreRecipeBounds(PixelFrame frame, NormalizedRect bounds, RedGroup group)
     {
-        var widthScore = RangeScore(bounds.Width, 0.13, 0.38);
-        var heightScore = RangeScore(bounds.Height, 0.025, 0.12);
-        var positionScore = bounds.X >= 0.55 && bounds.X <= 0.80 && bounds.Y >= 0.12 && bounds.Y <= 0.82
-            ? 1
-            : 0;
-        var rowScore = Math.Clamp(lineCount / 14d, 0, 1);
-        return density * 0.34 + widthScore * 0.18 + heightScore * 0.18 + positionScore * 0.18 + rowScore * 0.12;
+        var widthScore = RangeScore(bounds.Width, 0.20, 0.36);
+        var heightScore = RangeScore(bounds.Height, 0.032, 0.09);
+        var horizontalScore = RangeScore(bounds.X, 0.61, 0.76);
+        var verticalScore = RangeScore(bounds.Y, 0.20, 0.54);
+        if (widthScore == 0 || heightScore == 0 || horizontalScore == 0 || verticalScore == 0)
+        {
+            return 0;
+        }
+
+        var rowScore = Math.Clamp(group.LineCount / Math.Max(10d, frame.Height * 0.035), 0, 1);
+        var contextScore = ScoreRecipeListContext(frame, bounds);
+
+        return group.Density * 0.13
+            + widthScore * 0.11
+            + heightScore * 0.10
+            + horizontalScore * 0.10
+            + verticalScore * 0.10
+            + rowScore * 0.08
+            + group.HorizontalStability * 0.16
+            + contextScore * 0.22;
+    }
+
+    private static double ScoreRecipeListContext(PixelFrame frame, NormalizedRect bounds)
+    {
+        var left = (int)Math.Round(bounds.X * frame.Width);
+        var right = (int)Math.Round((bounds.X + bounds.Width) * frame.Width);
+        var top = (int)Math.Round(bounds.Y * frame.Height);
+        var bottom = (int)Math.Round((bounds.Y + bounds.Height) * frame.Height);
+        var height = Math.Max(1, bottom - top);
+
+        var selected = MeasureRegion(frame, left, top, right, bottom);
+        var above = MeasureRegion(frame, left, top - height * 3, right, top - Math.Max(2, height / 5));
+        var below = MeasureRegion(frame, left, bottom + Math.Max(2, height / 5), right, bottom + height * 2);
+
+        var selectedScore = Math.Clamp((selected.CrimsonRatio - 0.16) / 0.34, 0, 1);
+        var adjacentNeutralDark = (above.NeutralDarkRatio + below.NeutralDarkRatio) / 2;
+        var adjacentScore = Math.Clamp((adjacentNeutralDark - 0.25) / 0.45, 0, 1);
+        var brightPenalty = Math.Clamp((above.BrightWarmRatio + below.BrightWarmRatio - 0.24) / 0.40, 0, 1);
+
+        return Math.Clamp(selectedScore * 0.45 + adjacentScore * 0.55 - brightPenalty * 0.35, 0, 1);
+    }
+
+    private static RegionMeasure MeasureRegion(PixelFrame frame, int left, int top, int right, int bottom)
+    {
+        left = Math.Clamp(left, 0, frame.Width);
+        right = Math.Clamp(right, 0, frame.Width);
+        top = Math.Clamp(top, 0, frame.Height);
+        bottom = Math.Clamp(bottom, 0, frame.Height);
+        if (right <= left || bottom <= top)
+        {
+            return default;
+        }
+
+        var step = Math.Max(1, Math.Min(right - left, bottom - top) / 48);
+        var samples = 0;
+        var crimson = 0;
+        var neutralDark = 0;
+        var brightWarm = 0;
+        for (var y = top; y < bottom; y += step)
+        {
+            for (var x = left; x < right; x += step)
+            {
+                var (blue, green, red) = GetColor(frame, x, y);
+                var maximum = Math.Max(red, Math.Max(green, blue));
+                var minimum = Math.Min(red, Math.Min(green, blue));
+                samples++;
+                if (red >= 105 && red - green >= 35 && red - blue >= 42)
+                {
+                    crimson++;
+                }
+
+                if (maximum <= 125 && maximum - minimum <= 55)
+                {
+                    neutralDark++;
+                }
+
+                if (red >= 175 && green >= 85 && red - blue >= 65)
+                {
+                    brightWarm++;
+                }
+            }
+        }
+
+        return samples == 0
+            ? default
+            : new RegionMeasure(
+                crimson / (double)samples,
+                neutralDark / (double)samples,
+                brightWarm / (double)samples);
     }
 
     private static double RangeScore(double value, double minimum, double maximum)
@@ -173,11 +257,20 @@ public sealed class TransmutationSceneDetector
 
     private readonly record struct Candidate(NormalizedRect Bounds, double Confidence);
 
+    private readonly record struct RegionMeasure(
+        double CrimsonRatio,
+        double NeutralDarkRatio,
+        double BrightWarmRatio);
+
     private readonly record struct RedLine(int Y, int Left, int Right, double Density);
 
     private sealed class RedGroup
     {
         private double _densityTotal;
+        private double _leftTotal;
+        private double _rightTotal;
+        private double _leftSquaredTotal;
+        private double _rightSquaredTotal;
 
         public RedGroup(RedLine line)
         {
@@ -185,6 +278,10 @@ public sealed class TransmutationSceneDetector
             Left = line.Left;
             Right = line.Right;
             _densityTotal = line.Density;
+            _leftTotal = line.Left;
+            _rightTotal = line.Right;
+            _leftSquaredTotal = line.Left * (double)line.Left;
+            _rightSquaredTotal = line.Right * (double)line.Right;
             LineCount = 1;
         }
 
@@ -194,6 +291,16 @@ public sealed class TransmutationSceneDetector
         public int Right { get; private set; }
         public int LineCount { get; private set; }
         public double Density => _densityTotal / LineCount;
+        public double HorizontalStability
+        {
+            get
+            {
+                var width = Math.Max(1, Right - Left + 2);
+                var leftDeviation = StandardDeviation(_leftTotal, _leftSquaredTotal, LineCount);
+                var rightDeviation = StandardDeviation(_rightTotal, _rightSquaredTotal, LineCount);
+                return 1 - Math.Clamp((leftDeviation + rightDeviation) / (width * 0.22), 0, 1);
+            }
+        }
 
         public void Add(RedLine line)
         {
@@ -201,7 +308,17 @@ public sealed class TransmutationSceneDetector
             Left = Math.Min(Left, line.Left);
             Right = Math.Max(Right, line.Right);
             _densityTotal += line.Density;
+            _leftTotal += line.Left;
+            _rightTotal += line.Right;
+            _leftSquaredTotal += line.Left * (double)line.Left;
+            _rightSquaredTotal += line.Right * (double)line.Right;
             LineCount++;
+        }
+
+        private static double StandardDeviation(double total, double squaredTotal, int count)
+        {
+            var mean = total / count;
+            return Math.Sqrt(Math.Max(0, squaredTotal / count - mean * mean));
         }
     }
 }

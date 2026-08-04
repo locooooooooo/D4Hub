@@ -1,0 +1,155 @@
+{
+  "$schema": "d4hub.vision-presets.v1",
+  "catalogId": "diablo4companion-reference-baselines",
+  "catalogStatus": "reference-only-requires-local-validation",
+  "origin": {
+    "repository": "https://github.com/josdemmers/Diablo4Companion",
+    "gitTree": "b0bfad89a7474676ad9b291c488603fd0a44e52c",
+    "license": "MIT",
+    "notice": "../../third_party/Diablo4Companion/NOTICE.md"
+  },
+  "algorithmDefaults": {
+    "minimumTextMatchFraction": 0.75,
+    "templateSimilarityMetric": "normalized-squared-difference",
+    "templateSimilarityMaximumExclusive": 0.05,
+    "source": "D4Companion.Entities/SettingsD4.cs",
+    "runtimeAdoption": "candidate-only"
+  },
+  "profiles": [
+    {
+      "id": "upstream-1080p-smf-sdr",
+      "status": "candidate-only",
+      "referenceWidths": [1920],
+      "referenceHeight": 1080,
+      "displayMode": "sdr",
+      "fontSize": "medium",
+      "languageTagsMarkedReadyUpstream": [
+        "de-DE",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "fr-FR",
+        "pl-PL",
+        "pt-BR",
+        "ru-RU"
+      ],
+      "brightnessThreshold": {
+        "minimum": 70,
+        "maximum": 255
+      },
+      "tooltip": {
+        "width": 375,
+        "typeAreaHeight": 200,
+        "affixTopOffset": 8,
+        "affixBottomOffset": 8,
+        "aspectWidthOffset": 18,
+        "aspectTopOffset": 8
+      },
+      "paragon": {
+        "nodeSize": 29,
+        "collapsedNodeSize": 16,
+        "collapsedLeftOffset": -200,
+        "collapsedTopOffset": -50
+      },
+      "sourceConfig": "../../third_party/Diablo4Companion/calibration/1080p_SMF.json"
+    },
+    {
+      "id": "upstream-1440p-hsf-hdr",
+      "status": "candidate-only",
+      "referenceWidths": [2560, 3440],
+      "referenceHeight": 1440,
+      "displayMode": "hdr",
+      "fontSize": "small",
+      "languageTagsMarkedReadyUpstream": [
+        "de-DE",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "pl-PL",
+        "pt-BR",
+        "ru-RU"
+      ],
+      "brightnessThreshold": {
+        "minimum": 90,
+        "maximum": 255
+      },
+      "tooltip": {
+        "width": 500,
+        "typeAreaHeight": 200,
+        "affixTopOffset": 10,
+        "affixBottomOffset": 10,
+        "aspectWidthOffset": 18,
+        "aspectTopOffset": 10
+      },
+      "paragon": {
+        "nodeSize": 40,
+        "collapsedNodeSize": 23,
+        "collapsedLeftOffset": -200,
+        "collapsedTopOffset": -50
+      },
+      "sourceConfig": "../../third_party/Diablo4Companion/calibration/1440p_HSF.json"
+    },
+    {
+      "id": "upstream-1440p-smf-zhcn-sdr",
+      "status": "candidate-only",
+      "referenceWidths": [2560, 3440],
+      "referenceHeight": 1440,
+      "displayMode": "sdr",
+      "fontSize": "medium",
+      "languageTagsMarkedReadyUpstream": ["zh-CN"],
+      "brightnessThreshold": {
+        "minimum": 60,
+        "maximum": 255
+      },
+      "tooltip": {
+        "width": 500,
+        "typeAreaHeight": 200,
+        "affixTopOffset": 12,
+        "affixBottomOffset": 12,
+        "aspectWidthOffset": 18,
+        "aspectTopOffset": 12
+      },
+      "paragon": {
+        "nodeSize": 40,
+        "collapsedNodeSize": 23,
+        "collapsedLeftOffset": -200,
+        "collapsedTopOffset": -50
+      },
+      "sourceConfig": "../../third_party/Diablo4Companion/calibration/1440p_SMF_zhCN.json"
+    },
+    {
+      "id": "upstream-2160p-hsf-hdr",
+      "status": "candidate-only",
+      "referenceWidths": [3840],
+      "referenceHeight": 2160,
+      "displayMode": "hdr",
+      "fontSize": "small",
+      "languageTagsMarkedReadyUpstream": [
+        "de-DE",
+        "en-US",
+        "pl-PL",
+        "pt-BR",
+        "ru-RU"
+      ],
+      "brightnessThreshold": {
+        "minimum": 100,
+        "maximum": 255
+      },
+      "tooltip": {
+        "width": 750,
+        "typeAreaHeight": 400,
+        "affixTopOffset": 18,
+        "affixBottomOffset": 18,
+        "aspectWidthOffset": 18,
+        "aspectTopOffset": 18
+      },
+      "paragon": {
+        "nodeSize": 62,
+        "collapsedNodeSize": 37,
+        "collapsedLeftOffset": -200,
+        "collapsedTopOffset": -50
+      },
+      "sourceConfig": "../../third_party/Diablo4Companion/calibration/2160p_HSF.json"
+    }
+  ]
+}

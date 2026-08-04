@@ -1,6 +1,7 @@
 .pkr/
 .tools/
 .artifacts/
+/video/
 bin/
 obj/
 publish/

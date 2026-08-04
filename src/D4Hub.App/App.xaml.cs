@@ -62,6 +62,23 @@ public partial class App : Application
             publicLibrary,
             new FileBuildLibraryStore(Path.Combine(localDataRoot, "build-library")),
             d2CoreClient);
+        var publicLootFilterLibrary = new FileLootFilterStore(
+            Path.Combine(AppContext.BaseDirectory, "library", "d2core-filters.json"),
+            isReadOnly: true);
+        var lootFilterCollection = new LootFilterCollectionViewModel(
+            publicLootFilterLibrary.LoadAll(),
+            new FileLootFilterStore(Path.Combine(localDataRoot, "loot-filters.json")));
+        IReadOnlyList<ExternalResourceEntry> externalResources;
+        try
+        {
+            externalResources = ExternalResourceCatalog.LoadStrict(
+                Path.Combine(AppContext.BaseDirectory, "library", "external-resources.json")).Entries;
+        }
+        catch (Exception)
+        {
+            externalResources = [];
+        }
+
         var document = stateStore.Load();
         var defaultProfiles = BuildLibrarySeeder.CreateProfiles(publicLibrary);
         if (isFirstRun && defaultProfiles.Count > 0)
@@ -83,7 +100,14 @@ public partial class App : Application
             new CharacterPanelDetector(),
             new BuildFingerprintService(),
             new TransmutationSceneDetector(),
-            d2CoreResolver);
+            d2CoreResolver,
+            externalResources,
+            lootFilterCollection);
+        if (e.Args.Any(argument => string.Equals(argument, "--map", StringComparison.OrdinalIgnoreCase)))
+        {
+            viewModel.ActiveWorkspace = HubWorkspace.Resources;
+        }
+
         var mainWindow = new MainWindow(viewModel);
         MainWindow = mainWindow;
         mainWindow.Show();

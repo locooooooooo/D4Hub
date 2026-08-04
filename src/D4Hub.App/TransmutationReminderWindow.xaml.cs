@@ -2,6 +2,8 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using D4Hub.App.Services;
+using System.Windows.Media;
 using D4Hub.App.ViewModels;
 
 namespace D4Hub.App;
@@ -17,6 +19,7 @@ public partial class TransmutationReminderWindow : Window
     private const uint SwpShowWindow = 0x0040;
     private static readonly IntPtr HwndTopmost = new(-1);
     private IntPtr _handle;
+    private TransmutationReminderPlacement? _lastPlacement;
 
     public TransmutationReminderWindow(HudViewModel viewModel)
     {
@@ -29,13 +32,22 @@ public partial class TransmutationReminderWindow : Window
     public void UpdatePlacement(TransmutationReminderPlacement placement)
     {
         EnsureHandle();
-        ApplyPlacement(placement, show: false);
+        if (IsVisible && _lastPlacement == placement)
+        {
+            return;
+        }
+
+        var dpi = VisualTreeHelper.GetDpi(this);
+        Width = placement.Width / dpi.DpiScaleX;
+        Height = placement.Height / dpi.DpiScaleY;
         if (!IsVisible)
         {
+            ApplyPlacement(placement, show: false);
             Show();
         }
 
         ApplyPlacement(placement, show: true);
+        _lastPlacement = placement;
     }
 
     private void EnsureHandle()
@@ -69,11 +81,14 @@ public partial class TransmutationReminderWindow : Window
         {
             Hide();
         }
+
+        _lastPlacement = null;
     }
 
     private void Window_SourceInitialized(object? sender, EventArgs e)
     {
         _handle = new WindowInteropHelper(this).Handle;
+        OverlayCapturePolicy.ExcludeFromCapture(_handle);
         var styles = GetWindowLongPtr(_handle, GwlExStyle).ToInt64();
         SetWindowLongPtr(_handle, GwlExStyle, new IntPtr(styles | WsExTransparent | WsExToolWindow | WsExNoActivate));
     }

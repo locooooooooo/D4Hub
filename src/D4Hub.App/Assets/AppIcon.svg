@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">D4Hub application icon</title>
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2722" />
+      <stop offset="1" stop-color="#161512" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e06758" />
+      <stop offset="1" stop-color="#c94836" />
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="116" fill="url(#surface)" stroke="#d45945" stroke-width="11" />
+  <path d="M128 32 224 128 128 224 32 128Z" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linejoin="round" />
+  <path d="m128 79 49 49-49 49-49-49Z" fill="none" stroke="#c6baa5" stroke-width="8" stroke-linejoin="round" />
+  <path d="M128 32v47m96 49h-47m-49 96v-47m-96-49h47" fill="none" stroke="#867c6c" stroke-width="8" stroke-linecap="round" />
+  <circle cx="128" cy="128" r="22" fill="#77bba7" />
+</svg>

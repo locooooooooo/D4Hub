@@ -1,0 +1,2458 @@
+{
+    "$schema":  "d4hub.third-party-visual-assets-manifest.v1",
+    "status":  "source-only-research-assets",
+    "releaseInclusion":  "excluded-from-build-and-publish",
+    "upstream":  {
+                     "repository":  "https://github.com/josdemmers/Diablo4Companion",
+                     "gitTree":  "b0bfad89a7474676ad9b291c488603fd0a44e52c",
+                     "license":  "MIT",
+                     "retrievedForAudit":  "2026-07-27"
+                 },
+    "assetCount":  407,
+    "totalBytes":  15865651,
+    "rightsNote":  "The MIT license covers the upstream project; underlying game-derived imagery may have separate rights and is not redistributed by the D4Hub runtime.",
+    "files":  [
+                  {
+                      "source":  "D4Companion.Updater/Images/app.ico",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion.Updater/Images/app.ico",
+                      "sizeBytes":  67646,
+                      "sha256":  "41CFDB368D94E48DE0DEDF994281E6682FC5D3EF797236F4C713DD4D59B521EF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/affix_tempered.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/affix_tempered.png",
+                      "sizeBytes":  1907,
+                      "sha256":  "F8C971480CDBFFC9753ED11FF5E3707CD965967B06AB33E861D3106B70181FF4"
+                  },
+                  {
+                      "source":  "D4Companion/Images/app.ico",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/app.ico",
+                      "sizeBytes":  67646,
+                      "sha256":  "41CFDB368D94E48DE0DEDF994281E6682FC5D3EF797236F4C713DD4D59B521EF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/aspect_codex.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/aspect_codex.png",
+                      "sizeBytes":  1234,
+                      "sha256":  "77DABD49B4226DD5227CD9DE37F968A5B4D5C55331A5D09A098C0C338F7299EF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/aspect_drop.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/aspect_drop.png",
+                      "sizeBytes":  3485,
+                      "sha256":  "19F5D93B38AEE94EC89D4C39423A7EC2A2C4364A6F2ACBC54B0E7E1EF61CE5E4"
+                  },
+                  {
+                      "source":  "D4Companion/Images/aspect_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/aspect_icon.png",
+                      "sizeBytes":  4808,
+                      "sha256":  "34BF76C131D10F0BABB01F2B19CC036A4A64073AE5FB7350CC59E31304978AF9"
+                  },
+                  {
+                      "source":  "D4Companion/Images/aspect_seasonal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/aspect_seasonal.png",
+                      "sizeBytes":  2561,
+                      "sha256":  "28537404F380A4FFA561FFABE19A6007586D86E901661D0A821CDEC8F91980D7"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_barb.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_barb.png",
+                      "sizeBytes":  7446,
+                      "sha256":  "C52420A39E4880A636E4861B31AC7D247928C7E980BE6CF7D10E032F346AACEB"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_druid.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_druid.png",
+                      "sizeBytes":  8534,
+                      "sha256":  "2E1C46EC56CD248140AD5498F6C4933B6FBEDCD4C304CA29A62D5364E0AC1BAD"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_necro.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_necro.png",
+                      "sizeBytes":  9813,
+                      "sha256":  "1731D46A08D6221BB26C2CBF3AFBECF42566388A826B36127DEAFE3ECDE891B6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_paladin.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_paladin.png",
+                      "sizeBytes":  12612,
+                      "sha256":  "BB27DD222E8B8B20904A290AE4654878E66402BFA40B67F1E1798DD3AFE9659D"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_rogue.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_rogue.png",
+                      "sizeBytes":  8484,
+                      "sha256":  "C990F503B7104B7533AA1180B680CA2E29B5E07AF56C38611F8FF74DB8F30013"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_sorc.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_sorc.png",
+                      "sizeBytes":  8223,
+                      "sha256":  "AE405F49696858193B94788B8DDAC866BD70D205E99508AF88087B625B0B502F"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_spiritborn.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_spiritborn.png",
+                      "sizeBytes":  12407,
+                      "sha256":  "4F46035D9B2E8E8DEECB34CB93B924634171D2222B0FA368AD02CE844675FFB2"
+                  },
+                  {
+                      "source":  "D4Companion/Images/class_icon_warlock.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/class_icon_warlock.png",
+                      "sizeBytes":  13866,
+                      "sha256":  "E38545668B6BDB59115BCC4EA6690ECA4AE9639EF6BAFF9D5CBC9275DF70FDC6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/consumable_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/consumable_icon.png",
+                      "sizeBytes":  103261,
+                      "sha256":  "938C2C5985D42344854A7AF485704A324B0EA4C68F1CADD24460778C704CD1B8"
+                  },
+                  {
+                      "source":  "D4Companion/Images/feet_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/feet_icon.png",
+                      "sizeBytes":  3025,
+                      "sha256":  "6FD74BA85695300BA424000D18DCA38921C365FD2D5B24A551A8F12FE8695D57"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_barb_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_barb_off.png",
+                      "sizeBytes":  18403,
+                      "sha256":  "BE7C479AFCAC546486BB3A7B757BB31EAA15F287F82B6B5DCFC927CE47E15F4E"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_barb_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_barb_on.png",
+                      "sizeBytes":  15409,
+                      "sha256":  "2DADBD7CC255463A5268EAED0EEA0FEC3E30A00B4CB8381064D9F271C2CD862C"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_core_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_core_off.png",
+                      "sizeBytes":  16033,
+                      "sha256":  "79CB114F74B8A0BC40AC8E0065CC2E8337B571FB5DF7E13BE375DBDE176057E6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_core_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_core_on.png",
+                      "sizeBytes":  13755,
+                      "sha256":  "7D05A89CF67D986E091421EEAC1C229CAEF67423AC0BB98CE54396472BAB15F3"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_druid_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_druid_off.png",
+                      "sizeBytes":  18597,
+                      "sha256":  "FD396240B5E53407F0C6419EA2903C9EF821C2227F53DB9CFB22C07006428C23"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_druid_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_druid_on.png",
+                      "sizeBytes":  15528,
+                      "sha256":  "99CEB33C7893F6A948DA1ABF22EFE2286375E9C2F226A4F9E08CCEB7CE60D1EF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_loc_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_loc_off.png",
+                      "sizeBytes":  17853,
+                      "sha256":  "841CEE9479AD9E8602B299C41CA03AC82EA1C5C85DA10BABB8A6031A0FBC4867"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_loc_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_loc_on.png",
+                      "sizeBytes":  15059,
+                      "sha256":  "05926D5A5B0E003E9D7BB6CC106B06C4F3C03E02A3CCBE09636C68F830982A05"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_neg1_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_neg1_off.png",
+                      "sizeBytes":  17287,
+                      "sha256":  "1B0D16CA62463A9D5CAACD5B0B200DD1C4448A7FA793C5D076F2CDE742A09169"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_neg1_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_neg1_on.png",
+                      "sizeBytes":  14505,
+                      "sha256":  "8668BECD1B452701BE76AE456AE4CBE00274DE3841E31BD28599C94526A0B713"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_neg2_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_neg2_off.png",
+                      "sizeBytes":  18269,
+                      "sha256":  "CC4AA89004A799BD516D6DA0B8F1C92C03D655631A1C615AA25AB9BF9A9460DF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_neg2_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_neg2_on.png",
+                      "sizeBytes":  15417,
+                      "sha256":  "6041E51DF5FFE57484962AD60D600A11FCB41237655795588A401213237C2673"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_pos_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_pos_off.png",
+                      "sizeBytes":  17999,
+                      "sha256":  "EB9145AF653B5E4588D9772E1696EA1A5091B75B94841D6EB57651D2BA795066"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_dungeon_pos_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_dungeon_pos_on.png",
+                      "sizeBytes":  15071,
+                      "sha256":  "0D8FF529727C9443B969611512E339775DBC7E61A61D120FD455A4D0096243F4"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_necro_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_necro_off.png",
+                      "sizeBytes":  18556,
+                      "sha256":  "489999BB0462BB719E0FD98C13FCC4F939DF545A217A01BAC35D0A4221AC7654"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_necro_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_necro_on.png",
+                      "sizeBytes":  15603,
+                      "sha256":  "EF5685A3D9644C9C8FC508350BA802C2A6BA751F8256C6E9D2B2E637F58559DC"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_paladin_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_paladin_off.png",
+                      "sizeBytes":  14337,
+                      "sha256":  "612E26D5F4BBC1537E8237BF3D424116A5639889A8E88E47224623F4924D0D79"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_paladin_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_paladin_on.png",
+                      "sizeBytes":  11623,
+                      "sha256":  "092E9A4645D1FA03EE7A28A546A9286DDEA94FDE4CD2FC34856BA8B512229BE3"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rogue_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rogue_off.png",
+                      "sizeBytes":  18164,
+                      "sha256":  "5E30C536417F40166CE9A40A8941F96DE21BB9C18EC1FBB5B69E362D422641CA"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rogue_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rogue_on.png",
+                      "sizeBytes":  15359,
+                      "sha256":  "977D2AA3285D9DCD5C9D57BAE23B025B62944B41F0D591B0329A326CE4252D2A"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rune_condition_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rune_condition_off.png",
+                      "sizeBytes":  18097,
+                      "sha256":  "13F5C4C333D02BA4E9628ADC9B03CF5430276B8583D087DE3E90582A01BA4B0F"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rune_condition_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rune_condition_on.png",
+                      "sizeBytes":  15275,
+                      "sha256":  "6B325E5589DCA149E55708C7F56C47712C3FADA9CC3F4A13DC6F60FCA73136C8"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rune_effect_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rune_effect_off.png",
+                      "sizeBytes":  18301,
+                      "sha256":  "0FC7952CFB7A8417496767106A42C6F4867CE5B08A062D5957B23DF964952FC6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_rune_effect_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_rune_effect_on.png",
+                      "sizeBytes":  15371,
+                      "sha256":  "BDE1D40D150D308864D704A2778A17DFB01FF650112DFBBB48F422B486448351"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_sorc_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_sorc_off.png",
+                      "sizeBytes":  18016,
+                      "sha256":  "38ECC691302E14FDF33DFBD6F6C4148BAB458BBA4EE46C68DFA44E64A771CF7F"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_sorc_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_sorc_on.png",
+                      "sizeBytes":  15218,
+                      "sha256":  "9628F3DAA6D16A315E09FB98235C92DD859466B864B476BC1252995B3470F34B"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_spiritborn_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_spiritborn_off.png",
+                      "sizeBytes":  19752,
+                      "sha256":  "430EE681E7892D1AA77946071626EF3DB65B1EA2B97E665E77FF2B5D913DE416"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_spiritborn_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_spiritborn_on.png",
+                      "sizeBytes":  16253,
+                      "sha256":  "F030D66901A9B6C91B9169DEF47DDF9A553E4C6C0EF7D33FFD2FCA8B139219BD"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_warlock_off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_warlock_off.png",
+                      "sizeBytes":  14605,
+                      "sha256":  "23EFA3D5A570137F83E08D18343F03CE261B2B95E86525CDB838FE8EBF9805EA"
+                  },
+                  {
+                      "source":  "D4Companion/Images/filter_icon_warlock_on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/filter_icon_warlock_on.png",
+                      "sizeBytes":  11643,
+                      "sha256":  "43B1E6164A3D7F383158FBAE10E0578F2E7F53B8B0F062AF57CBC5DD0F0DE73E"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/deDE.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/deDE.png",
+                      "sizeBytes":  545,
+                      "sha256":  "3323814006FE6739493D27057954941830B59EFF37EBAAC994310E17C522DD57"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/enUS.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/enUS.png",
+                      "sizeBytes":  609,
+                      "sha256":  "36CCE5CAE3D2E0045B2B2B6CBFFDAD7A0ABA3E99919CC219BBF0578EFDC45585"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/esES.png",
+                      "sizeBytes":  469,
+                      "sha256":  "E9AA6FCF5E814E25B7462ED594643E25979CF9C04F3A68197B5755B476AC38A7"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/esMX.png",
+                      "sizeBytes":  574,
+                      "sha256":  "656FB035A56A50A6431312527B106F65C7E03BB8711778018C8DC466D1D445EE"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/frFR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/frFR.png",
+                      "sizeBytes":  545,
+                      "sha256":  "79A39793EFBF8217EFBBC840E1B2041FE995363A5F12F0C01DD4D1462E5EB842"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/itIT.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/itIT.png",
+                      "sizeBytes":  420,
+                      "sha256":  "C7992F57D67156F994A38C6BB4EC72FA57601A284558DB5E065C02DC36EE9D8C"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/jaJP.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/jaJP.png",
+                      "sizeBytes":  420,
+                      "sha256":  "5EFCE88AC7228EA159BCF7FD1CC56D73C19428394218706524BAC0E9151D4C61"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/koKR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/koKR.png",
+                      "sizeBytes":  592,
+                      "sha256":  "6FDD24BD96B3A482BC058D5C9BCFD6F1C664D91BBD47658D65AC5D852535F7FD"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/plPL.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/plPL.png",
+                      "sizeBytes":  374,
+                      "sha256":  "34F6A1822D880608E7124D2EA0E3DA4CD9B3A3B3B7D18171B61031CEDBE6E72F"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/ptBR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/ptBR.png",
+                      "sizeBytes":  593,
+                      "sha256":  "DFF6F4D907290BDBE74812BF73B590F268694E0A30E64B4BB24B803A47B3E319"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/ruRU.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/ruRU.png",
+                      "sizeBytes":  420,
+                      "sha256":  "C6E9489E25E7854A58DB93ACC5A91B3CC023D33A70C4931DCE8D2EF2868B5E94"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/trTR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/trTR.png",
+                      "sizeBytes":  492,
+                      "sha256":  "292D592F7FA1DF2FA653ECC1E03D5EB2AE68277C6DF264F762AEFB8218E23454"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/zhCN.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/zhCN.png",
+                      "sizeBytes":  472,
+                      "sha256":  "7058233B5BDFDD4279E92E9DFE64BD4A61AFD7E76D97DBA498CE1D5777B92185"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Flags/zhTW.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Flags/zhTW.png",
+                      "sizeBytes":  465,
+                      "sha256":  "E59C331045B010A83F46AD25C592CF3F5415271B612FC9DB8D32CF9158447DC6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/hands_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/hands_icon.png",
+                      "sizeBytes":  2866,
+                      "sha256":  "6C0372354F0B651AE7FBAE91ECF64AC1C9A6AD3ACC1CF73C3C9C563417011920"
+                  },
+                  {
+                      "source":  "D4Companion/Images/head_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/head_icon.png",
+                      "sizeBytes":  2575,
+                      "sha256":  "A57C940DD4252D7B40F75326C66C5143B3D17EF832A23A551D321819F0610AB6"
+                  },
+                  {
+                      "source":  "D4Companion/Images/legs_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/legs_icon.png",
+                      "sizeBytes":  2835,
+                      "sha256":  "9B6D0B0A4B81E25D17A9F47CB1EC0F3612E8D13A455C03949CCF111D06C61189"
+                  },
+                  {
+                      "source":  "D4Companion/Images/mainhand_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/mainhand_icon.png",
+                      "sizeBytes":  1702,
+                      "sha256":  "2A035E6651C117E8B2751D9B87E0AEDEAB66214F1A24681BE35301668841E8FF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/mainhand-barb-rogue_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/mainhand-barb-rogue_icon.png",
+                      "sizeBytes":  2248,
+                      "sha256":  "5E99B7F9D1D90F4963C1BC4E491130410714A03826CFA175CE81A1B65CF5144B"
+                  },
+                  {
+                      "source":  "D4Companion/Images/Menu/icon_diablo.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/Menu/icon_diablo.png",
+                      "sizeBytes":  1053,
+                      "sha256":  "D2319DC58BE8E652FA30DB3310E4248995DF5321B08C8531D6107CAB8655C0BF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/neck_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/neck_icon.png",
+                      "sizeBytes":  1983,
+                      "sha256":  "7EF84E690AA0EBBED3D68BEB7D4B7E496618C62904D13CE081BF5DF51D3F61DB"
+                  },
+                  {
+                      "source":  "D4Companion/Images/offhand_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/offhand_icon.png",
+                      "sizeBytes":  1986,
+                      "sha256":  "A3C4AFCE00C96C4F8574D65A87499ABAF8C93032B815F6A3CB3BEF45FDC89AC0"
+                  },
+                  {
+                      "source":  "D4Companion/Images/offhand2_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/offhand2_icon.png",
+                      "sizeBytes":  2217,
+                      "sha256":  "3671FB2C6F634979CD7626299BBFA733367AC2AE0EAA54CB6834D7527F0DECA0"
+                  },
+                  {
+                      "source":  "D4Companion/Images/overlay-off.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/overlay-off.png",
+                      "sizeBytes":  17620,
+                      "sha256":  "F094B407A802A0B7C01701E0DD7A7AEEC2445A93F5146FC2FF6555BC9AA0A424"
+                  },
+                  {
+                      "source":  "D4Companion/Images/overlay-on.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/overlay-on.png",
+                      "sizeBytes":  15652,
+                      "sha256":  "5008393C040872B82D7DA977C44C70218959ECA7828D5F2EAB71ED10D863A233"
+                  },
+                  {
+                      "source":  "D4Companion/Images/ranged_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/ranged_icon.png",
+                      "sizeBytes":  2184,
+                      "sha256":  "E087014430F06B4419B9CFFF805B8287A42C7F277BD24AEDBC668E21BBB07DAE"
+                  },
+                  {
+                      "source":  "D4Companion/Images/ring_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/ring_icon.png",
+                      "sizeBytes":  2433,
+                      "sha256":  "C95D01AACD035839C6C8EDF2CB3B06518C7798D3721A7DC0A49DF32B691D934D"
+                  },
+                  {
+                      "source":  "D4Companion/Images/rune_condition.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/rune_condition.png",
+                      "sizeBytes":  370,
+                      "sha256":  "D400332328DA6A4BDDADAE1F104D8DE58A666FB201835EC83B23196B45668D7A"
+                  },
+                  {
+                      "source":  "D4Companion/Images/rune_effect.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/rune_effect.png",
+                      "sizeBytes":  449,
+                      "sha256":  "98572011E2727FF7C315E962ABE44AC90669C4776195EFA64EF3EA29F76AF5E8"
+                  },
+                  {
+                      "source":  "D4Companion/Images/rune_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/rune_icon.png",
+                      "sizeBytes":  15107,
+                      "sha256":  "912C99945BCFEDB8B34AE2905C22279171B601CF96B34E06C77398B485B23FEC"
+                  },
+                  {
+                      "source":  "D4Companion/Images/seasonal_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/seasonal_icon.png",
+                      "sizeBytes":  41500,
+                      "sha256":  "78D9A34B90E19F2A2D45F9CB4057F58EF258C3F38EEDFB7890BF26DB9859CB6D"
+                  },
+                  {
+                      "source":  "D4Companion/Images/sigil_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/sigil_icon.png",
+                      "sizeBytes":  8584,
+                      "sha256":  "114D60975B75E898D95EC162B6F7249813DC1C9FC878884DB94BB272F762867D"
+                  },
+                  {
+                      "source":  "D4Companion/Images/torso_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/torso_icon.png",
+                      "sizeBytes":  3154,
+                      "sha256":  "4DF8C37D73BBD598665D5C80AAE8AF23B4F78D986BA056F4BE5795BACE622A84"
+                  },
+                  {
+                      "source":  "D4Companion/Images/totem_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/totem_icon.png",
+                      "sizeBytes":  1741,
+                      "sha256":  "0567D7DE810C9ECB241878F93AFCCDBFB33DF4D62864E6F1F82065216F0BF4A1"
+                  },
+                  {
+                      "source":  "D4Companion/Images/tray.ico",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/tray.ico",
+                      "sizeBytes":  67646,
+                      "sha256":  "41CFDB368D94E48DE0DEDF994281E6682FC5D3EF797236F4C713DD4D59B521EF"
+                  },
+                  {
+                      "source":  "D4Companion/Images/twohandedbludgeoning_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/twohandedbludgeoning_icon.png",
+                      "sizeBytes":  1846,
+                      "sha256":  "815294C5BAFC183C2573D78BD416C21AEA71071C1006BB242BF55E9ABCC952C9"
+                  },
+                  {
+                      "source":  "D4Companion/Images/twohandedslashing_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/twohandedslashing_icon.png",
+                      "sizeBytes":  2083,
+                      "sha256":  "7BBA38B178F2E815B15F45A0EFADD9A7E5A7AB752B8FF2B53FEBA9B6CE9BC225"
+                  },
+                  {
+                      "source":  "D4Companion/Images/unique_icon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/unique_icon.png",
+                      "sizeBytes":  5164,
+                      "sha256":  "58EA523D64E2ED12F0E7404E9948FF4EA6987CAA6C436B388E9B6F859E30EE68"
+                  },
+                  {
+                      "source":  "D4Companion/Images/website_icon_d2core.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/website_icon_d2core.png",
+                      "sizeBytes":  2367,
+                      "sha256":  "DA145EECB25E6727974378400AC9D3099937B9CC2995E8CCE53B0EA0947A7CB5"
+                  },
+                  {
+                      "source":  "D4Companion/Images/website_icon_d4builds.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/website_icon_d4builds.png",
+                      "sizeBytes":  1586,
+                      "sha256":  "3E99E5FE1963216FD9311259BE7A4784B0093CE17C5E39A9BD537767394C38A0"
+                  },
+                  {
+                      "source":  "D4Companion/Images/website_icon_infinitybuilds.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/website_icon_infinitybuilds.png",
+                      "sizeBytes":  23763,
+                      "sha256":  "40586EAA75AD7E79DB603B4CB038D33800C5F78C09935808132D30A10B8ED4CE"
+                  },
+                  {
+                      "source":  "D4Companion/Images/website_icon_maxroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/website_icon_maxroll.png",
+                      "sizeBytes":  1169,
+                      "sha256":  "C09A96538DD0D48EDE934EFB043ADF845B1782C34C17B3E38A6B156E321C1232"
+                  },
+                  {
+                      "source":  "D4Companion/Images/website_icon_mobalytics.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/D4Companion/Images/website_icon_mobalytics.png",
+                      "sizeBytes":  2649,
+                      "sha256":  "F64182A540A518DFDF20A8240A4B7D88B53AF31F440D663F38BACCF38E2718CC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_greater.png",
+                      "sizeBytes":  928,
+                      "sha256":  "CB274DA64B943BB338D6EE43BE087E60F5E488282B6FFA84B0E3CEC3534CF056"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_greater_master.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_greater_master.png",
+                      "sizeBytes":  1119,
+                      "sha256":  "DD941BA7D5B5A34603E66FB52B52CB9758347293D41E60F151544886E2AABE45"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_masterworking.png",
+                      "sizeBytes":  1062,
+                      "sha256":  "D2B42D301F60976D39637A028BD2357C635867DE0887AF17AF033652B858C1DF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_normal.png",
+                      "sizeBytes":  452,
+                      "sha256":  "867E4F2B6EE557523B6BAF53E50272CBD36D868A127F9DBEC8D9DB6D019B3248"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_reroll.png",
+                      "sizeBytes":  489,
+                      "sha256":  "0664BBABA1C11D20917C175D746F132D5F90A7833C51EC434534EE2E6B7C13B3"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  811,
+                      "sha256":  "794953B944F5DAEE0DF32ED809841841E80123346510C5484E170DEED0B8676D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  800,
+                      "sha256":  "BF9117D32BA4FA9C23EE737ABA3F06AE65EECB1C6F66ACAE27FFF13DB6573EA9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  707,
+                      "sha256":  "765CB2351050DD602465489778D709287E04EE8A75B471382F2AAAACF9112554"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  802,
+                      "sha256":  "28C28F75B339E9AC9F50CC3BA29E42FD1EA38BD620D441A2D7AF682949EB42F2"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  770,
+                      "sha256":  "CFF5A2F044719E89A1A53C50082D020F0A67BDC7803B0946B3F76EB68554507A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  811,
+                      "sha256":  "46228FB1B0DF26F44019FC2BB08C4DE2174A49C90E92A0EDF73BDEDC950F08FF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  807,
+                      "sha256":  "9B1669FCC0878D4AEBA062F0BAB575FA6666B129BC544AD2A62B2328D89DFB17"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  723,
+                      "sha256":  "0C74755CC02449F7400916C027E2C8C0411B171184DE27AB3639323B01132B22"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-affixes_transfiguring.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-affixes_transfiguring.png",
+                      "sizeBytes":  1273,
+                      "sha256":  "B97B369DE96B589012F1EF007A7D262D9BCC6D6D1FAC94889B6ECE96767D0E0B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-aspects_legendary.png",
+                      "sizeBytes":  494,
+                      "sha256":  "6F2F563FC057E23320CAD07EC6EB4CC3ADA42E28739A9C2DDD350E56026C4A27"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-aspects_mythic.png",
+                      "sizeBytes":  738,
+                      "sha256":  "F48CB1B00ADBEE7D6924838D0BF107C9F707AE0204C29CF9DFCB33320074F45E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-aspects_unique.png",
+                      "sizeBytes":  720,
+                      "sha256":  "1D0080DF5A0EFF25D6FA93C61176B89C6FB3C62F2FEE5C1E3E2BE4B14BD9470D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_1.png",
+                      "sizeBytes":  1191,
+                      "sha256":  "B69E35DDD73D5C2EC3E38079729CE33D88022571E8937B722081D61C661E524E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_1_mask.png",
+                      "sizeBytes":  4223,
+                      "sha256":  "372C2697E367A417CC60140DF2CB7F5D95AA5C94A085AF035A52E905AF8E9BC8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_invocation.png",
+                      "sizeBytes":  1750,
+                      "sha256":  "389E967C10FAE8518773759335EEB7C5C01176D319D7861DCAD1CC7166D896F5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4262,
+                      "sha256":  "B9526B26245B7C13028D82567506EAAA729BC5D78021C9223267842077238B57"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_ritual.png",
+                      "sizeBytes":  1824,
+                      "sha256":  "CA828440D20056BCB50D85FDE3470968AC86FCDB0066692B9022DB17BBF33DD6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4261,
+                      "sha256":  "C7005B36AC7779F30FF461DC2FCC76F64A3701A2C4A57706FB0AEEADCB6B3AAF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-splitter_1.png",
+                      "sizeBytes":  692,
+                      "sha256":  "5708D92AC51C8A4EC3F8FC87C121E7FE0E07834F75B0CF62D1DF01BF0B62C273"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-splitter_2.png",
+                      "sizeBytes":  657,
+                      "sha256":  "0507E94AC3968DFF2CC4767BC112A1AAE7A441986A860739333D9FC061ECD035"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-splitter_top_1.png",
+                      "sizeBytes":  692,
+                      "sha256":  "34F0EB4361196B9A951757758EC0FB8930B2C869EDBCF95D9A121EE4A20FF198"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-splitter_top_2.png",
+                      "sizeBytes":  643,
+                      "sha256":  "A102A0EA9A34F6CD2E17678C21E142D1C18B65074B2F030E4C3B342ADE10D7B6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/dot-splitter_top_3.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/dot-splitter_top_3.png",
+                      "sizeBytes":  801,
+                      "sha256":  "DF4D824D6D153CA3A1AE3782866D4A4F6F837B48BB8BB9229BD03A646C780B38"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "sizeBytes":  7031,
+                      "sha256":  "A256E76127E2AF63740A7C22D5924EC66D649F8B15CEF9D989CCB46E784A3E44"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+                      "sizeBytes":  777,
+                      "sha256":  "79BB7BF589DCC3069F5C80FE230CB5AEDE4C14F6FA212E6A64B9918D8D11036B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_square.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_square.png",
+                      "sizeBytes":  1313,
+                      "sha256":  "2EB915ACE6593E3DEAFF71336775B32FD2758129F5624200DC1DF006319FE1E6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  1278,
+                      "sha256":  "37A610B7926DBD82464187E9B1CFB61363ADB91B0B7BE876F20BD82DA27E3CA8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_y.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_gc_y.png",
+                      "sizeBytes":  2057,
+                      "sha256":  "EA3EC4EA1C7E72554A6BEFFB3525AEBB2E0D36B49CBCAD90079671E616CE61E0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  1334,
+                      "sha256":  "429A4461CF277910E54C6D9D827E51A9EBA87FEFC9E4306520A8C70D3BB683DF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_esES.png",
+                      "sizeBytes":  1571,
+                      "sha256":  "598D43AF5F4A86B321FBA8CB3F02D5E837E5C688EFD64E535C9DBBDDEE44A18F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+                      "sizeBytes":  1571,
+                      "sha256":  "598D43AF5F4A86B321FBA8CB3F02D5E837E5C688EFD64E535C9DBBDDEE44A18F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+                      "sizeBytes":  1831,
+                      "sha256":  "7BB71A5DB821EE53D397F41F1661DDA8EA783C81D54453CB454B1419B13486DA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_greater.png",
+                      "sizeBytes":  802,
+                      "sha256":  "86F8E79BB319582E68471B072EF019E66DFE5FCBA9BEFC2495F123E7FF1DA6A9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_greater_master.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_greater_master.png",
+                      "sizeBytes":  964,
+                      "sha256":  "7607B51440EC6404D6578706509B65E1E6CCD1AEAD0C1D76FCCA8A7CBC661513"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_masterworking.png",
+                      "sizeBytes":  910,
+                      "sha256":  "65DEA5953E203555BAB69425D933C769E65F3A8DD744784F6FB5FD0208777DFC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_normal.png",
+                      "sizeBytes":  469,
+                      "sha256":  "1BF2CB3B20DEC29FD6D4CD6EDEA171C263E34EA3ABD04A8FB23B21AEB8AAD5A0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_reroll.png",
+                      "sizeBytes":  400,
+                      "sha256":  "24C41256641958EBC26141716A72F187090A0D8B564FAE0610EC3D80CC33EADF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  744,
+                      "sha256":  "5141DA957734329F602959E322BC0DF6F1FCA0F56AAD6DE5D245092D95B860B4"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  726,
+                      "sha256":  "3207904B33CC984E3BC4D9435C57056F19D8C903DCC6149E7520CF348E999624"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  696,
+                      "sha256":  "DBF2575BEA8AD8E18A103757C301054EC329B9C79F171F786086B2BAC6334A4C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  648,
+                      "sha256":  "4FF31248951D157F7EAA081BEFED2939446624B2D92E2D965F62FCFB55FDABE7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  654,
+                      "sha256":  "A52587703709591DCEB3EED9068089CAA0CCB6D7B75631D7C2FEEB486DB907C6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  654,
+                      "sha256":  "A95B0BB859D2126097FCE31FB638546F4426C654DB1A45A28E0D714D234B9CE4"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  719,
+                      "sha256":  "07E12ABFD38C05BC902AEFCF63167827959A7173B3A510B9C91E3BD458887711"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  646,
+                      "sha256":  "19AE96AF17CED488F1E3FDDB1937BFD03963369EEFDF3AFDFDF0F4CC6B060DBA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-affixes_transfiguring.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-affixes_transfiguring.png",
+                      "sizeBytes":  1096,
+                      "sha256":  "BBE32C6A9B2E0F124A3159BC69820D14297FBC13C150DF7570CCB693FB178A67"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-aspects_legendary.png",
+                      "sizeBytes":  548,
+                      "sha256":  "B9F4060CC8D0E82E0E8B687834219CFEC10FAE9F5E541BAC0CD21AF65050BC26"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-aspects_mythic.png",
+                      "sizeBytes":  606,
+                      "sha256":  "75FA0C4A71E28C577FD89FA893B6766C11B7A79714E8E03C9D0FCCE88E61E8DA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-aspects_unique.png",
+                      "sizeBytes":  651,
+                      "sha256":  "51422DC6A25D302CBEE5DEA35061E3543C96BB6AB294CADAFEFAEDFE8AE175E9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_1.png",
+                      "sizeBytes":  1487,
+                      "sha256":  "D1EC414B15482AD5BDF71E26D73E4596F3D7EA75F122FC16430079511EF871B8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_1_mask.png",
+                      "sizeBytes":  4211,
+                      "sha256":  "18AF995A91556B6E31037133EEDE3FF0953B775FC035D455471C1E461B2118BF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_invocation.png",
+                      "sizeBytes":  1689,
+                      "sha256":  "5BAA3C5FA5E0165B138287F39FB0A6683BD78D8B5E5F0477132D122A4C4FBC81"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4259,
+                      "sha256":  "F053BFDA4C5ECAD66A26F8A689CBE7A110FD775AB03939ABC73011DFE9AFD982"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_ritual.png",
+                      "sizeBytes":  1812,
+                      "sha256":  "87443ECB80BE64262A9D542E92098B27958DE0343DA5F41E3432440CF93C2147"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4265,
+                      "sha256":  "B8B7DF7D0E97D4AC628680DF0D1B770D81C2DCCA9D1609028CDFDCE0777E1F52"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-splitter_1.png",
+                      "sizeBytes":  712,
+                      "sha256":  "6FDED8EB9A7D0C8D636876B04A12BCE8A232FD9329E831B12376D5A4AC16FCF5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-splitter_2.png",
+                      "sizeBytes":  654,
+                      "sha256":  "17E6D11D73CE07E002F7094F2A32A2A984F98E7130C2D6A66FCEDA44974BACF9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-splitter_top_1.png",
+                      "sizeBytes":  842,
+                      "sha256":  "D826C51C750D8AF558CAFE7497A1206F9D0DC51A25D5DA18DCB57F4DAEC793F0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-splitter_top_2.png",
+                      "sizeBytes":  651,
+                      "sha256":  "BE77408007E691852C8E19A22DE2258D82A74D79487EC4F810F07CDC37968135"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/dot-splitter_top_3.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/dot-splitter_top_3.png",
+                      "sizeBytes":  761,
+                      "sha256":  "E9984958EE966B27AE68D2CDFB70D58325D3E2D33B3B84F3A2DDA668F3D4606B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/Optional/tooltip_kb_sigil_salvage_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/Optional/tooltip_kb_sigil_salvage_esMX.png",
+                      "sizeBytes":  7021,
+                      "sha256":  "04E5C68A3450FDCE62F8E80B1E3728D5373B84A8CB99F25C62E9BF67AA0B0A50"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+                      "sizeBytes":  748,
+                      "sha256":  "440BAD8A8AF04455155E3F9107C1E182E054384B7D17E77402190F83E2C70265"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  1089,
+                      "sha256":  "312ADD68258E5E855AADED76BD6FC631D5D521944A0C0E3704576BAED0CDDE2B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  1189,
+                      "sha256":  "57CE3783E13B5719B58760D2CBD920A395ACEDCDAABA9DFBCED7CF7B2375505D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all_esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all_esES.png",
+                      "sizeBytes":  1404,
+                      "sha256":  "7E02C03DE484A6E2C858A053B42265B988DCE3B2CE6631962CE5A095232336E8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1080p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "sizeBytes":  1404,
+                      "sha256":  "7E02C03DE484A6E2C858A053B42265B988DCE3B2CE6631962CE5A095232336E8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_greater.png",
+                      "sizeBytes":  1075,
+                      "sha256":  "1636CD1A7521DA5AA81904128C559DF52A966C6A592D5872DD05E5F1D549AA00"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_masterworking.png",
+                      "sizeBytes":  649,
+                      "sha256":  "D74CBA592210F6E91A09174207E80667F5099BB6C4365D2269682CAD54EC8F20"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_masterworking_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_masterworking_2.png",
+                      "sizeBytes":  736,
+                      "sha256":  "16ADB2C4E3EEEBDB2CBA7116832E4A1B2F5605DB1E7D0889A8EFCB6076946431"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_normal.png",
+                      "sizeBytes":  728,
+                      "sha256":  "DA4CE596C2A01334694234489AF1D7C1933BD84D8796162E182A12CF8F0823EF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_reroll.png",
+                      "sizeBytes":  693,
+                      "sha256":  "2F7838A851004CC717C34EE2A9C2975563FE1EE3A532114D75C3010DF4445F06"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  710,
+                      "sha256":  "BFA1D382EFB9F6093FFBD6A4FDAB79EBA424FFFAEA09535A67A7EBE967D3B1BA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  604,
+                      "sha256":  "A88D6FD277D33DFA3D877E54E5AC583DBC092770BB7A046189010FB8C19A3519"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_sanctified.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_sanctified.png",
+                      "sizeBytes":  741,
+                      "sha256":  "FC0A1699DA7F7AD359B7C50A4495E99B9B600839883CA5F0BD6C14E47560FDF8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  885,
+                      "sha256":  "8666900673B932FF3ABD32C3D7FB8EEBC9D7B5EF54075A4C21FCC4746DE1B6EB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  1004,
+                      "sha256":  "176863B059F6DD80EA04380B21E4EAB8C19A21DAC1B8EAAFF91F85B85AD1A4C9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  1189,
+                      "sha256":  "3E42B053A0DCD00DBFF7E89C088AD07DAB9FACFC3FAB69ED47E5CBD32494CCBF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  1003,
+                      "sha256":  "BA638748A456B4A73D4298C7BC1F79F31511DB21D831AB521D77E84B0E1D5D15"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  1151,
+                      "sha256":  "53DFA4B68C9BC208466A8C04E97F58EB4CCA7CCE90798422D14E4F58E7C3320F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  1132,
+                      "sha256":  "36222CC2873F878DD778B856957FEB7015BB5B5048686617CFE21A678793EEA0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-aspects_legendary.png",
+                      "sizeBytes":  747,
+                      "sha256":  "DA806C92277F6623CF12F66F4070728B4A4B3CECD2B173B2BC6ACDCB35BB69C1"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-aspects_mythic.png",
+                      "sizeBytes":  998,
+                      "sha256":  "EC1740B4FE61500FB12385AA9F6EAD8D7133A5564FE09C4E19AFA687F435CBD7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-aspects_unique.png",
+                      "sizeBytes":  827,
+                      "sha256":  "0401F3819D492F7B4BC40D2D1FBC2F43A84A2B5BBC86FB78D739031274DA3018"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_1.png",
+                      "sizeBytes":  2308,
+                      "sha256":  "925D7CA3560F67F9E00304A9D625A0646589780CCEDDA2D5EA8BBB9342FF02DA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_1_mask.png",
+                      "sizeBytes":  4261,
+                      "sha256":  "BE858ECF6E398B3BAEF82F53119651EFA6054A3C03B4CA8EF1D526D4CDDAA2F6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_invocation.png",
+                      "sizeBytes":  2946,
+                      "sha256":  "75EA7F19E5B57085ACD13B9ED3B8ACCA53D8F97417CC9319737C88E86C10CDD0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4529,
+                      "sha256":  "6A219867B84319CCF3764FA120F14F5A9AC8C43BD2137C63A3F83A31CC0230B1"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_ritual.png",
+                      "sizeBytes":  3211,
+                      "sha256":  "2C9FEA624EC7BF92D90EC2F49E09E5B116BB5F5709D6A644E36DD830202C72F2"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4308,
+                      "sha256":  "0FCD7ECF5B5E96064F82D5B6FA33A13BF908096EE6E851176DDF22F87E549F3A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_1.png",
+                      "sizeBytes":  1420,
+                      "sha256":  "1A943C20E7EF533F3ED5791F7BF8F114638E9D69509AF04E33D3ED4EB648C953"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_2.png",
+                      "sizeBytes":  1417,
+                      "sha256":  "C4B561685262D23CD86B3D52F05CB0317126B77E4592DA915FA446E6B7619EBB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_top_1.png",
+                      "sizeBytes":  1379,
+                      "sha256":  "CE7974B3A2D2B70AABC03B0A8777B396C1D5A910A412002AF4F7E4789088281D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_top_2.png",
+                      "sizeBytes":  1334,
+                      "sha256":  "7535C6E2DCD221620212E14058EA9E933CB611971C23C889F6C4F402BCC5A770"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_top_3.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_top_3.png",
+                      "sizeBytes":  1361,
+                      "sha256":  "FC67F7D7D137316BD4029529B078D00FFEF0CB2AB52C1BA42AA8AB06226B2356"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/dot-splitter_top_4.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/dot-splitter_top_4.png",
+                      "sizeBytes":  1620,
+                      "sha256":  "49B7F96511F39882CE4989B9CB8413A1B533B31837422A1DA6D0D2923AB899BC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/Optional/tooltip_kb_clear.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/Optional/tooltip_kb_clear.png",
+                      "sizeBytes":  6459,
+                      "sha256":  "AFE3724F98F3930B98E8F6AC7FCE218E9E67CD27E66D0DE5BB151B00C2C3B914"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/Optional/tooltip_kb_select.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/Optional/tooltip_kb_select.png",
+                      "sizeBytes":  6823,
+                      "sha256":  "1ABE3CF90C1DE1672BD2FA2015BA932E6C53F7918056C565C31F9CAF44F170EB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_gc_a.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_gc_a.png",
+                      "sizeBytes":  1643,
+                      "sha256":  "52D68611C196766635B5AB0B65F7A19F49E570C2EFE6C7D29383202E087AACE8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  1628,
+                      "sha256":  "7E086EC1B30480FA9962942E01D1B7C166F9D79907A26508DE93C9A99F7B596B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  2863,
+                      "sha256":  "0A85937FEB622A62B0F91DA9A490BCC9F6021B91030ABE654050F6435DCCB6FF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all_esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all_esES.png",
+                      "sizeBytes":  2385,
+                      "sha256":  "33E75A8A010A13AD379BA25F84CB4AF4A637D897C81EB4D26BAD55FB92DEA599"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_HSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "sizeBytes":  2385,
+                      "sha256":  "33E75A8A010A13AD379BA25F84CB4AF4A637D897C81EB4D26BAD55FB92DEA599"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_greater.png",
+                      "sizeBytes":  1491,
+                      "sha256":  "3B159F05F818E020475DB1E42B83280B9C54CF891E9064EEE7342214BF8AC9B5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_greater_master.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_greater_master.png",
+                      "sizeBytes":  1804,
+                      "sha256":  "90A01F67176C94195988FB3E084F1900C146C5BC6F284F40A748A996CF44B803"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_masterworking.png",
+                      "sizeBytes":  1495,
+                      "sha256":  "F0F193B6065C072A81165F01211B9CC0F4F6AF3CF0D45CA9C558DBCB1AF618A7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_normal.png",
+                      "sizeBytes":  686,
+                      "sha256":  "38758AA36F19EA7DE91FD9A378A047BDE02B456D92D861352945E2FA8053E153"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_reroll.png",
+                      "sizeBytes":  728,
+                      "sha256":  "0D9DC6FA26A6E1D742829F998F01F9256C8C1CC33B3DA684E78B4641DB9BFB53"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  1120,
+                      "sha256":  "9DE63AF9C83D72867DEAFAF9254756024F0004C5B52C46E73F9659D552FEF2CA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  1080,
+                      "sha256":  "599A9BB43A0A3A2AD25E9C6ADBE8B98EBF5C4FA5CAC1A5DF2CA10B270EB133B3"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  1033,
+                      "sha256":  "9051DF8BBABA21CEAD4D47E04FC4CA32E370D60BA5E498D51D3B83062DDEE46D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  1159,
+                      "sha256":  "B0AC63BD2B7AB534EB84F6FB1EA2B1C7EB0FAEF172FA8EAD8E7B15528392A88D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  1102,
+                      "sha256":  "43F89BC2252B41A12BC23CC66963B6B7D00BB32AC59438F372488D36D56A4872"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  1166,
+                      "sha256":  "D252E90085A7D7A658B40D1C418D96A6FD1BCDD37AD396989F58B3B39FD1986F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  1205,
+                      "sha256":  "4732787652AED68AA21BF8F749603FB9EB92B80E662DA51EDACE5C7BBA1F86A1"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  1258,
+                      "sha256":  "7FF6B05F703B6CA415F438A6DFA5289599FD23F8B8F1FCCF8719EBE9C5D87BC0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-affixes_transfiguring.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-affixes_transfiguring.png",
+                      "sizeBytes":  2025,
+                      "sha256":  "BE4368626890B79E13C629D8ACB117DE8AFA92980D31C91B701DE9CFFB05630E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-aspects_legendary.png",
+                      "sizeBytes":  890,
+                      "sha256":  "D33E2D4C6E40D01673626E0CB467BE9614AE6102A7019CDDAC449B32B7D4A075"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-aspects_mythic.png",
+                      "sizeBytes":  1124,
+                      "sha256":  "A9B662028F641E33EBED851842D518205481431E7E28A346CAD74DAC11960E5C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-aspects_unique.png",
+                      "sizeBytes":  1153,
+                      "sha256":  "A263CA6060564373234FAB41EE0A762987D93134E3998CA92C1FEC27915A6B92"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_1.png",
+                      "sizeBytes":  1912,
+                      "sha256":  "E859CB4F3384B91F9A3D3013822E4641D047F61B4B513CEFF5A24DAEF1AC5E4D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_1_mask.png",
+                      "sizeBytes":  4221,
+                      "sha256":  "835B0DA9E6B434DDF38E638CFCF029264931A864B524E1A4178FF270D8C368FB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_invocation.png",
+                      "sizeBytes":  2908,
+                      "sha256":  "0AA0E544B39AFC04E320ECCB40F7D17504AC25F7539C5B1BCF6465AB629E1CD6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4291,
+                      "sha256":  "BFB8589926468DE803C40DA469ED376703C236D872D85DDA265381CA1D70AE4D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_ritual.png",
+                      "sizeBytes":  2796,
+                      "sha256":  "8693EDB1D674D0A3599C9CA6D9A52EF5FDAFF7C78B5F1707594EC90494D912B9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4320,
+                      "sha256":  "581CA845E18A2D37F045D97AF7589E1C54BED9F23D8C4B6E02A3CF54B8BCC97C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-splitter_1.png",
+                      "sizeBytes":  1055,
+                      "sha256":  "639F42E07253F92DA956791EA0F27D05930778022240EF72B799099C1DBF50CB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-splitter_2.png",
+                      "sizeBytes":  1049,
+                      "sha256":  "4297950DEBF60A3FAD08F9D058EB805651A40DAF0D137E15FFBFC8CE46C7E0CF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-splitter_3.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-splitter_3.png",
+                      "sizeBytes":  926,
+                      "sha256":  "FFB8F13A3659D926E87A3A2F641FBD4872782A710EDE8BA032F1823A06222D9F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-splitter_top_1.png",
+                      "sizeBytes":  1139,
+                      "sha256":  "548D6525DD4A867C03FE9A8467D81070A09D935ACCEAF6A08F2DFF099FED0038"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/dot-splitter_top_2.png",
+                      "sizeBytes":  1099,
+                      "sha256":  "9531D5A810CC6229D221321E4E26BC28F6F43005466852F4E4DEB1CDC3DC99BD"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "sizeBytes":  9246,
+                      "sha256":  "B39C35DE3CBA87E1A047012F20F1401CE61E7D05E6F469D1B4CCCC7C20904DA0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+                      "sizeBytes":  999,
+                      "sha256":  "300081C63A93B3B911E3DB22E27DE008EDC666B01A89277AE73FA2B351727A29"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_gc_square.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_gc_square.png",
+                      "sizeBytes":  2341,
+                      "sha256":  "D7020685A24E56D1F9A2489020DE2C4B1E4DAF0A0912EDCA1A77216A5CB31217"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  2004,
+                      "sha256":  "8FE5B7C06D7D5D9C8151BE960E406DDD958583314E088B1E9E97C864F83E763C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  1960,
+                      "sha256":  "DC3DA8505894954750C9861AA641B09AA693B0D74FC4645C61991677ABA13CFC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_esES.png",
+                      "sizeBytes":  2006,
+                      "sha256":  "36F5268B5BB0ADF31DEE324551A94CB70CAFCE24527C87EB52AD023B2C56722B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+                      "sizeBytes":  2006,
+                      "sha256":  "5BEBD655FEF682FD07B7D3EF4667885CEAF9C0F9BD8027E40D01B73B1DECC77F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+                      "sizeBytes":  2751,
+                      "sha256":  "69C1DE4895B592610CC361601A9E799BBD00CEC41F4D7FAAA30F66AE3BFF2186"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+                      "sizeBytes":  2160,
+                      "sha256":  "64C4531214E7328FA655AB7FDC1D207C41B1BCE00121D95F836A8AE01FE92D40"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_greater.png",
+                      "sizeBytes":  896,
+                      "sha256":  "6D412A2930B80DA0F5AB8AB72E0707BDC5C4B590EE0B0D5C04E3323B2BE17AEF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_greater_master.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_greater_master.png",
+                      "sizeBytes":  1049,
+                      "sha256":  "AD75A25D1FEC1F1A5ABF32B386B19044FAC9A51A53BE894CD160E637A7997A68"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_masterworking.png",
+                      "sizeBytes":  922,
+                      "sha256":  "EC8FA304F22116375C60AEFA596C4C3A55C726DEE3FD024B5724F06FD25B503D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_normal.png",
+                      "sizeBytes":  458,
+                      "sha256":  "6204EA68D66A2E899F00CE1546D9F86464F2F38DDEFBC7CAA551CEF81C16EF18"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_normal_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_normal_2.png",
+                      "sizeBytes":  869,
+                      "sha256":  "489F4C26640C29104632F82B9F983713DCB0A4196EA71307F8EF0B8E8CBC8E4C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_reroll.png",
+                      "sizeBytes":  605,
+                      "sha256":  "97661401019D0E432643C7204079B683A5ADFB5336B9B93750C5118A0179D929"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  849,
+                      "sha256":  "08D857AD14409F2BAD4FC3724D78E6CCC290517B7C23E2F9451EB7392D91FB2D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  725,
+                      "sha256":  "B805C5274BBE64050B9CFC9A3DE93A03B4E04681F867C3E688A30416535679AC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  684,
+                      "sha256":  "3358FB42C454CF646CFDCC88593F68BC10FE63489C77992F7381E50434ABE779"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  699,
+                      "sha256":  "391A86759A934DE1BD61BE58134B0E25BFA048F8B9AFB4DA55675D9D8AFAF223"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  711,
+                      "sha256":  "DBD50874559D42714CB9521C951F5F8E8B75DFD730EE15F6AC8214D202419C0D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_resource.png",
+                      "sizeBytes":  701,
+                      "sha256":  "46BE5A9D391EAE2B1A2FA8C5A02C8A4CC7CD2FFC8D5685E28B959664D373B8F8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_utility.png",
+                      "sizeBytes":  797,
+                      "sha256":  "BDE14BD2030B35B777229297E18A0AAECA1FE42A4334D0D12DEC9E92851655A2"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  679,
+                      "sha256":  "262C40DD12598115B0ECE22D1AD642DB6777A00616758AAC94DCF6162D69773F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_transfiguring.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-affixes_transfiguring.png",
+                      "sizeBytes":  1171,
+                      "sha256":  "1B79CE67F45FB42B8B9BE48178A7CCB3FBCD4930690757AC03E8EFEE9250D5B5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_legendary.png",
+                      "sizeBytes":  594,
+                      "sha256":  "B749E2386CF06D0E58D9621D0F3D0E53DD396F6323748CF3CFF582E95CDEC3EA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_mythic.png",
+                      "sizeBytes":  707,
+                      "sha256":  "37365AE7E2554267B96C62BCC048D80DC39AB8C8C853DBD88FB5C0923BB1B090"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_seasonal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_seasonal.png",
+                      "sizeBytes":  1578,
+                      "sha256":  "7679ABD6C638026185529E277EDE1805A8200C1623EA748F60F26AF560DF1410"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-aspects_unique.png",
+                      "sizeBytes":  904,
+                      "sha256":  "4594D8E9656A5689B118CF78BAE04BED26D8069B705D0D7B064DB23261E27BC0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_1.png",
+                      "sizeBytes":  2979,
+                      "sha256":  "165F90A84044DBE76EEE2F341F2E02C6B7C8A42303F49042146759CFE05E3A6D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_1_mask.png",
+                      "sizeBytes":  204,
+                      "sha256":  "BA9D8DD229813F3E4E04066CF3F09D16552EF2F36FF75452CC16B20A4AE51632"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_invocation.png",
+                      "sizeBytes":  2908,
+                      "sha256":  "0AA0E544B39AFC04E320ECCB40F7D17504AC25F7539C5B1BCF6465AB629E1CD6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4291,
+                      "sha256":  "BFB8589926468DE803C40DA469ED376703C236D872D85DDA265381CA1D70AE4D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_ritual.png",
+                      "sizeBytes":  2796,
+                      "sha256":  "8693EDB1D674D0A3599C9CA6D9A52EF5FDAFF7C78B5F1707594EC90494D912B9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4320,
+                      "sha256":  "581CA845E18A2D37F045D97AF7589E1C54BED9F23D8C4B6E02A3CF54B8BCC97C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_1.png",
+                      "sizeBytes":  1072,
+                      "sha256":  "FE4FE70876BE12B4236D441AA49DB6465793C8356A00E6EAC44963029FD23E0D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_2.png",
+                      "sizeBytes":  1049,
+                      "sha256":  "4297950DEBF60A3FAD08F9D058EB805651A40DAF0D137E15FFBFC8CE46C7E0CF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_3.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_3.png",
+                      "sizeBytes":  926,
+                      "sha256":  "FFB8F13A3659D926E87A3A2F641FBD4872782A710EDE8BA032F1823A06222D9F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_top_1.png",
+                      "sizeBytes":  1057,
+                      "sha256":  "E47A99AA5892984245197B04A1D1FF2047DC1CF6163CC7FA04D46AE4B43DC939"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/dot-splitter_top_2.png",
+                      "sizeBytes":  996,
+                      "sha256":  "73E4823108DEA2E9845BC5252BCB71CA54DEBE198898CC1F47FD7C6C03E1959B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "sizeBytes":  6937,
+                      "sha256":  "20FE99F02A4C386D1C4D1D31411E64DECF8E4F9B4B554FC565C15460F3643B89"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_space.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_space.png",
+                      "sizeBytes":  999,
+                      "sha256":  "300081C63A93B3B911E3DB22E27DE008EDC666B01A89277AE73FA2B351727A29"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+                      "sizeBytes":  1784,
+                      "sha256":  "A3B8AC3C3A3CA6729E6BB41A7FFEA255BD745B16F6978E5C95045150455C738E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  1321,
+                      "sha256":  "4ECA1B6A6FB3E5B8A3EAA67ECD0CD910C0C6848B4E0878EC0E3C0EB47B41C167"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  1310,
+                      "sha256":  "81A4698B573434CA2E8C815DFBA31FBFCBC2EC2E0CFCC25102A4539C1A47034D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_greater.png",
+                      "sizeBytes":  1169,
+                      "sha256":  "10BEC7F522C141AD07D5C0ACD1607D3608CE21E5AE4B16D48638E121A857D574"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_greater_master.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_greater_master.png",
+                      "sizeBytes":  1437,
+                      "sha256":  "7A300DB6E91BF57A30DBF16D7EB5814AC48B40EA94E7E51C477C22FB76F05F37"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_masterworking.png",
+                      "sizeBytes":  1256,
+                      "sha256":  "CBC7BB013E1F88E4987AA0A3732C0447191998E789A3159169F34361B2305FBF"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_normal.png",
+                      "sizeBytes":  569,
+                      "sha256":  "C6BDADAEA28462218F82F6CB0C75A259683D58DAE0400EA93332D05F41B46822"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_reroll.png",
+                      "sizeBytes":  565,
+                      "sha256":  "C11A11115EDEF63F4D330E108297C2B8FA5E5E76F9035914308212AF7AFD2F81"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  1025,
+                      "sha256":  "F1994587B3AB7D94281853B908A358A0F3674656C4B06DA868E85CB6367D0CE6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  987,
+                      "sha256":  "F6D80997EFF7E75CAD01E4A3B22AA76A49DB62E888CBFD3C4EA862C3AE5E4EE0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  853,
+                      "sha256":  "39C817CF1133CE2ADC0445AE8AE9358AB6FDB15B41ACB22E243C9F5C8C1F6502"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  937,
+                      "sha256":  "DECBAE252081D7C689AC9C4CCF3AAC87B334AF9AAFC99BA5F34C59834410F7F7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  956,
+                      "sha256":  "173F9A14A6DA5A8EC1D2C653252CB8136C7B6A657ACB786AD9A0CEC112276D2B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  985,
+                      "sha256":  "054FD1281E4C960FBF628D3A21FC355F265E0DE1D38BFBDD16B67AC7E1B1C761"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  1002,
+                      "sha256":  "642E7EACDCD91E6892A0D6C789FEB75B38596CAEF58FB3949AF3F2D09F50C693"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  946,
+                      "sha256":  "488B08EA2C53356BBFB718366EB9A240B089C0002640677125B8CD814639F599"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-affixes_transfiguring.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-affixes_transfiguring.png",
+                      "sizeBytes":  1639,
+                      "sha256":  "E98266D7F7D79B9EAE2C26E2B6981FC1D3C278DCB74EFE84E646B019FCBB963C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-aspects_legendary.png",
+                      "sizeBytes":  766,
+                      "sha256":  "375F6D9EF5FE1C1E07BEE3FDD37BA14ACE9C842CB8DE3C075CCB3CB7A743A503"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-aspects_mythic.png",
+                      "sizeBytes":  906,
+                      "sha256":  "14821E9216DA1B370E4D481069313630A13D6F55F65237E1AB0212ABCD2B271A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-aspects_unique.png",
+                      "sizeBytes":  902,
+                      "sha256":  "E7E43071FAED1E4139D01FCC7FAF11678E4BF1C1690C67DE7B40E46E3D0374D1"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_1.png",
+                      "sizeBytes":  3186,
+                      "sha256":  "F823A0579E858D3965C56247579D357060D7E0FA79F3E63B095371DFF1C7498F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_1_mask.png",
+                      "sizeBytes":  1756,
+                      "sha256":  "F8C8FE0B08F8008F3533893268478F34B29273C4F0DA40B26B53D0955348DD2B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_invocation.png",
+                      "sizeBytes":  2907,
+                      "sha256":  "C895D6E47A65C8604C1050A1263F5037192980461BDBD07D119506001E0915EC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4283,
+                      "sha256":  "DF4492FE7937AAA78D2B5D6EDCCBA18D57A1AA13C93770E6064B25F6EE996FB5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_ritual.png",
+                      "sizeBytes":  2966,
+                      "sha256":  "B0F8C45206309616B619BC1DE7F3D4428010C70E138ADFAE93091B73271BDEBC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  4280,
+                      "sha256":  "921C61B3F31011A20FB84589AE9F2C04F01AE09D55A1E567EAEF7A43DC1AB9EC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-splitter_1.png",
+                      "sizeBytes":  1071,
+                      "sha256":  "8CA1A30BAA7060255BCF6B757248ABF99B9101D01AE948F86D22771A1237258A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-splitter_2.png",
+                      "sizeBytes":  1121,
+                      "sha256":  "054CDD70950FA9B780D0FCCF28BA6FDFAA7122E70FF364F7D1BD18AB1B907832"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/dot-splitter_top_1.png",
+                      "sizeBytes":  1054,
+                      "sha256":  "9354ED65EFBD510ED54DA15D0A4C4188EA2FEFC6A94436161B7374AA5FD8A520"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+                      "sizeBytes":  734,
+                      "sha256":  "752A0D8F46D7EBBEF3C68A2EA34F80634C9D711E1961271024FC8EACDB8C97C2"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  1696,
+                      "sha256":  "7D6C4F302352608C26C58E30CCB47AE64375D0FC2894CA1BE4BB016AE9ACBC70"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  2260,
+                      "sha256":  "7ABE8297B22025703212A3EEF88D274861554A017322AC0F60D7BAA0CB3ED52A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all_esES.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all_esES.png",
+                      "sizeBytes":  1925,
+                      "sha256":  "17BB498D1542F741DEB5E4103F03000320DF7000A4D0664D4CE4CC0997FF6534"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1440p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+                      "sizeBytes":  1925,
+                      "sha256":  "17BB498D1542F741DEB5E4103F03000320DF7000A4D0664D4CE4CC0997FF6534"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-affixes_greater.png",
+                      "sizeBytes":  1799,
+                      "sha256":  "40C55B40ACBF64ECA568A65D8D51AD1BA99F0071D40F45256E186563032D2775"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-affixes_normal.png",
+                      "sizeBytes":  694,
+                      "sha256":  "18C688C0AFF7263682109BD7E824FBB6F0E5C932BB98907233794D6B4757227D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-affixes_reroll.png",
+                      "sizeBytes":  672,
+                      "sha256":  "3D3187A15901B816F4A8AB976C89F0349B8BE14A8E7001FD93F4799BE75AEE63"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-affixes_temper.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-affixes_temper.png",
+                      "sizeBytes":  641,
+                      "sha256":  "616F3F3E3683FE795045603C7ED033B8FF46EB1B8355B56A76F7CC4EDBE22949"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-aspects_legendary.png",
+                      "sizeBytes":  1012,
+                      "sha256":  "D6F61B796EE56F02D010A245097B7B9844BF459FD416612895026CEAB6D8A760"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-aspects_unique.png",
+                      "sizeBytes":  1414,
+                      "sha256":  "522D26C82B37B5B4AEBB38C1B03A7687FC9773480BF30C62062E1B1193B9C222"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-socket_1.png",
+                      "sizeBytes":  2563,
+                      "sha256":  "985B798ED599AE3E127C1F847019F2B9E3E24720E506D21EFFDAD3C071282541"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-socket_1_mask.png",
+                      "sizeBytes":  200,
+                      "sha256":  "8B67FAD63048538E80A0804C8EAA70E3A5141CAD57E55C06467974F789C8E938"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-splitter_1.png",
+                      "sizeBytes":  1274,
+                      "sha256":  "FAC2935B0CB1F151D5F5173CE84BDCDE8774F4E6E976C0B0086B84E5565D3B50"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/dot-splitter_top_1.png",
+                      "sizeBytes":  1356,
+                      "sha256":  "AADB868729D5B287F67B6AA593DBFC70478976D9A06FD4893BA02922019E6A8B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_gc_square.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_gc_square.png",
+                      "sizeBytes":  2018,
+                      "sha256":  "E5F623911ECCBA9A45D1D72C876F1D7A5984EB1BF07E3E57AF746C635EECBC26"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  2063,
+                      "sha256":  "11EF6037400C952C787ABF112756CE6538EB7B4F8FEE4B933064CF01408330C3"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  1755,
+                      "sha256":  "FAB26957BD45BD0AB9E3DB2EE028C77564C3B4BB05BF0968874DDEAF040B3B96"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/dot-affixes_normal.png",
+                      "sizeBytes":  823,
+                      "sha256":  "B11225B5DABAACCFF4F704B8502504E3D37C98F53C9C0FC8FE834FD911C47FE9"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/dot-affixes_reroll.png",
+                      "sizeBytes":  1420,
+                      "sha256":  "D5B7115CE44306997957B4F4556D46EF16BD1CB5613E6D29BDA62AFF6DB47403"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_legendary.png",
+                      "sizeBytes":  1213,
+                      "sha256":  "73146B988A26F391D91DD4DB556FC1162FAA092651B17E43A2217230ABBDBBBA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_seasonal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_seasonal.png",
+                      "sizeBytes":  1578,
+                      "sha256":  "7679ABD6C638026185529E277EDE1805A8200C1623EA748F60F26AF560DF1410"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/dot-aspects_unique.png",
+                      "sizeBytes":  1374,
+                      "sha256":  "97B8D70F7D51913C08BD8D5506FE900CD72BF396E8A798F6C6FBAC078FE48FBE"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+                      "sizeBytes":  6937,
+                      "sha256":  "20FE99F02A4C386D1C4D1D31411E64DECF8E4F9B4B554FC565C15460F3643B89"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+                      "sizeBytes":  1784,
+                      "sha256":  "A3B8AC3C3A3CA6729E6BB41A7FFEA255BD745B16F6978E5C95045150455C738E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/1600p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  2620,
+                      "sha256":  "BB356CDD547A90046A75709698555EA3504D8DA4E72AEA22C4D197BEEA4FBBB7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_greater.png",
+                      "sizeBytes":  2119,
+                      "sha256":  "B5F72A894213EBD4F735F77E45DE67FCDC69281A8940C316B1D9AC45CB052480"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_normal.png",
+                      "sizeBytes":  1098,
+                      "sha256":  "6707D43829392CE79220CB8730DE3F8C37E1B3FD584B444614A31BD4C4D2BC98"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_reroll.png",
+                      "sizeBytes":  904,
+                      "sha256":  "65569075ED17239E14232FBA17FECA4F24F7D854F5C429A27F35B7569754A3C3"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  1744,
+                      "sha256":  "78F89B3BC3A60B16BBA2C921EF218637E290E4406CAFF049E038968FDC18C68B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  1630,
+                      "sha256":  "8D3724C9C58FC0362A8A8D475D53566B5DBD71ECD6661BC61DE526DA5A0EED75"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  1582,
+                      "sha256":  "1D07E01170E74EA06FD279945893B4A90D584F5752EDCB4143BD530F33B5387E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  1804,
+                      "sha256":  "74219CBB1C41D068111559EE6711728EFD8E7C82C992753FFA9F6B464BBAB7FB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  1620,
+                      "sha256":  "B03B6E26717C4155F81928FBE163D4B1B95608FBBD233818B57C174F6B0F185E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  1661,
+                      "sha256":  "7E3C29B97176880A5F6085399A5D5F4BB312CF46B45E1955F89B161B6CA6D942"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  1717,
+                      "sha256":  "99A2907A3C86417195A03C5719B949C6274F1AADE571FF55A6BCE13DB09B3CBB"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  1881,
+                      "sha256":  "D3DF270125646BFBC2B93BA27C381419381036B218648FB93E857D9AC2C873F4"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-aspects_legendary.png",
+                      "sizeBytes":  1127,
+                      "sha256":  "9E7966813D18C0815F953D6304CED90EFA5EA7F6F46448D41AD9817C107235B5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-aspects_mythic.png",
+                      "sizeBytes":  1716,
+                      "sha256":  "56BF05636C0ABA9B172E8E33AB9A6FB3550EA54FF77E332D459391D75251FC3B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-aspects_unique.png",
+                      "sizeBytes":  1659,
+                      "sha256":  "03B4594222EBBF6AA3FE5564690DAB97978E6286D6DFFB7FCE20AB7855C9D635"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_1.png",
+                      "sizeBytes":  2916,
+                      "sha256":  "E9B8E2517420BD26B9A0FC808DEB70D7DEE32EA90D7A952F812DF08A036E2388"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_1_mask.png",
+                      "sizeBytes":  371,
+                      "sha256":  "F639AA99582BA8D50C948AE7743F1C99FC00D1964B5A61203026B97A8B367777"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_invocation.png",
+                      "sizeBytes":  6273,
+                      "sha256":  "5CA9CED4D5E159FE2E560FFE0E0E537ADB01C58DD78B27708B339B70DC897E5D"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  4330,
+                      "sha256":  "DC32281F20A268A0E481525DC04069D7705A8304CF690F3E920DA0F7AEA8AD9F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_ritual.png",
+                      "sizeBytes":  6411,
+                      "sha256":  "3C6BAC3409B0109A266B5CCD958851ADD895805A1D411694CEC5C108C4F0FF03"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  5000,
+                      "sha256":  "DCB42A8971ED5E5B3767123341B33387CC89F745F5234B4C157A0FEF96F1F46B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-splitter_1.png",
+                      "sizeBytes":  2169,
+                      "sha256":  "38978F0AA08B1BDEA5CA783C5C84D6687E22C254D8C9C694743092509FF9BA78"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-splitter_top_1.png",
+                      "sizeBytes":  2307,
+                      "sha256":  "3F9CADCE53D09A365EC3338AEBD59329B878D2540481590A66F72CAB5490011C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/dot-splitter_top_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/dot-splitter_top_2.png",
+                      "sizeBytes":  2297,
+                      "sha256":  "0C69EB6BB56C371570D334FABDBE9C462ADA4CBA7F73A3DDAFE6D74B4A92F8AA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/Tooltips/Optional/tooltip_kb_all_salvage.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/Tooltips/Optional/tooltip_kb_all_salvage.png",
+                      "sizeBytes":  16212,
+                      "sha256":  "8DFC9CE52085F8F91271E33B983261A4792E9C298BF68C3E8C1D99C31967C39C"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_a.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_a.png",
+                      "sizeBytes":  5588,
+                      "sha256":  "FDC94ED4EE99D86E910FB3764F5BCC81A8CBBBB09D8274042BF0CE5F23236B52"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  4883,
+                      "sha256":  "9015F570EBC105F1A9A8E549C8CEB423444952A42D7A9231A8B6F00050E9827A"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_y.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_gc_y.png",
+                      "sizeBytes":  5117,
+                      "sha256":  "B162517CDFF944DF72086F2A1445850CF464E3003E70AF70FD5AD6104D7D1DC7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_HSF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  2492,
+                      "sha256":  "3908CB348D9962FD854B1003DF70EDF79EDE0BFB2F0EECEB4CAD94BB5A17DA03"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_greater.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_greater.png",
+                      "sizeBytes":  2326,
+                      "sha256":  "9562055E363C18EC9384B9E3972E778DCCB8005D0CA1791EC174147252F54A55"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_masterworking.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_masterworking.png",
+                      "sizeBytes":  1196,
+                      "sha256":  "6D66FE0479EA134DCD728DF041A0011EAEA1EEF125396DA2AC8CE5C45A75B287"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_normal.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_normal.png",
+                      "sizeBytes":  971,
+                      "sha256":  "BFE12BFE8368D9CAF358FB7C891460828698729458A5957E0BC2CFEBB2706BAE"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_reroll.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_reroll.png",
+                      "sizeBytes":  983,
+                      "sha256":  "FDF49601F100E48076D5E3D5F01E9D85842F7E91A4A4ADEC56C29C933487AC86"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_rune_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_rune_invocation.png",
+                      "sizeBytes":  1245,
+                      "sha256":  "B18C0EC6EB1563B7ACE7B1AC8A1FA7AE12B99987CEF7416540D99894C880917F"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_rune_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_rune_ritual.png",
+                      "sizeBytes":  1222,
+                      "sha256":  "1B8B0BC3106DFB591D1A9BF11CECA195C1D6662E846C580870B500B778312B1B"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_sanctified.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_sanctified.png",
+                      "sizeBytes":  978,
+                      "sha256":  "9DCC4D7966B40868FEC306D28C369DE17E2EFE90A9A49FEB46CBBF8F6B261EA7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_defensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_defensive.png",
+                      "sizeBytes":  1518,
+                      "sha256":  "4F78FA20E7D585DBB175118B3658FFCF418BF253B962C6B4F715CE827F5A0E21"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_mobility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_mobility.png",
+                      "sizeBytes":  1698,
+                      "sha256":  "0E076587C8DEF9DA0DB385F58FD1FF2CE7493F9786621DE010D0EEF2B7BE3B34"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_offensive.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_offensive.png",
+                      "sizeBytes":  1797,
+                      "sha256":  "99B5AD19E0970DF38217547857298A1F676D7455F708C59FBB052663B9049DF0"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_resource.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_resource.png",
+                      "sizeBytes":  1679,
+                      "sha256":  "B4D2A74E1D67FD11423AE5381777D098484786C3CC2539467B4ED5FBA2061065"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_utility.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_utility.png",
+                      "sizeBytes":  1951,
+                      "sha256":  "830558B81D5093AF1D8BF1D82D2671B93B35997ED7B21B62F206E0F7EED291F6"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-affixes_temper_weapons.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-affixes_temper_weapons.png",
+                      "sizeBytes":  1933,
+                      "sha256":  "5DF8B54473E1BA61F09E68B0C6165D596E92A04A6D8A689D84D45B8DF8A459ED"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-aspects_legendary.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-aspects_legendary.png",
+                      "sizeBytes":  1497,
+                      "sha256":  "51A81A66FC2CD6D2C4E1824121957BDA717A98F37D6FC97A306296AB2E662CA8"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-aspects_mythic.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-aspects_mythic.png",
+                      "sizeBytes":  1510,
+                      "sha256":  "7D283FA50B6420D4EAB8357B28D8E8A4F01C9C657C5E2C3FD963528F6D2B3EBA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-aspects_unique.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-aspects_unique.png",
+                      "sizeBytes":  2084,
+                      "sha256":  "A4103783FF011E92CCD9C40E854CB564F7016B8BB2DDAE5A6A7D5A5B8A5F6FCD"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_1.png",
+                      "sizeBytes":  3661,
+                      "sha256":  "816FF9C3EA4D73D71D84621BFA742209A9BE4FF775A72E12AE82293EC0411965"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_1_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_1_mask.png",
+                      "sizeBytes":  371,
+                      "sha256":  "702ED14E5326E108108E6014E855D6106EEA60A1ECE4AC26F13ED701F9AD7CF5"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_2.png",
+                      "sizeBytes":  3690,
+                      "sha256":  "D8829864B4CD28CB1012F8743EAE75660023345156A8C96FC0604D252E7D514E"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_2_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_2_mask.png",
+                      "sizeBytes":  374,
+                      "sha256":  "BCBCC2FAD53D37BF981C88C420D693DC6A2443F051F9B046BDF0054C9E71EF74"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_invocation.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_invocation.png",
+                      "sizeBytes":  6553,
+                      "sha256":  "81988EB651FBC87175B3FCFE1440585D57ACD333F9269F489B0242943A5E1393"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_invocation_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_invocation_mask.png",
+                      "sizeBytes":  333,
+                      "sha256":  "2BDF77AFE3068AFF3B266E354AAD97564E8A326EEE2A6FB650591B324D02FBBC"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_ritual.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_ritual.png",
+                      "sizeBytes":  6755,
+                      "sha256":  "935B5E18793D0F34261E05F4423E2E7F8E3DCDD53ECBAB2DF2FF31F6983AB536"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-socket_ritual_mask.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-socket_ritual_mask.png",
+                      "sizeBytes":  326,
+                      "sha256":  "42A339FED116C5376AC6C453C7E8AF92D625C681C39050FF7D298DA7322DB7D4"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-splitter_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-splitter_1.png",
+                      "sizeBytes":  3080,
+                      "sha256":  "475879565C3FB97D137CC9DA6296EF623F0B8508854C0EB39DD600C6308AD6B7"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-splitter_2.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-splitter_2.png",
+                      "sizeBytes":  2447,
+                      "sha256":  "750F53E79956519F0DDFAEF631DD1F1C0C4E8C4000D611547CF2CEA6CD748874"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/dot-splitter_top_1.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/dot-splitter_top_1.png",
+                      "sizeBytes":  3015,
+                      "sha256":  "FAF8E3CF97D2FF4817E39806EBBBB5B3DB5A6ACA3C69E91B17695715DE970197"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_gc_square.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_gc_square.png",
+                      "sizeBytes":  1767,
+                      "sha256":  "74FE0D376E73E46A045F5F4A6D287987E1E148779928A2517BE36D18B4179BAA"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_gc_x.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_gc_x.png",
+                      "sizeBytes":  2745,
+                      "sha256":  "300AEBE7D3BFD0AEC5E470B3FAF5F9504D8C0652BCB52AC02B8F08C38CEC9575"
+                  },
+                  {
+                      "source":  "downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_kb_all.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/downloads/systempresets/images/2160p_SSF/Tooltips/tooltip_kb_all.png",
+                      "sizeBytes":  3009,
+                      "sha256":  "39892312969B5CD91B95D6AAABF61F4064CD27FAB832B1DCB73F1646D4C00A45"
+                  },
+                  {
+                      "source":  "readme/diablo4companion.xcf",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/diablo4companion.xcf",
+                      "sizeBytes":  1803118,
+                      "sha256":  "DB6C00185781C3687FD67DD16DC3E8C8B761F467516EDB4E4E9EF4884CA48607"
+                  },
+                  {
+                      "source":  "readme/esES/readme-002.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-002.png",
+                      "sizeBytes":  111418,
+                      "sha256":  "1DBCD5349D70554B5531A345CD2BD9C4567DEBCAD6C66D910686979865D1F399"
+                  },
+                  {
+                      "source":  "readme/esES/readme-003.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-003.png",
+                      "sizeBytes":  39013,
+                      "sha256":  "B4BC801CAC44190AB60FB88A321C41F7C6C1E45C3E1C0F4BB989A1E4D67EDEC9"
+                  },
+                  {
+                      "source":  "readme/esES/readme-004.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-004.png",
+                      "sizeBytes":  60822,
+                      "sha256":  "AD7A8325C890111FD160D17E187BD3C4629272162F98DE2248E7C90A9B83F50E"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top.jpg",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top.jpg",
+                      "sizeBytes":  863705,
+                      "sha256":  "538B4995CFA75713F323AD765C94CAB075E702B692629FC45AB6B444976018A8"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-001.png",
+                      "sizeBytes":  103510,
+                      "sha256":  "074AEF284D6DF49B0DD9F86D209858BAF11B215A19B8A2529E9C5296E1117C1E"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-002.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-002.png",
+                      "sizeBytes":  85134,
+                      "sha256":  "2D6E8EB96B51DBEFE0A7A433855432FC2BCF9AB47E28D1AB720694C13A4EDF8C"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-003.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-003.png",
+                      "sizeBytes":  77868,
+                      "sha256":  "F0EE18A7085869AEF1DA00B438C085E28B451A8E177CD17AEDDE864682CEC116"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-004.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-004.png",
+                      "sizeBytes":  84679,
+                      "sha256":  "08EA072FED7B163155F1C7FD7902157DA11BE4078F811726CB6B74407D93A2C7"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-005.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-005.png",
+                      "sizeBytes":  45862,
+                      "sha256":  "359B1C67A3AB484229DD2D1FA8ECB3BDBD6351218E0CE10EF56502618550989A"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-006.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-006.png",
+                      "sizeBytes":  25788,
+                      "sha256":  "4953560A3C0BD5074925D20BB84EBBC9CED0C0FCC11EE5EC6369027CCC1B6865"
+                  },
+                  {
+                      "source":  "readme/esES/readme-top-paragon.jpg",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/esES/readme-top-paragon.jpg",
+                      "sizeBytes":  799576,
+                      "sha256":  "D1F4839762AA90EE8D2D732B2CFEC4B964698E275F1A80FA3C78EF69465CEDB8"
+                  },
+                  {
+                      "source":  "readme/readme-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-001.png",
+                      "sizeBytes":  835509,
+                      "sha256":  "7A31BC84748EAB2D22A3AA01E0C3248F004451153B9AA41E3E227DCB26F4D29A"
+                  },
+                  {
+                      "source":  "readme/readme-002.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-002.png",
+                      "sizeBytes":  138862,
+                      "sha256":  "81D0C564C17C43468253C6DFC225C433AB7813AD9D0F1827D8AFE161A0AADFD8"
+                  },
+                  {
+                      "source":  "readme/readme-003.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-003.png",
+                      "sizeBytes":  58437,
+                      "sha256":  "CAF6AF15F30FD40ED247148D1EA28A449459AB09F4866F011EC50D6263FB0FAE"
+                  },
+                  {
+                      "source":  "readme/readme-004.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-004.png",
+                      "sizeBytes":  111181,
+                      "sha256":  "35B642CB48FEA1D4B439A436805EAC7AEC50AE9715BF6C1F5FE12FD090AEFEB3"
+                  },
+                  {
+                      "source":  "readme/readme-top.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top.png",
+                      "sizeBytes":  1889055,
+                      "sha256":  "A84BC0569763E47848E6470D46A14BF9DB351B4F95B4795E27DC98CA2201974D"
+                  },
+                  {
+                      "source":  "readme/readme-top-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-001.png",
+                      "sizeBytes":  164147,
+                      "sha256":  "439CC36C6949B483922B0B57DA2CE4C4B803779AAFE50E4F72B2DAD0F25F5D5E"
+                  },
+                  {
+                      "source":  "readme/readme-top-002.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-002.png",
+                      "sizeBytes":  152543,
+                      "sha256":  "05F7458857EAF54BB612B299091E0A4728F0C0FA46CBA10630D05D2BDE53807C"
+                  },
+                  {
+                      "source":  "readme/readme-top-003.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-003.png",
+                      "sizeBytes":  118476,
+                      "sha256":  "15E47BCF6E5CA4F8B27A80A2DD33D978044318F0D91A96CE6232D0598CC1874C"
+                  },
+                  {
+                      "source":  "readme/readme-top-004.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-004.png",
+                      "sizeBytes":  149623,
+                      "sha256":  "F1DB0F1F6D5EF4FA66B72CC671D3E34FD4C2E4C2AA41788EF7A840DBB6D05D4E"
+                  },
+                  {
+                      "source":  "readme/readme-top-005.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-005.png",
+                      "sizeBytes":  97182,
+                      "sha256":  "83696C37BB774E2E709782A5066237FA023EA91D9AB970B6EC2838D64CCA602A"
+                  },
+                  {
+                      "source":  "readme/readme-top-006.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-006.png",
+                      "sizeBytes":  55517,
+                      "sha256":  "56F7B835E96147AE4EE0279E4CEA82D7DACE6399900AB744841D7A796C10E39E"
+                  },
+                  {
+                      "source":  "readme/readme-top-paragon.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/readme-top-paragon.png",
+                      "sizeBytes":  4288765,
+                      "sha256":  "0556289ECF1D96CE346E1EFB8B14B0A6456CB1F53AC0A1FCFBEFD8AA646B093A"
+                  },
+                  {
+                      "source":  "readme/wiki-debug-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/wiki-debug-001.png",
+                      "sizeBytes":  68087,
+                      "sha256":  "7C51175D39406A12B3BF73FD91EB57B50C6A225D2F57CB60982E7AD7B8153903"
+                  },
+                  {
+                      "source":  "readme/wiki-imports-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/wiki-imports-001.png",
+                      "sizeBytes":  68197,
+                      "sha256":  "A37A75B83473AC9D28518E8E21923A62EF695969D699DBC9642CD58636B8F328"
+                  },
+                  {
+                      "source":  "readme/wiki-systempreset-001.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/wiki-systempreset-001.png",
+                      "sizeBytes":  1213867,
+                      "sha256":  "1342CC6C366E75E38E1749A0F340B84243F68D73825CBC4984DBBDB28DA1E519"
+                  },
+                  {
+                      "source":  "readme/wiki-systempreset-002.png",
+                      "destination":  "third_party/Diablo4Companion/visual-assets/readme/wiki-systempreset-002.png",
+                      "sizeBytes":  764453,
+                      "sha256":  "F6A1AEB35F307DC3E789DB95304D42C028639D0C905C22CA41922C09B316EAE4"
+                  }
+              ]
+}

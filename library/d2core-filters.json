@@ -1,0 +1,441 @@
+{
+    "schemaVersion":  1,
+    "updatedAt":  "2026-08-04T00:00:00+00:00",
+    "filters":  [
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZsP-filter-early",
+                        "source":  "d2core",
+                        "buildId":  "1ZsP",
+                        "variantIndex":  0,
+                        "name":  "风暴狼德前期过滤器",
+                        "buildName":  "风暴狼德",
+                        "className":  "Druid",
+                        "season":  14,
+                        "stage":  "early",
+                        "levelRange":  "1-70 / 前期",
+                        "useCases":  [
+                                         "开荒",
+                                         "刷装"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZsP",
+                        "description":  "来源页面的前期过滤器。复制码由页面按钮读取，颜色说明保留在本地集合中。",
+                        "copyCode":  "CpUBCibliY3mnJ/miYvlpZcm5oiS5oyHJumhuemTvumcgOaxguivjeadoRACHWlp5P8iEQgFFXTRBgAVddEGABVx0QYAIk8IBhVowBwAFYPBHAAVMW4dABXO6hsAFbjqGwAV3uobABX9CicAFbTqGwAVgPwbABXG6hsAFWrAHAAV2OobABVmwBwAFdTqGwAV0uobACADKAEKfQoY5YmN5pyf5q2m5Zmo6ZyA5rGC6K+N5p2hEAIdaWnk/yI0CAUVRNEGABVd0QYAFWvRBgAVUtEGABVM0QYAFVPRBgAVOtEGABVZ0QYAFVHRBgAVmEojACIiCAYVk/wnABXG6hsAFRNeHQAV1OobABXS6hsAFf0KJwAgAygBCmQKGOWJjeacn+aKpOeUsumcgOaxguivjeadoRACHWlp5P8iFggFFW/RBgAVbtEGABVt0QYAFXDRBgAiJwgGFTNeHQAVxuobABU4/RsAFdjqGwAVuOobABXe6hsAFbLqGwAgAygBCpUBCibliY3mnJ/miYvlpZcm5oiS5oyHJumhuemTvumcgOaxguivjeadoRACHfmvV/8iEQgFFXTRBgAVddEGABVx0QYAIk8IBhVowBwAFYPBHAAVMW4dABXO6hsAFbjqGwAV3uobABX9CicAFbTqGwAVgPwbABXG6hsAFWrAHAAV2OobABVmwBwAFdTqGwAV0uobACACKAEKfQoY5YmN5pyf5q2m5Zmo6ZyA5rGC6K+N5p2hEAId+a9X/yI0CAUVRNEGABVd0QYAFWvRBgAVUtEGABVM0QYAFVPRBgAVOtEGABVZ0QYAFVHRBgAVmEojACIiCAYVk/wnABXG6hsAFRNeHQAV1OobABXS6hsAFf0KJwAgAigBCmQKGOWJjeacn+aKpOeUsumcgOaxguivjeadoRACHfmvV/8iFggFFW/RBgAVbtEGABVt0QYAFXDRBgAiJwgGFTNeHQAVxuobABU4/RsAFdjqGwAVuOobABXe6hsAFbLqGwAgAigBClEKFemjjuaatOeLvOmcgOaxguaal+mHkRACHWdn7/8iLwgIFYY5JwAVhBEGABVr7hMAFXvLFwAVNjwnABVpwR8AFUNxJwAVb8EfABVdPicAKAEKJgoS6aOO5pq05Y+454mn5aWX6KOFEAIdIiLo/yIHCAkVJgMjACgBCiMKEuWPr+WNh+e6p+eahOWogeiDvRACHaz+ef8iBAgDMAEoARIn44CQ6JOd6JCM5ZCb44CR6aOO5pq054u85YmN5pyf6L+H5ruk5ZmoGAIgAg==",
+                        "legend":  [
+                                       {
+                                           "color":  "#E74C3C",
+                                           "label":  "红色",
+                                           "description":  "可升级威能和需求的暗金"
+                                       },
+                                       {
+                                           "color":  "#E58AD4",
+                                           "label":  "粉色",
+                                           "description":  "3 条可用词条"
+                                       },
+                                       {
+                                           "color":  "#4DA3FF",
+                                           "label":  "蓝色",
+                                           "description":  "2 条正确词条"
+                                       },
+                                       {
+                                           "color":  "#7BD88F",
+                                           "label":  "浅绿色",
+                                           "description":  "可升级威能"
+                                       }
+                                   ],
+                        "updatedAt":  "2026-08-03T00:00:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZCi-filter-mid",
+                        "source":  "d2core",
+                        "buildId":  "1ZCi",
+                        "variantIndex":  0,
+                        "name":  "野蛮人中期过滤器",
+                        "buildName":  "溶解旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "mid",
+                        "levelRange":  "巅峰 1-150",
+                        "useCases":  [
+                                         "换装",
+                                         "速刷"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZCi",
+                        "description":  "解锁巅峰盘后，适用于巅峰 1-150 级。",
+                        "copyCode":  "Cg8QAh3OAP//IgQIAzABKAEKbBACHQAA//8iBggEIAEwASIECAIgBCIECAEgCCJNCAUVbtEGABVE0QYAFV3RBgAVUtEGABVw0QYAFUzRBgAVT9EGABV00QYAFW/RBgAVOtEGABV10QYAFXHRBgAVUdEGABWYSiMAFW3RBgAoAQqVARAAHQAA//8iTwgHFYULKAAVwuobABU4Xh0AFSBpHAAVMW4dABXQCicAFc7qGwAVuOobABUKPCcAFZP8JwAVgPwbABXY6hsAFdTqGwAV0uobABV5/BsAIAIiOQgFFUTRBgAVXdEGABVS0QYAFUzRBgAVdNEGABVP0QYAFTrRBgAVddEGABVx0QYAFVHRBgAVmEojACgBClQQAB0AAP//IjEIBxXC6hsAFTheHQAVOP0bABW46hsAFd7qGwAVSWkcABXkVyUAFdjqGwAVefwbACACIhYIBRVv0QYAFW7RBgAVbdEGABVw0QYAKAEKGRAAHQAA//8iCAgAIIQHKIQHIgQIASAQKAEKDxAAHQAA//8iBAgCICQoAQoVEAAdAAD//yIECAIgJSIECAMwASgBChgQAx0AAP//IgQIASABIgcIBRWAfiMAKAEKGBADHQAA//8iBAgBIAMiBwgFFXv0QYAFW/RBgAVOtEGABV10QYAFXHRBgAVUdEGABVt0QYAFZhKIwAoARIM5Lit5pyf5L2/55SoGAQgAQ==",
+                        "updatedAt":  "2026-08-03T00:00:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZCi-filter-late",
+                        "source":  "d2core",
+                        "buildId":  "1ZCi",
+                        "variantIndex":  0,
+                        "name":  "野蛮人后期过滤器",
+                        "buildName":  "溶解旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "巅峰 151-200",
+                        "useCases":  [
+                                         "终局",
+                                         "速刷"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZCi",
+                        "description":  "全身装备品质达到 850 传奇以上时使用，适用于巅峰 151-200 级。",
+                        "copyCode":  "Cg8QAh3/APn/IgQIAzABKAEKbBACHQAA//8iBggEIAEwASIECAIgBCIECAEgCCJNCAUVbtEGABVE0QYAFV3RBgAVUtEGABVw0QYAFUzRBgAVT9EGABV00QYAFW/RBgAVOtEGABV10QYAFXHRBgAVUdEGABWYSiMAFW3RBgAoAQoZEAAdAAD//yIICAAghAcohAciBAgBIBAoAQoPEAAdAAD//yIECAIgJCgBChUQAB0AAP//IgQIAiAlIgQIAzABKAEKGBADHQAA//8iBAgBIAEiBwgFFYB+IwAoAQoYEAMdAAD//yIECAEgAyIHCAUVBe0iACgBCl4QAx0AAP//IgQIASAfIk0IBRVE0QYAFW7RBgAVXdEGABVS0QYAFXDRBgAVTNEGABVP0QYAFXTRBgAVb9EGABU60QYAFXXRBgAVcdEGABVR0QYAFW3RBgAVmEojACgBEgzlkI7mnJ/kvb/nlKgYBSAE",
+                        "updatedAt":  "2026-08-03T00:00:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZCi-filter-endgame",
+                        "source":  "d2core",
+                        "buildId":  "1ZCi",
+                        "variantIndex":  0,
+                        "name":  "野蛮人大后期过滤器",
+                        "buildName":  "溶解旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "太古词缀起步",
+                        "useCases":  [
+                                         "终局",
+                                         "冲层"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZCi",
+                        "description":  "全身装备至少拥有 1 条太古强效词缀时使用。",
+                        "copyCode":  "CmwQAh0AAP//IgYIBCABMAEiBAgCIAQiBAgBIAgiTQgFFW7RBgAVRNEGABVd0QYAFVLRBgAVcNEGABVM0QYAFU/RBgAVdNEGABVv0QYAFTrRBgAVddEGABVx0QYAFVHRBgAVmEojABVt0QYAKAEKDxACHdwA//8iBAgDMAEoAQoPEAAdAAD//yIECAIgICgBCg8QAB0AAP//IgQIAzABKAEKahAAHQAA//8iCAgAIIQHKIQHIgYIBCABMAEiTQgFFW7RBgAVRNEGABVd0QYAFVLRBgAVcNEGABVM0QYAFXTRBgAVT9EGABU60QYAFW/RBgAVddEGABVx0QYAFVHRBgAVmEojABVt0QYAKAEKGRAAHQAA//8iCAgAIIQHKIQHIgQIASAQKAEKGBADHQAA//8iBAgBIAEiBwgFFYB+IwAoAQoYEAMdAAD//yIECAEgAyIHCAUVBe0iACgBCmgQAx0AAP//IggIACCEByiEByIECAEgDyJNCAUVRNEGABVu0QYAFV3RBgAVUtEGABVw0QYAFUzRBgAVdNEGABVP0QYAFTrRBgAVb9EGABV10QYAFXHRBgAVUdEGABWYSiMAFW3RBgAoAQpeEAMdAAD//yIECAEgHyJNCAUVRNEGABVu0QYAFV3RBgAVUtEGABVw0QYAFUzRBgAVT9EGABV00QYAFW/RBgAVOtEGABV10QYAFXHRBgAVUdEGABVt0QYAFZhKIwAoARIP5aSn5ZCO5pyf5L2/55SoGAMgAw==",
+                        "updatedAt":  "2026-08-03T00:00:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1Zxa-filter-general",
+                        "source":  "d2core",
+                        "buildId":  "1Zxa",
+                        "variantIndex":  0,
+                        "name":  "灵巫 S14 通用过滤器",
+                        "buildName":  "绝地反击灵巫",
+                        "className":  "Spiritborn",
+                        "season":  14,
+                        "stage":  "general",
+                        "levelRange":  "1-70 / 后期",
+                        "useCases":  [
+                                         "开荒",
+                                         "速刷",
+                                         "冲层"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1Zxa",
+                        "description":  "当前页面提供的通用过滤器。",
+                        "copyCode":  "CoIBCg/ljZXlpKrlj6TpmLLlhbcQAh0AAP//IkgIBhW66hsAFTj9GwAV2OobABWy6hsAGgoNOP0bABU4/RsAGgoNuuobABW66hsAGgoN2OobABXY6hsAGgoNsuobABWy6hsAIAEiFggFFW7RBgAVb9EGABVt0QYAFXDRBgAiBAgCIAQoAQrrAQoY5Y2V5aSq5Y+k5pS75Ye75ZCR5bqV5p2QEAIdAAD//yIECAIgBCIgCAUVdNEGABVxUhYAFS3SFgAVXdEGABVx0QYAFXXRBgAinQEIBhXQCicAFc7qGwAV/QonABWA/BsAFdbqGwAV+wonABXU6hsAFfcKJwAV0uobABoKDdAKJwAV0AonABoKDc7qGwAVzuobABoKDf0KJwAV/QonABoKDYD8GwAVgPwbABoKDdbqGwAV1uobABoKDfsKJwAV+wonABoKDfcKJwAV9wonABoKDdTqGwAV1OobABoKDdLqGwAV0uobACABKAEKIwoS6IO96YeP5rOV5YW45Y2H57qnEAId2ugi/yIECAMwASgBCigKD+espuWNsOWSjOWwgeWNsBAAHQAA//8iDAgFFQXtIgAVgH4jACgBCh0KDOWFiOelluW6leadkBAAHQAA//8iBAgCIAQoAQodChLpmpDol4/lhbbku5bmiYDmnIkQAx0AAP//KAESGOeBteW3q1MxNOmAmueUqOi/h+a7pOWZqBgDIAE=",
+                        "updatedAt":  "2026-08-03T00:00:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZsP-filter-early-ascend",
+                        "source":  "d2core",
+                        "buildId":  "1ZsP",
+                        "variantIndex":  2,
+                        "name":  "风暴狼德前期过滤器（开启巅峰后）",
+                        "buildName":  "风暴狼德",
+                        "className":  "Druid",
+                        "season":  14,
+                        "stage":  "early",
+                        "levelRange":  "巅峰 1-100",
+                        "useCases":  [
+                                         "前期",
+                                         "换装"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZsP\u0026var=3",
+                        "description":  "红色-可升级威能\u0026需求的暗金；粉色-3条可用词条；蓝色-2条正确词条；浅绿色-可升级威能；显示全部900装等和3条正确的850装等物品。",
+                        "copyCode":  "ClEKFemjjuaatOeLvOmcgOaxguaal+mHkRAAHWdn7/8iLwgIFYY5JwAVhBEGABVr7hMAFXvLFwAVNjwnABVpwR8AFUNxJwAVb8EfABVdPicAKAEKUQoV6aOO5pq054u86ZyA5rGC5pqX6YeREAIdZ2fv/yIvCAgVhjknABWEEQYAFWvuEwAVe8sXABU2PCcAFWnBHwAVQ3EnABVvwR8AFV0+JwAoAQpgEAIdaWnk/yIECAEgPCJPCAYVaMAcABWDwRwAFTFuHQAVzuobABW46hsAFd7qGwAV/QonABW06hsAFYD8GwAVxuobABVqwBwAFdjqGwAVZsAcABXU6hsAFdLqGwAgAygBCoMBChjliY3mnJ/mrablmajpnIDmsYLor43mnaEQAh1paeT/IgQIASA8IjQIBRVE0QYAFV3RBgAVa9EGABVS0QYAFUzRBgAVU9EGABU60QYAFVnRBgAVUdEGABWYSiMAIiIIBhWT/CcAFcbqGwAVE14dABXU6hsAFd7qGwAV/QonACADKAEKagoY5YmN5pyf5oqk55Sy6ZyA5rGC6K+N5p2hEAIdaWnk/yIECAEgPCIWCAUVb9EGABVu0QYAFW3RBgAVcNEGACInCAYVM14dABXG6hsAFTj9GwAV2OobABW46hsAFd7qGwAVsuobACADKAEKcxACHfmvV/8iBAgBIDAiEQgFFXTRBgAVddEGABVx0QYAIk8IBhVowBwAFYPBHAAVMW4dABXO6hsAFbjqGwAV3uobABX9CicAFbTqGwAVgPwbABXG6hsAFWrAHAAV2OobABVmwBwAFdTqGwAV0uobACACKAEKTQoY5YmN5pyf5q2m5Zmo6ZyA5rGC6K+N5p2hEAId+a9X/yIECAEgMCIiCAYVk/wnABXG6hsAFRNeHQAV1OobABXS6hsAFf0KJwAgAigBCmoKGOWJjeacn+aKpOeUsumcgOaxguivjeadoRACHfmvV/8iBAgBIDAiFggFFW/RBgAVbtEGABVt0QYAFXDRBgAiJwgGFTNeHQAVxuobABU4/RsAFdjqGwAVuOobABXe6hsAFbLqGwAgAigBCiYKEumjjuaatOWPuOeJp+Wll+ijhRACHSIi6P8iBwgJFSYDIwAoAQojChLlj6/ljYfnuqfnmoTlqIHog70QAh2s/nn/IgQIAzABKAEKMgoT5pi+56S656We56ymJuWwgeWNsBAAHQAA//8iBAgBIHwiDAgFFQXtIgAVgH4jACgBCisKGOS7u+aEj+WQq+WkquWPpOivjeadoeijhRAAHQAA//8iBggEIAEwASgBCi0KFTg1MOS7peS4i+ijheetieeJqeWTgRADHQAA//8iBQgAKIMHIgQIASBfKAEYAiAC",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-08-01T08:28:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1YXR-filter-late",
+                        "source":  "d2core",
+                        "buildId":  "1YXR",
+                        "variantIndex":  0,
+                        "name":  "溶解中后期",
+                        "buildName":  "溶解旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "巅峰 100+",
+                        "useCases":  [
+                                         "终局",
+                                         "速刷",
+                                         "冲层"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1YXR",
+                        "description":  "单太古起步，优先更好的威能、本 BD 相关词缀、太古暗金、神话暗金与套装护身符。",
+                        "copyCode":  "ChcKBuWogeiDvRAAHQAA//8iBAgDMAEoAQqeAQoG5q2m5ZmoEAIdrQD//yJZCAYVwuobABWT/CcAFdAKJwAV1OobABXS6hsAGgoNwuobABXC6hsAGgoNk/wnABWT/CcAGgoN0AonABXQCicAGgoN1OobABXU6hsAGgoN0uobABXS6hsAIAEiBAgBIA4iKggFFUzRBgAVT9EGABVE0QYAFTrRBgAVXdEGABVS0QYAFVHRBgAVmEojACgBCsUBCgbpppbppbAQAh2tAP//Ip0BCAYVhQsoABXC6hsAFSDrGwAVzuobABW46hsAFQo8JwAVgwsoABWA/BsAFdLqGwAaCg3C6hsAFcLqGwAaCg2FCygAFYULKAAaCg0g6xsAFSDrGwAaCg3O6hsAFc7qGwAaCg246hsAFbjqGwAaCg0KPCcAFQo8JwAaCg2A/BsAFYD8GwAaCg2DCygAFYMLKAAaCg3S6hsAFdLqGwAgASIECAEgDiIMCAUVdNEGABV10QYAKAEKjAEKBumYsuWFtxACHa0A//8iaggGFcLqGwAVOP0bABXY6hsAFbLqGwAVK24dABV5/BsAGgoNwuobABXC6hsAGgoNOP0bABU4/RsAGgoN2OobABXY6hsAGgoNsuobABWy6hsAGgoNK24dABUrbh0AGgoNefwbABV5/BsAIAEiBAgBIA4iBwgFFW3RBgAoAQojCgzlpKrlj6Tmmpfph5EQAB3GYtb/IgQIASAQIgQIAiAEKAEKOAoP5aWX6KOF5oqk6Lqr56ymEAIdrQD//yIHCAUVBe0iACITCAYVhQsoABUxbh0AFXn8GwAgASgBCjcKGOWll+ijheaKpOi6q+espu+8jOWwgeWNsBAAHf8iAP8iBAgBIFgiDAgFFYB+IwAVBe0iACgBCnYKDOelnuivneaal+mHkRAAHQAA//8iBAgBICAiVwgFFYB+IwAVXdEGABVS0QYAFXDRBgAVT9EGABV00QYAFTrRBgAVb9EGABV10QYAFVHRBgAVBe0iABVu0QYAFUTRBgAVTNEGABVx0QYAFW3RBgAVmEojACgBChEQAh2tAP//IgYIBCABMAEoAQoPEAMdAAD//yIECAIgBSgBEg8wMi7murbop6Pnu4jlsYAYAiAB",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-08-03T21:24:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1YXR-filter-leveling",
+                        "source":  "d2core",
+                        "buildId":  "1YXR",
+                        "variantIndex":  5,
+                        "name":  "开荒装备过滤器",
+                        "buildName":  "无限旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "leveling",
+                        "levelRange":  "15-70",
+                        "useCases":  [
+                                         "开荒",
+                                         "升级"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1YXR\u0026var=6",
+                        "description":  "开荒阶段优先显示各类伤害、怒气回复、全元素抗性和移动速度。",
+                        "copyCode":  "CmAKIeS8pOWus++8jOaAkuawlO+8jOWFqOaKl++8jOenu+mAnxACHZIq3/8iBAgBIAYiLAgGFYD8GwAVOF4dABXQCicAFc7qGwAVOP0bABXU6hsAFdLqGwAV3uobACABKAEKFwoG55m96KOFEAMdAAD//yIECAEgASgBEgkwMS7lvIDojZIYASAB",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-08-03T21:24:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20kq-filter-medium",
+                        "source":  "d2core",
+                        "buildId":  "20kq",
+                        "variantIndex":  0,
+                        "name":  "毒灌箭雨过滤器 · 中等",
+                        "buildName":  "毒灌箭雨",
+                        "className":  "Rogue",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "巅峰 100+",
+                        "useCases":  [
+                                         "后期",
+                                         "速刷"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20kq",
+                        "description":  "来源页面的中等过滤规则，适合保留更多可过渡装备。",
+                        "copyCode":  "ChgKB215dGhpY3MQAh34ptf/IgQIASAgKAEKLAoVYW5jIHVuaXF1ZXMgKyBteXRoaWNzEAAdAAD//yIECAIgBCIECAEgMCgBCh4KDWNvZGV4IHVwZ3JhZGUQAh2K6cb/IgQIAzABKAEKvAEKE1QxMiBub24tYW5jIHVuaXF1ZXMQAx0AAP//Io4BCAUVY9EGABVr0QYAFV3RBgAVatEGABVS0QYAFXDRBgAVZ9EGABV00QYAFU/RBgAVOtEGABVZ0QYAFW/RBgAVcVIWABVV0QYAFXXRBgAVUdEGABVy0QYAFVTRBgAVRNEGABVu0QYAFWnRBgAVaNEGABVM0QYAFS3SFgAVU9EGABVx0QYAFZhKIwAVbdEGACIECAEgECIFCAAo0gYoAAq/AQoXVDEyIHplcm8gR0Egbm9uLXVuaXF1ZXMQAx0AAP//Io4BCAUVXdEGABVr0QYAFWPRBgAVatEGABVS0QYAFXDRBgAVZ9EGABVP0QYAFXTRBgAVVdEGABVxUhYAFVnRBgAVOtEGABVv0QYAFXXRBgAVctEGABVR0QYAFVTRBgAVRNEGABVu0QYAFWnRBgAVaNEGABVM0QYAFS3SFgAVU9EGABVx0QYAFW3RBgAVmEojACIECAQgASIECAEgDygACroBChFUMTArIG5vbi1hbmMgbGVncxADHQAA//8ijgEIBRVj0QYAFWvRBgAVXdEGABVq0QYAFVLRBgAVcNEGABVn0QYAFXTRBgAVT9EGABVV0QYAFXFSFgAVOtEGABVZ0QYAFW/RBgAVddEGABVy0QYAFVHRBgAVVNEGABVE0QYAFW7RBgAVadEGABVo0QYAFUzRBgAVLdIWABVT0QYAFXHRBgAVbdEGABWYSiMAIgQIASAIIgUIACjSBigBCr0BChRUOCsgbm9uLWFuYyBub24tbGVncxADHQAA//8ijgEIBRVj0QYAFWvRBgAVXdEGABVS0QYAFWrRBgAVcNEGABVn0QYAFU/RBgAVdNEGABVV0QYAFXFSFgAVOtEGABVZ0QYAFW/RBgAVddEGABVy0QYAFVHRBgAVVNEGABVu0QYAFUTRBgAVadEGABVo0QYAFUzRBgAVLdIWABVT0QYAFXHRBgAVbdEGABWYSiMAIgQIASAHIgUIACjTBigBCr8BChZUNisgbm9uLWFuYyB3aGl0ZS9ibHVlEAMdAAD//yKOAQgFFWPRBgAVa9EGABVd0QYAFVLRBgAVatEGABVw0QYAFWfRBgAVT9EGABV00QYAFVXRBgAVcVIWABU60QYAFVnRBgAVb9EGABV10QYAFXLRBgAVUdEGABVU0QYAFW7RBgAVRNEGABVp0QYAFWjRBgAVTNEGABUt0hYAFVPRBgAVcdEGABVt0QYAFZhKIwAiBAgBIAMiBQgAKNMGKAEKNQoWVDYrIGJsdWUvcmFyZSB0YWxpc21hbhADHQAA//8iDAgFFYB+IwAVBe0iACIECAEgBygBEg5NYXhyb2xsIE1lZGl1bRgCIAI=",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-09T09:24:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20kq-filter-strict",
+                        "source":  "d2core",
+                        "buildId":  "20kq",
+                        "variantIndex":  0,
+                        "name":  "毒灌箭雨过滤器 · 严格",
+                        "buildName":  "毒灌箭雨",
+                        "className":  "Rogue",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "巅峰 100+",
+                        "useCases":  [
+                                         "后期",
+                                         "冲层"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20kq",
+                        "description":  "来源页面的严格过滤规则，适合减少拾取并只保留更接近终局的装备。",
+                        "copyCode":  "ChgKB215dGhpY3MQAh34ptf/IgQIASAgKAEKLAoVYW5jIHVuaXF1ZXMgKyBteXRoaWNzEAAdAAD//yIECAIgBCIECAEgMCgBCh4KDWNvZGV4IHVwZ3JhZGUQAh2K6cb/IgQIAzABKAEKtwEKE1QxMiBub24tYW5jIHVuaXF1ZXMQAx0AAP//IokBCAUVY9EGABVr0QYAFV3RBgAVatEGABVS0QYAFXDRBgAVZ9EGABV00QYAFU/RBgAVVdEGABVxUhYAFW/RBgAVWdEGABU60QYAFXXRBgAVctEGABVR0QYAFVTRBgAVRNEGABVu0QYAFWnRBgAVTNEGABUt0hYAFVPRBgAVcdEGABWYSiMAFW3RBgAiBAgBIBAiBQgAKNIGKAEKugEKF1QxMiB6ZXJvIEdBIG5vbi11bmlxdWVzEAMdAAD//yKJAQgFFV3RBgAVa9EGABVj0QYAFWrRBgAVUtEGABVw0QYAFWfRBgAVT9EGABV00QYAFW/RBgAVOtEGABVZ0QYAFXFSFgAVVdEGABV10QYAFVHRBgAVctEGABVU0QYAFUTRBgAVbtEGABVp0QYAFUzRBgAVLdIWABVT0QYAFXHRBgAVbdEGABWYSiMAIgQIBCABIgQIASAPKAEKtQEKEVQxMCsgbm9uLWFuYyBsZWdzEAMdAAD//yKJAQgFFWPRBgAVa9EGABVd0QYAFWrRBgAVUtEGABVw0QYAFWfRBgAVdNEGABVP0QYAFW/RBgAVWdEGABU60QYAFXFSFgAVVdEGABV10QYAFVHRBgAVctEGABVU0QYAFUTRBgAVbtEGABVp0QYAFUzRBgAVLdIWABVT0QYAFXHRBgAVbdEGABWYSiMAIgQIASAIIgUIACjSBigBCrgBChRUOCsgbm9uLWFuYyBub24tbGVncxADHQAA//8iiQEIBRVj0QYAFWvRBgAVXdEGABVS0QYAFWrRBgAVcNEGABVn0QYAFU/RBgAVdNEGABVv0QYAFVnRBgAVOtEGABVxUhYAFVXRBgAVddEGABVR0QYAFXLRBgAVVNEGABVu0QYAFUTRBgAVadEGABVM0QYAFS3SFgAVU9EGABVx0QYAFW3RBgAVmEojACIECAEgByIFCAAo0wYoAQq6AQoWVDYrIG5vbi1hbmMgd2hpdGUvYmx1ZRADHQAA//8iiQEIBRVj0QYAFWvRBgAVXdEGABVS0QYAFWrRBgAVcNEGABVn0QYAFU/RBgAVdNEGABVv0QYAFVnRBgAVOtEGABVxUhYAFVXRBgAVddEGABVR0QYAFXLRBgAVVNEGABVu0QYAFUTRBgAVadEGABVM0QYAFS3SFgAVU9EGABVx0QYAFW3RBgAVmEojACIECAEgAyIFCAAo0wYoAQo1ChZUNisgYmx1ZS9yYXJlIHRhbGlzbWFuEAMdAAD//yIMCAUVgH4jABUF7SIAIgQIASAHKAESDk1heHJvbGwgU3RyaWN0GAQgCQ==",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-09T09:24:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20c1-filter-push",
+                        "source":  "d2core",
+                        "buildId":  "20c1",
+                        "variantIndex":  0,
+                        "name":  "利爪狼德大后期过滤器",
+                        "buildName":  "利爪狼德",
+                        "className":  "Druid",
+                        "season":  14,
+                        "stage":  "push",
+                        "levelRange":  "冲层 150+",
+                        "useCases":  [
+                                         "冲层",
+                                         "终局"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20c1",
+                        "description":  "红色保留词条全对的 BD 需求物品；蓝色保留单太古且词条全对的物品；粉色显示 BD 需求暗金；浅绿色显示可升级威能和神话暗金。",
+                        "copyCode":  "Ch0KDOelnuivneeJqeWTgRAAHQAA//8iBAgCICAoAQpjChvmraPnoa7or43mnaHmmpfph5HlpLToo6TlrZAQAh0iIuj/IgwICBVpwR8AFXvLFwAiHQgHFcbqGwAVOP0bABXY6hsAFXHAHAAVsuobACADIgQIASAwIggIACCEByiEBygBCokBCh7mraPnoa7or43mnaHmiYvlpZfmiJLmjIfpobnpk74QAh0AAP//IjYIBxXO6hsAFdAKJwAV/QonABW06hsAFYD8GwAVasAcABXG6hsAFWbAHAAV1OobABXS6hsAIAMiFggIFUNxJwAVb8EfABWGOScAFV0+JwAiBAgBIDAiCAgAIIQHKIQHKAEKoAEKGOato+ehruivjeadoeatpuWZqOWbvuiFvhACHQAA//8iDAgIFWvuEwAVNjwnACInCAcVxuobABVqwBwAFdAKJwAV2OobABXU6hsAFdLqGwAV/QonACACIjQIBRVE0QYAFWvRBgAVXdEGABVS0QYAFUzRBgAVU9EGABVZ0QYAFTrRBgAVUdEGABWYSiMAIgQIASAwIggIACCEByiEBygBCmoKGOato+ehruivjeadoeS8oOWlh+aIkuaMhxACHSIi6P8iLAgHFYD8GwAVasAcABXO6hsAFWbAHAAV1OobABXS6hsAFf0KJwAVtOobACADIgcIBRV00QYAIgQIASAMIggIACCEByiEBygBCpMBCh7mraPnoa7or43mnaHkvKDlpYfog7jnlLLpnovlrZAQAh0AAP//IkoIBxXO6hsAFdAKJwAVOP0bABX9CicAFd7qGwAVsuobABW06hsAFYD8GwAVxuobABVqwBwAFdjqGwAVZsAcABXU6hsAFdLqGwAgAyIMCAUVbdEGABVw0QYAIgQIASAMIggIACCEByiEBygBCqABCjzmraPnoa7or43mnaHlpKrlj6TpnZ7mmpfph5HmrablmajvvIjkuI3pnIDopoHnmoTlj6/liKDpmaTvvIkQAh0AAP//IgYIBCABMAEiLAgHFZP8JwAVxuobABVqwBwAFdjqGwAVZsAcABXU6hsAFdLqGwAV/QonACADIhEIBRVZ0QYAFWvRBgAVmEojACIECAEgDCIICAAghAcohAcoAQqYAQob5q2j56Gu6K+N5p2h5aSq5Y+k5aS06KOk5a2QEAId6LAi/yIGCAQgATABIkoIBxXO6hsAFdAKJwAVOP0bABX9CicAFd7qGwAVsuobABW06hsAFYD8GwAVxuobABVqwBwAFdjqGwAVZsAcABXU6hsAFdLqGwAgAyIMCAUVbtEGABVv0QYAIgQIASAOIggIACCEByiEBygBCoQBCh7mraPnoa7or43mnaHkvKDlpYfpobnpk77miYvlpZcQAh3oqyL/IjsIBxXO6hsAFdAKJwAV/QonABW06hsAFYD8GwAVxuobABVqwBwAFWbAHAAV2OobABXU6hsAFdLqGwAgAyIMCAUVddEGABVx0QYAIgQIASAOIggIACCEByiEBygBCl4KGOS4ieWQiOS4gOeUqOaal+mHkeaYvuekuhACHW+H//8iCAgAIIQHKIQHIi8ICBWGOScAFbh7BQAVa+4TABV7yxcAFTY8JwAVacEfABVDcScAFW/BHwAVXT4nACgBClYKG+WkquWPpOW4puaKgOiDvemjjuaatOWll+ijhRACHSIi6P8iBggEIAEwASIdCAYVjwsoABWLCygAFY0LKAAVkQsoABWTCygAIAEiBwgJFSYDIwAoAQpDCiTnoqfok53mj5Dlj5bmiqTnrKbnlKjvvIjlj6/pgInpobnvvIkQAh0iIuj/IgQIAiAEIgwICBXmbScAFbNtJwAoAQosChLmiYDmnInmmpfph5HnpZ7nrKYQAB0AAP//IgQIASAQIgcIBRUF7SIAKAEKMwoZ5Lyg5aWHJuelnuivneaal+mHkeWwgeWNsBAAHQAA//8iBAgBICgiBwgFFYB+IwAoAQojChLlj6/ljYfnuqfnmoTlqIHog70QAh2s/nn/IgQIAzABKAEKKwoY5Lu75oSP5bim5aSq5Y+k6K+N57yA6KOFEAAdAAD//yIGCAQgATABKAEKIAoP6Z2e56We6K+d5pqX6YeREAMdAAD//yIECAEgXygBEhzok53okIzlkJtA5aSn5ZCO5pyf6aOO5pq054u8GAQgBA==",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-22T08:33:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20yK-filter-transition",
+                        "source":  "d2core",
+                        "buildId":  "20yK",
+                        "variantIndex":  0,
+                        "name":  "无溶解之前过滤器",
+                        "buildName":  "无溶解旋风",
+                        "className":  "Barbarian",
+                        "season":  14,
+                        "stage":  "mid",
+                        "levelRange":  "魔渊 90+",
+                        "useCases":  [
+                                         "过渡",
+                                         "速刷"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20yK",
+                        "description":  "只对符合词条的装备染色为红色，期望 4 条完美词条，满足 3 条即可通过附魔补齐；屏蔽普通白装和蓝装。",
+                        "copyCode":  "CksKBuWktOeblBACHQAA//8iBAgCIAUiKQgHFcLqGwAVOF4dABU4/RsAFbLqGwAVefwbABoKDXn8GwAVefwbACADIgcIBRVu0QYAKAEKOQoG6KGj5pyNEAIdAAD//yIdCAcVwuobABU4Xh0AFTj9GwAVsuobABV5/BsAIAMiBwgFFW3RBgAoAQpGCgboo6TlrZAQAh0AAP//IiQIBxXC6hsAFTheHQAVOP0bABWy6hsAGgoNOF4dABU4Xh0AIAMiBwgFFW/RBgAiBAgCIAUoAQo+CgbpnovlrZAQAh0AAP//IgcIBRVw0QYAIiIIBhXC6hsAFTheHQAVOP0bABVUZx0AFd7qGwAVefwbACADKAEKdwoM5oqk5omL6aaW6aWwEAIdAAD//yIECAIgBSIlCAUVdNEGABVZ0QYAFVPRBgAVY9EGABV10QYAFXHRBgAVatEGACIxCAcVwuobABUgaRwAFTFuHQAVzuobABX9CicAFQo8JwAVgPwbABXS6hsAFa0LKAAgAygBCocBChLpnZ7lj4zmiYvplKTmrablmagQAh0AAP//IgQIAiAFIjkIBRVd0QYAFWPRBgAVUtEGABVq0QYAFUzRBgAVT9EGABVZ0QYAFVPRBgAVOtEGABWYSiMAFVHRBgAiJwgHFcLqGwAV0AonABXY6hsAFdTqGwAV0uobABWtCygAFf0KJwAgAygBCmAKCeS4u+atpuWZqBACHQAA//8iBAgCIAUiGwgFFUTRBgAVWdEGABVT0QYAFWPRBgAVatEGACInCAcVwuobABWT/CcAFdAKJwAV1OobABWtCygAFdLqGwAV/QonACADKAEKHQoM5aiB6IO95o+Q5Y2HEAId/xgA/yIECAMwASgBCiYQAh0A/wD/IhsICBVCqx0AFYjnEwAVv5YEABXc0hcAFXvLFwAoAQqJAQoP5LiN55yL55m96JOd6ImyEAMdAAD//yIECAIgASJhCAUVXdEGABVj0QYAFWrRBgAVUtEGABVw0QYAFXTRBgAVT9EGABU60QYAFVnRBgAVb9EGABV10QYAFVHRBgAVRNEGABVu0QYAFUzRBgAVU9EGABVx0QYAFW3RBgAVmEojACIECAEgAygBEg/msqHmurbop6PkuYvliY0YBCAB",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-21T12:09:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20eK-filter-firewall",
+                        "source":  "d2core",
+                        "buildId":  "20eK",
+                        "variantIndex":  3,
+                        "name":  "法师专用过滤器 · 火墙 T1-T12",
+                        "buildName":  "暴风雪 / 火墙",
+                        "className":  "Sorcerer",
+                        "season":  14,
+                        "stage":  "mid",
+                        "levelRange":  "T1-T12",
+                        "useCases":  [
+                                         "升级",
+                                         "速刷"
+                                     ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20eK\u0026var=4",
+                        "description":  "法师专用过滤器，来自火墙 T1-T12 变体。",
+                        "copyCode":  "Ch0QAx0AAP//IgQIASAGIgwIBRUF7SIAFYB+IwAoAQodEAAdAAD//yIECAEgUCIMCAUVBe0iABWAfiMAKAEKGBAAHQAA//8iBwgFFYB+IwAiBAgBIBgoAQoPEAAdAAD//yIECAMwASgBChkQAB0AAP//IggIACCEByiEByIECAEgMCgBChcQAB0AAP//IgQIASAPIgYIBCABMAEoAQoJEAMdAAD//ygBEg9NZWt1bmEncyBGaWx0ZXIYAiAC",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-08-02T23:43:00+00:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20gB-filter-summon-endgame",
+                        "source":  "d2core",
+                        "buildId":  "20gB",
+                        "variantIndex":  0,
+                        "name":  "死灵专用过滤器 · 召唤终局",
+                        "buildName":  "全 BB 召唤流",
+                        "className":  "Necromancer",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "巅峰 120-130",
+                        "useCases":  [
+                            "后期",
+                            "速刷",
+                            "冲层"
+                        ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20gB",
+                        "description":  "来源页面的死灵专用过滤器，适合 120 层以下速刷与 130 层终局构筑。",
+                        "copyCode":  "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",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-17T15:00:00+08:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-219Z-filter-holyfire",
+                        "source":  "d2core",
+                        "buildId":  "219Z",
+                        "variantIndex":  0,
+                        "name":  "圣火后期过滤器",
+                        "buildName":  "圣火自走",
+                        "className":  "Paladin",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "T12+ / 天塔 120+",
+                        "useCases":  [
+                            "后期",
+                            "速刷",
+                            "冲层"
+                        ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=219Z",
+                        "description":  "适合后期，基本上都屏蔽了，只显示 1 星以上、封印、紫装和能提升威能的装备。",
+                        "copyCode":  "CiAQAB0AAP//IgYIBCABMAEiBAgBIHgiBwgFFQXtIgAoAQocEAAdAAD//yIICAAghAcohAciBwgIFXY7GgAoAQoVEAAdAAD//yIECAIgICIECAEgMCgBChEQAB0AAP//IgYIBCABMAEoAQoPEAAdAAD//yIECAMwASgBChgQAB0AAP//IgQIASB4IgcIBRWAfiMAKAEKEBADHQAA//8iBQgAKIQHKAESA1MxNBgCIAE=",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-29T09:00:00+08:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZMU-filter-speed",
+                        "source":  "d2core",
+                        "buildId":  "1ZMU",
+                        "variantIndex":  0,
+                        "name":  "圣骑士日常速刷过滤器",
+                        "buildName":  "敲钟帕拉丁",
+                        "className":  "Paladin",
+                        "season":  14,
+                        "stage":  "late",
+                        "levelRange":  "后期 / 日常速刷",
+                        "useCases":  [
+                            "后期",
+                            "速刷"
+                        ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZMU",
+                        "description":  "自用过滤器，适合刷到核心戒指后的开荒衔接与日常速刷。",
+                        "copyCode":  "ChcKBuWogeiDvRAAHQAA//8iBAgDMAEoAQpJCg/ooaPmnI3oo6TlrZDpnosQAB0AAP//Ih0IBhXC6hsAFTj9GwAV2OobABWy6hsAFd7qGwAgAyIECAEgDCIICAAghAcohAcoAQpRChLmiYvlpZfmiJLmjIfpobnpk74QAB0AAP//IiIIBhXC6hsAFYD8GwAVzuobABXU6hsAFdLqGwAV/wonACADIgQIASAMIggIACCEByiEBygBCiUKBuelnuesphAAHQAA//8iBAgBIHwiDAgFFQXtIgAVgH4jACgBCnoKCemHkei+ieaIkhACHQAA//8iNwgHFcLqGwAVgPwbABXO6hsAGgoNgPwbABWA/BsAGgoNwuobABXC6hsAGgoNzuobABXO6hsAIAEiGAgGFcLqGwAVgPwbABXO6hsAFdLqGwAgAiIHCAgVs1QmACIICAAghAcohAcoAQp1CgnlrqHliKTlpLQQAh0AAP//IjcIBxXC6hsAFdjqGwAVuOobABoKDcLqGwAVwuobABoKDdjqGwAV2OobABoKDbjqGwAVuOobACABIhMIBhXC6hsAFdjqGwAVuOobACACIgcICBXZVCUAIggIACCEByiEBygBCnMKBuiQqOebvhACHQAA//8iKQgHFcLqGwAVY24dABXO6hsAFTj9GwAVuOobABoKDcLqGwAVwuobACABIiIIBhXC6hsAFWNuHQAVzuobABU4/RsAFbjqGwAVsuobACACIgcICBVLuyUAIggIACCEByiEBygBCnIKBuagvOWJkRACHQAA//8iNwgHFcLqGwAVk/wnABXS6hsAGgoNwuobABXC6hsAGgoNk/wnABWT/CcAGgoN0uobABXS6hsAIAEiEwgGFcLqGwAVk/wnABXS6hsAIAIiBwgIFbHLJQAiCAgAIIQHKIQHKAEKSAoM5pqX6YeR6KOF5aSHEAAdAAD//yIvCAgVd9YlABXawSUAFbNUJgAVg1omABWxyyUAFQHjAwAV2VQlABVLuyUAFc0fKAAoAQp9CgzpmpDol4/miYDmnIkQAx0AAP//IlcIBRWAfiMAFVLRBgAVcNEGABV00QYAFU/RBgAVb9EGABU60QYAFXXRBgAVctEGABVR0QYAFQXtIgAVbtEGABVE0QYAFUzRBgAVcdEGABWYSiMAFW3RBgAiBAgBIB8iBQgAKIQHKAESD+aVsumSn+mqkeiHqueUqBgFIAE=",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-07T23:43:00+08:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-1ZLg-filter-leveling",
+                        "source":  "d2core",
+                        "buildId":  "1ZLg",
+                        "variantIndex":  0,
+                        "name":  "术士开荒过滤器 · 末日 / 沉沦魔",
+                        "buildName":  "末日浩劫 / 沉沦魔",
+                        "className":  "Warlock",
+                        "season":  14,
+                        "stage":  "leveling",
+                        "levelRange":  "1-70",
+                        "useCases":  [
+                            "开荒",
+                            "升级"
+                        ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=1ZLg",
+                        "description":  "页面提供的 1-70 级开荒过滤器，覆盖末日浩劫与沉沦魔路线。",
+                        "copyCode":  "Cm0QAh1paeT/IhEIBRV00QYAFXXRBgAVcdEGACJPCAYVMW4dABVNrSYAFc7qGwAV0AonABXErSYAFd7qGwAVtOobABWA/BsAFcbqGwAV2OobABXU6hsAFfcKJwAVwq0mABXS6hsAFcitJgAgAygBCoIBChjliY3mnJ/mrablmajpnIDmsYLor43mnaEQAh1paeT/IjQIBRVE0QYAFV3RBgAVa9EGABVS0QYAFUzRBgAVU9EGABU60QYAFVnRBgAVUdEGABWYSiMAIicIBhWT/CcAFcbqGwAVE14dABXQCicAFdTqGwAV9wonABXS6hsAIAMoAQp4ChjliY3mnJ/miqTnlLLpnIDmsYLor43mnaEQAh1paeT/IhYIBRVu0QYAFW/RBgAVbdEGABVw0QYAIjsIBhUvbh0AFU2tJgAVOP0bABXErSYAFbjqGwAVsuobABXe6hsAFcbqGwAV2OobABXCrSYAFcitJgAgAygBCmMQAh35r1f/IhEIBRV00QYAFXXRBgAVcdEGACJFCAYVMW4dABXO6hsAFcStJgAV3uobABW06hsAFQo8JwAVgPwbABXG6hsAFdjqGwAV1OobABXCrSYAFdLqGwAVyK0mACACKAEKggEKGOWJjeacn+atpuWZqOmcgOaxguivjeadoRACHfmvV/8iNAgFFUTRBgAVXdEGABVr0QYAFVLRBgAVTNEGABVT0QYAFTrRBgAVWdEGABVR0QYAFZhKIwAiJwgGFZP8JwAVxuobABUTXh0AFdAKJwAV1OobABX3CicAFdLqGwAgAigBCm4KGOWJjeacn+aKpOeUsumcgOaxguivjeadoRACHfmvV/8iFggFFW/RBgAVbtEGABVt0QYAFXDRBgAiMQgGFU2tJgAVOP0bABXErSYAFbLqGwAV3uobABXG6hsAFdjqGwAVwq0mABXIrSYAIAIoAQpYChzmnKvml6Um5rKJ5rKm6a2U6ZyA5rGC5pqX6YeREAIdZ2fv/yIvCAgV2uUmABXq5SYAFd7lJgAVrOUmABV7yxcAFZLjJgAVp+UmABUdyxcAFe7lJgAoAQoyChnml6DlkI3ogIUr6ZyN5ouJ5p2+5aWX6KOFEAIdIiLo/yIMCAkVGLYjABUatiMAKAEKIwoS5Y+v5Y2H57qn55qE5aiB6IO9EAIdrP55/yIECAMwASgBEhLmiJjliKnlk4HnrZvpgIkgIzUYBSAB",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-07-23T09:07:00+08:00"
+                    },
+                    {
+                        "schemaVersion":  1,
+                        "id":  "d2core-20EK-filter-speed",
+                        "source":  "d2core",
+                        "buildId":  "20EK",
+                        "variantIndex":  0,
+                        "name":  "术士日常速刷过滤器 · T12",
+                        "buildName":  "三维弹球 / 狼王魔爪",
+                        "className":  "Warlock",
+                        "season":  14,
+                        "stage":  "mid",
+                        "levelRange":  "T12",
+                        "useCases":  [
+                            "速刷",
+                            "冲层"
+                        ],
+                        "isRecommended":  true,
+                        "sourceUrl":  "https://www.d2core.com/d4/planner?bd=20EK",
+                        "description":  "自制日常速刷 T12 过滤器，突出多太古词缀和重要输出词缀，并保留可升级威能装备。",
+                        "copyCode":  "Ch4KDWNvZGV4IHVwZ3JhZGUQAB0AAP//IgQIAzABKAEKaQoCR0EQAh0bG5H/IlIIBRVu0QYAFUTRBgAVUtEGABVq0QYAFXDRBgAVTNEGABV00QYAFU/RBgAVWdEGABU60QYAFW/RBgAVcdEGABV10QYAFVHRBgAVmEojABVt0QYAIgYIBCADMAEoAQppCgJHQRACHYUdjP8iUggFFW7RBgAVRNEGABVS0QYAFWrRBgAVcNEGABVM0QYAFXTRBgAVT9EGABVZ0QYAFTrRBgAVb9EGABVx0QYAFXXRBgAVUdEGABWYSiMAFW3RBgAiBggEIAIwASgBCrABCgpNVUxUSVBMSUVSEAIdyZdM/yJZCAYVgPwbABXO6hsAFfcKJwAV0uobABW06hsAGgoNgPwbABWA/BsAGgoNzuobABXO6hsAGgoN9wonABX3CicAGgoN0uobABXS6hsAGgoNtOobABW06hsAIAEiPggFFUTRBgAVatEGABVS0QYAFUzRBgAVdNEGABVP0QYAFVnRBgAVOtEGABVx0QYAFXXRBgAVUdEGABWYSiMAKAEKNAoVaGlkZSBibHVlJnllbGxvdyB0YWxpEAMdAAD//yIECAEgByIMCAUVBe0iABWAfiMAKAEKbwoKbm9uY2VzdHJhbBADHQAA//8iUggFFW7RBgAVRNEGABVS0QYAFWrRBgAVcNEGABVM0QYAFXTRBgAVT9EGABVZ0QYAFTrRBgAVb9EGABVx0QYAFXXRBgAVUdEGABWYSiMAFW3RBgAiBAgCIAEoAQpwCgVubyBHQRADHQAA//8iUggFFW7RBgAVRNEGABVq0QYAFVLRBgAVcNEGABVM0QYAFXTRBgAVT9EGABU60QYAFVnRBgAVb9EGABVx0QYAFXXRBgAVmEojABVR0QYAFW3RBgAiBAgEIAEiBAgBIA8oARIHcG9wY29ybhgBIAI=",
+                        "updatedAt":  "2026-08-04T00:00:00+00:00",
+                        "sourceUpdatedAt":  "2026-08-03T22:42:00+08:00"
+                    }
+                ]
+}

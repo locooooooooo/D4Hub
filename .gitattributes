@@ -13,3 +13,10 @@
 *.yml text eol=lf
 
 *.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.xcf binary
+*.bmp binary
+*.gif binary
+*.webp binary

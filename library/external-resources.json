@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.07.26.2",
+  "generatedAt": "2026-07-26T00:00:00+08:00",
+  "entries": [
+    {
+      "resourceId": "diablo-iv.helltides-map",
+      "gameId": "diablo-iv",
+      "providerId": "helltides",
+      "category": "map-tools",
+      "displayName": "蛆虫位置 / 地狱狂潮地图",
+      "description": "打开 Helltides.com 查看当前地狱狂潮地图及地点标记。",
+      "canonicalUrl": "https://helltides.com/",
+      "allowedHosts": [
+        "helltides.com"
+      ],
+      "locales": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "officialStatus": "community",
+      "reviewedAt": "2026-07-26T00:00:00+08:00",
+      "reviewedBy": "D4Hub Owner",
+      "reviewMethod": "Public home page and terms reviewed in a browser.",
+      "status": "active",
+      "riskNotes": "第三方英文站点；内嵌页使用临时会话并拦截已知广告、分析和隐私弹层资源。",
+      "disclaimerKey": "third-party-browser",
+      "attribution": "Helltides.com / IronWeb Corporation"
+    }
+  ]
+}

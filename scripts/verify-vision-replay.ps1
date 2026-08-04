@@ -409,7 +409,13 @@ catch
 
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
 $probeProject = Join-Path $repositoryRoot "tests\D4Hub.VisionProbe\D4Hub.VisionProbe.csproj"
-$probeExecutable = Join-Path $repositoryRoot "tests\D4Hub.VisionProbe\bin\Release\net8.0-windows\D4Hub.VisionProbe.exe"
+$usesArtifactsOutput = $env:UseArtifactsOutput -eq 'true' -and -not [string]::IsNullOrWhiteSpace($env:ArtifactsPath)
+$probeExecutable = if ($usesArtifactsOutput) {
+    Join-Path $env:ArtifactsPath "bin\D4Hub.VisionProbe\release\D4Hub.VisionProbe.exe"
+}
+else {
+    Join-Path $repositoryRoot "tests\D4Hub.VisionProbe\bin\Release\net8.0-windows10.0.19041.0\D4Hub.VisionProbe.exe"
+}
 
 try
 {

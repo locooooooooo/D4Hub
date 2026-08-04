@@ -1,6 +1,7 @@
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;
@@ -13,6 +14,10 @@ namespace D4Hub.App.ViewModels;
 public readonly record struct HudPlacement(int Left, int Top, int Width, int Height);
 
 public readonly record struct TransmutationReminderPlacement(int Left, int Top, int Width, int Height);
+
+public readonly record struct StatisticsHudPlacement(int Left, int Top, int Width, int Height);
+
+public readonly record struct MapHudPlacement(int Left, int Top, int Width, int Height);
 
 public readonly record struct ScreenshotPreview(
     string Path,
@@ -28,7 +33,9 @@ public sealed record BuildPurposeFilterOption(string Label, BuildPurpose? Purpos
 public enum HubWorkspace
 {
     Overview,
-    Hud
+    Hud,
+    LootFilters,
+    Resources
 }
 
 public sealed class HudViewModel : ObservableObject
@@ -39,7 +46,10 @@ public sealed class HudViewModel : ObservableObject
     private readonly CharacterPanelDetector _panelDetector;
     private readonly BuildFingerprintService _fingerprints;
     private readonly TransmutationSceneDetector _transmutationSceneDetector;
+    private readonly TransmutationReminderStateMachine _transmutationReminderState = new();
     private readonly D2CoreBuildResolver _d2CoreResolver;
+    private readonly Stopwatch _realtimeCaptureClock = Stopwatch.StartNew();
+    private readonly WorldEventClock _worldEventClock = new(WorldEventSchedule.Defaults);
     private BuildDocument _document;
     private BuildProfile? _selectedProfile;
     private EquipmentAffixRule? _selectedRule;
@@ -67,6 +77,7 @@ public sealed class HudViewModel : ObservableObject
     private BuildSeasonFilterOption _selectedSeasonFilter = new("全部模式", null);
     private BuildDifficultyFilterOption _selectedDifficultyFilter = new("全部难度", null);
     private BuildPurposeFilterOption _selectedPurposeFilter = new("全部用途", null);
+    private readonly System.Windows.Threading.DispatcherTimer _mapRefreshDebounce;
 
     public HudViewModel(
         IStateStore stateStore,
@@ -76,7 +87,9 @@ public sealed class HudViewModel : ObservableObject
         CharacterPanelDetector panelDetector,
         BuildFingerprintService fingerprints,
         TransmutationSceneDetector transmutationSceneDetector,
-        D2CoreBuildResolver d2CoreResolver)
+        D2CoreBuildResolver d2CoreResolver,
+        IReadOnlyList<ExternalResourceEntry> externalResources,
+        LootFilterCollectionViewModel lootFilterCollection)
     {
         _stateStore = stateStore;
         _document = document;
@@ -86,11 +99,33 @@ public sealed class HudViewModel : ObservableObject
         _fingerprints = fingerprints;
         _transmutationSceneDetector = transmutationSceneDetector;
         _d2CoreResolver = d2CoreResolver;
+        ExternalResources = externalResources;
+        LootFilters = lootFilterCollection;
+        RealtimePanel = new RealtimePanelViewModel(new WindowsRealtimeOcrAdapter());
 
         _document.EnsureValid();
+        RealtimePanel.SetCollectionEnabled(_document.Overlay.DamageStatisticsHudEnabled);
         _selectedProfile = Profiles.FirstOrDefault(profile => profile.Id == _document.SelectedProfileId)
             ?? Profiles.FirstOrDefault();
         _selectedRule = _selectedProfile?.EquipmentRules.FirstOrDefault();
+
+        // 地图 HUD 设置防抖刷新：区域/显示内容/路径等变更后一次性通知窗口重载，
+        // 滑块拖动产生的连续变更会被合并为最后一次。
+        _mapRefreshDebounce = new System.Windows.Threading.DispatcherTimer(
+            System.Windows.Threading.DispatcherPriority.Background)
+        {
+            Interval = TimeSpan.FromMilliseconds(120)
+        };
+        _mapRefreshDebounce.Tick += (_, _) =>
+        {
+            _mapRefreshDebounce.Stop();
+            MapHudRefreshRequested?.Invoke();
+        };
+        MapHudSettings.PropertyChanged += (_, _) =>
+        {
+            _mapRefreshDebounce.Stop();
+            _mapRefreshDebounce.Start();
+        };
 
         AddProfileCommand = new RelayCommand(AddProfile);
         RemoveProfileCommand = new RelayCommand(() => RemoveProfileRequested?.Invoke(), () => Document.Profiles.Count > 1);
@@ -108,6 +143,8 @@ public sealed class HudViewModel : ObservableObject
         CancelLayoutEditingCommand = new RelayCommand(CancelLayoutEditing, () => IsLayoutEditing);
         ResetLayoutCommand = new RelayCommand(ResetLayout, () => IsLayoutEditing && SelectedProfile is not null);
         OpenHudWorkspaceCommand = new RelayCommand(() => ActiveWorkspace = HubWorkspace.Hud);
+        OpenLootFiltersWorkspaceCommand = new RelayCommand(() => ActiveWorkspace = HubWorkspace.LootFilters);
+        OpenResourcesWorkspaceCommand = new RelayCommand(() => ActiveWorkspace = HubWorkspace.Resources);
         CopyDouyinHandleCommand = new RelayCommand(() => CopyDouyinHandleRequested?.Invoke());
         CopyCommunityGroupCommand = new RelayCommand(() => CopyCommunityGroupRequested?.Invoke());
 
@@ -232,6 +269,8 @@ public sealed class HudViewModel : ObservableObject
 
             OnPropertyChanged(nameof(IsOverviewPage));
             OnPropertyChanged(nameof(IsHudPage));
+            OnPropertyChanged(nameof(IsLootFiltersPage));
+            OnPropertyChanged(nameof(IsResourcesPage));
             OnPropertyChanged(nameof(WorkspaceSubtitle));
         }
     }
@@ -260,9 +299,51 @@ public sealed class HudViewModel : ObservableObject
         }
     }
 
-    public string WorkspaceSubtitle => IsOverviewPage
-        ? "本地游戏辅助工作台"
-        : "HUD 叠层与 BD 配置";
+    public bool IsLootFiltersPage
+    {
+        get => ActiveWorkspace == HubWorkspace.LootFilters;
+        set
+        {
+            if (value)
+            {
+                ActiveWorkspace = HubWorkspace.LootFilters;
+            }
+        }
+    }
+
+    public bool IsResourcesPage
+    {
+        get => ActiveWorkspace == HubWorkspace.Resources;
+        set
+        {
+            if (value)
+            {
+                ActiveWorkspace = HubWorkspace.Resources;
+            }
+        }
+    }
+
+    public string WorkspaceSubtitle => ActiveWorkspace switch
+    {
+        HubWorkspace.LootFilters => "战利品过滤器集合",
+        HubWorkspace.Overview => "本地游戏辅助工作台",
+        HubWorkspace.Hud => "HUD 叠层与 BD 配置",
+        HubWorkspace.Resources => "开荒地图 HUD 与社区地图",
+        _ => "本地游戏辅助工作台"
+    };
+
+    public IReadOnlyList<ExternalResourceEntry> ExternalResources { get; }
+
+    public LootFilterCollectionViewModel LootFilters { get; }
+
+    /// <summary>
+    /// User-facing realtime statistics controls and the latest trusted snapshot.
+    /// </summary>
+    public RealtimePanelViewModel RealtimePanel { get; }
+
+    public ExternalResourceEntry? HelltidesResource => ExternalResources.FirstOrDefault(entry =>
+        string.Equals(entry.ResourceId, "diablo-iv.helltides-map", StringComparison.Ordinal)
+        && string.Equals(entry.Status, "active", StringComparison.Ordinal));
 
     public string ProfileCountText => $"{Document.Profiles.Count} 个 BD";
 
@@ -351,6 +432,100 @@ public sealed class HudViewModel : ObservableObject
                 HudDisplayMode = HudDisplayMode.Values;
             }
         }
+    }
+
+    public bool IsDamageStatisticsHudEnabled
+    {
+        get => Document.Overlay.DamageStatisticsHudEnabled;
+        set
+        {
+            if (Document.Overlay.DamageStatisticsHudEnabled == value)
+            {
+                return;
+            }
+
+            Document.Overlay.DamageStatisticsHudEnabled = value;
+            RealtimePanel.SetCollectionEnabled(value);
+            OnPropertyChanged();
+            if (!value)
+            {
+                StatisticsHudHidden?.Invoke();
+            }
+        }
+    }
+
+    public bool IsStatisticsHudCompact
+    {
+        get => Document.Overlay.StatisticsHudCompact;
+        set
+        {
+            if (Document.Overlay.StatisticsHudCompact == value)
+            {
+                return;
+            }
+
+            Document.Overlay.StatisticsHudCompact = value;
+            OnPropertyChanged();
+        }
+    }
+
+    /// <summary>开荒地图 HUD 持久化设置；旧存档缺失时兜底创建。</summary>
+    public MapHudSettings MapHudSettings => Document.Overlay.MapHud ??= new MapHudSettings();
+
+    /// <summary>世界事件时钟（公开日程推算 + 手动偏移校准），供地图 HUD 窗口驱动计时条。</summary>
+    public WorldEventClock WorldEventClock => _worldEventClock;
+
+    public bool IsMapHudEnabled
+    {
+        get => MapHudSettings.Enabled;
+        set
+        {
+            if (MapHudSettings.Enabled == value)
+            {
+                return;
+            }
+
+            MapHudSettings.Enabled = value;
+            OnPropertyChanged();
+            if (!value)
+            {
+                MapHudHidden?.Invoke();
+            }
+        }
+    }
+
+    /// <summary>计时条排列的互斥单选辅助：横排为真时竖排为假，反之亦然。</summary>
+    public bool MapTimerBarVertical
+    {
+        get => !MapHudSettings.TimerBarHorizontal;
+        set
+        {
+            if (MapHudSettings.TimerBarHorizontal == !value)
+            {
+                return;
+            }
+
+            MapHudSettings.TimerBarHorizontal = !value;
+            OnPropertyChanged();
+        }
+    }
+
+    /// <summary>全局热键：切换地图 HUD 显隐。</summary>
+    public void ToggleMapHudVisibility() => IsMapHudEnabled = !IsMapHudEnabled;
+
+    /// <summary>全局热键：重绘地图（重载底图与 POI 并应用显示样式）。</summary>
+    public void RedrawMap() => MapHudRefreshRequested?.Invoke();
+
+    /// <summary>全局热键：重置地图位置（按当前游戏窗口重新计算贴附位置）。</summary>
+    public void ResetMapPlacement()
+    {
+        var window = _lastWindow;
+        if (window is null)
+        {
+            return;
+        }
+
+        MapHudPlacementChanged?.Invoke(CalculateMapHudPlacement(window.Value, MapHudSettings));
     }
 
     public string SelectedProfileSummary => SelectedProfile is null
@@ -458,6 +633,11 @@ public sealed class HudViewModel : ObservableObject
                 return;
             }
 
+            if (value)
+            {
+                RealtimePanel.InvalidatePendingReadout();
+            }
+
             OnPropertyChanged(nameof(IsLayoutIdle));
             BeginLayoutEditingCommand.RaiseCanExecuteChanged();
             SaveLayoutTemplateCommand.RaiseCanExecuteChanged();
@@ -495,6 +675,8 @@ public sealed class HudViewModel : ObservableObject
     public RelayCommand CancelLayoutEditingCommand { get; }
     public RelayCommand ResetLayoutCommand { get; }
     public RelayCommand OpenHudWorkspaceCommand { get; }
+    public RelayCommand OpenLootFiltersWorkspaceCommand { get; }
+    public RelayCommand OpenResourcesWorkspaceCommand { get; }
     public RelayCommand CopyDouyinHandleCommand { get; }
     public RelayCommand CopyCommunityGroupCommand { get; }
 
@@ -507,8 +689,15 @@ public sealed class HudViewModel : ObservableObject
     public Action? CopyCommunityGroupRequested { get; set; }
     public Action<HudPlacement>? HudPlacementChanged { get; set; }
     public Action? HudHidden { get; set; }
+    public Action<StatisticsHudPlacement>? StatisticsHudPlacementChanged { get; set; }
+    public Action? StatisticsHudHidden { get; set; }
     public Action<TransmutationReminderPlacement>? TransmutationReminderPlacementChanged { get; set; }
     public Action? TransmutationReminderHidden { get; set; }
+    public Action<MapHudPlacement>? MapHudPlacementChanged { get; set; }
+    public Action? MapHudHidden { get; set; }
+
+    /// <summary>地图 HUD 设置变更（防抖后）通知窗口重载底图/POI/显示样式。</summary>
+    public Action? MapHudRefreshRequested { get; set; }
     public Action<ScreenshotPreview>? PreviewReady { get; set; }
     public Action<bool>? LayoutEditingChanged { get; set; }
 
@@ -518,15 +707,19 @@ public sealed class HudViewModel : ObservableObject
     {
         if (IsLayoutEditing)
         {
+            StatisticsHudHidden?.Invoke();
             HideTransmutationReminder();
+            MapHudHidden?.Invoke();
             PollLayoutEditing();
             return;
         }
 
-        if (!IsTracking || !Document.Overlay.AutoAttach)
+        if (!IsTracking || (!Document.Overlay.AutoAttach && !RealtimePanel.IsCollectionEnabled))
         {
+            StatisticsHudHidden?.Invoke();
             HideTransmutationReminder();
             HudHidden?.Invoke();
+            MapHudHidden?.Invoke();
             return;
         }
 
@@ -538,9 +731,12 @@ public sealed class HudViewModel : ObservableObject
             SetSelectedProfileWaitingStatus("等待游戏");
             _lastFrame = null;
             _lastPanel = null;
+            RealtimePanel.MarkWaitingForGame(_realtimeCaptureClock.Elapsed.TotalSeconds);
+            StatisticsHudHidden?.Invoke();
             CaptureFingerprintCommand.RaiseCanExecuteChanged();
             HideTransmutationReminder();
             HudHidden?.Invoke();
+            MapHudHidden?.Invoke();
             return;
         }
 
@@ -551,14 +747,43 @@ public sealed class HudViewModel : ObservableObject
             GameStatus = window.IsForeground ? "游戏窗口 · 前台" : "游戏窗口 · 后台";
             if (!window.IsForeground)
             {
+                RealtimePanel.MarkWaitingForGame(_realtimeCaptureClock.Elapsed.TotalSeconds);
+                StatisticsHudHidden?.Invoke();
                 PanelStatus = "切回游戏后继续识别";
                 SetSelectedProfileWaitingStatus("切回游戏显示");
+                HideTransmutationReminder();
+                HudHidden?.Invoke();
+                MapHudHidden?.Invoke();
+                return;
+            }
+
+            var frame = _screenFrames.Capture(window);
+            if (IsDamageStatisticsHudEnabled)
+            {
+                var statisticsPlacement = CalculateStatisticsHudPlacement(window, IsStatisticsHudCompact);
+                var exclusion = CalculateStatisticsHudOcrExclusion(window);
+                RealtimePanel.CaptureFrame(frame, _realtimeCaptureClock.Elapsed.TotalSeconds, exclusion);
+                StatisticsHudPlacementChanged?.Invoke(statisticsPlacement);
+            }
+            else
+            {
+                StatisticsHudHidden?.Invoke();
+            }
+            if (IsMapHudEnabled)
+            {
+                MapHudPlacementChanged?.Invoke(CalculateMapHudPlacement(window, MapHudSettings));
+            }
+            else
+            {
+                MapHudHidden?.Invoke();
+            }
+            if (!Document.Overlay.AutoAttach)
+            {
                 HideTransmutationReminder();
                 HudHidden?.Invoke();
                 return;
             }
 
-            var frame = _screenFrames.Capture(window);
             if (UpdateTransmutationReminder(window, frame))
             {
                 _lastFrame = frame;
@@ -612,6 +837,7 @@ public sealed class HudViewModel : ObservableObject
         catch (Exception exception)
         {
             GameStatus = $"画面捕获失败 · {exception.Message}";
+            StatisticsHudHidden?.Invoke();
             HideTransmutationReminder();
             HudHidden?.Invoke();
         }
@@ -819,6 +1045,8 @@ public sealed class HudViewModel : ObservableObject
         IsTracking = !IsTracking;
         if (!IsTracking)
         {
+            RealtimePanel.InvalidatePendingReadout();
+            StatisticsHudHidden?.Invoke();
             HideTransmutationReminder();
             HudHidden?.Invoke();
             GameStatus = "画面监测已暂停";
@@ -828,22 +1056,28 @@ public sealed class HudViewModel : ObservableObject
     private bool UpdateTransmutationReminder(GameClientWindow window, PixelFrame frame)
     {
         var detection = _transmutationSceneDetector.Detect(frame);
-        if (!detection.IsTransmutationVisible)
+        var state = _transmutationReminderState.Advance(detection);
+        if (!state.IsVisible)
         {
-            TransmutationReminderHidden?.Invoke();
+            if (state.VisibilityChanged)
+            {
+                TransmutationReminderHidden?.Invoke();
+            }
+
             return false;
         }
 
-        PanelStatus = $"嬗变物品 · {detection.ContextConfidence:P0}";
+        PanelStatus = $"嬗变物品 · {state.Confidence:P0}";
         RecognitionStatus = "嬗变改造提醒";
-        RecognitionConfidence = detection.ContextConfidence;
+        RecognitionConfidence = state.Confidence;
         TransmutationReminderPlacementChanged?.Invoke(
-            CalculateReminderPlacement(window, detection.SelectedRecipeBounds));
+            CalculateReminderPlacement(window, state.SelectedRecipeBounds));
         return true;
     }
 
     private void HideTransmutationReminder()
     {
+        _transmutationReminderState.Reset();
         TransmutationReminderHidden?.Invoke();
     }
 
@@ -851,22 +1085,80 @@ public sealed class HudViewModel : ObservableObject
         GameClientWindow window,
         NormalizedRect recipeBounds)
     {
-        const int width = 272;
-        const int height = 52;
-        const int horizontalGap = 40;
-        const int verticalGap = 14;
+        var displayScale = Math.Clamp(window.Width / 1920d, 0.90, 1.20);
+        var width = (int)Math.Round(272 * displayScale);
+        var height = (int)Math.Round(52 * displayScale);
+        var horizontalGap = (int)Math.Round(32 * displayScale);
+        var verticalGap = (int)Math.Round(12 * displayScale);
         const int margin = 8;
         var recipeLeft = window.Left + (int)Math.Round(recipeBounds.X * window.Width);
         var recipeTop = window.Top + (int)Math.Round(recipeBounds.Y * window.Height);
-        var left = Math.Clamp(
-            recipeLeft - width - horizontalGap,
-            window.Left + margin,
-            Math.Max(window.Left + margin, window.Left + window.Width - width - margin));
-        var top = Math.Clamp(
-            recipeTop - height - verticalGap,
-            window.Top + margin,
-            Math.Max(window.Top + margin, window.Top + window.Height - height - margin));
+        var minimumLeft = window.Left + margin;
+        var maximumLeft = Math.Max(minimumLeft, window.Left + window.Width - width - margin);
+        var minimumTop = window.Top + margin;
+        var maximumTop = Math.Max(minimumTop, window.Top + window.Height - height - margin);
+        var left = Math.Clamp(Quantize(recipeLeft - width - horizontalGap, 4), minimumLeft, maximumLeft);
+        var top = Math.Clamp(Quantize(recipeTop - height - verticalGap, 4), minimumTop, maximumTop);
         return new TransmutationReminderPlacement(left, top, width, height);
+    }
+
+    private static int Quantize(int value, int step) =>
+        (int)Math.Round(value / (double)step) * step;
+
+    public static StatisticsHudPlacement CalculateStatisticsHudPlacement(
+        GameClientWindow window,
+        bool compact)
+    {
+        var displayScale = Math.Clamp(window.Height / 1080d, 0.80, 1.50);
+        var width = (int)Math.Round(320 * displayScale);
+        var height = (int)Math.Round((compact ? 64 : 310) * displayScale);
+        var minimapReserve = (int)Math.Round(304 * displayScale);
+        var topMargin = (int)Math.Round(44 * displayScale);
+        const int edgeMargin = 8;
+        var minimumLeft = window.Left + edgeMargin;
+        var maximumLeft = Math.Max(minimumLeft, window.Left + window.Width - width - edgeMargin);
+        var preferredLeft = window.Left + window.Width - minimapReserve - width;
+        var left = Math.Clamp(Quantize(preferredLeft, 4), minimumLeft, maximumLeft);
+        var top = Math.Clamp(
+            Quantize(window.Top + topMargin, 4),
+            window.Top + edgeMargin,
+            Math.Max(window.Top + edgeMargin, window.Top + window.Height - height - edgeMargin));
+        return new StatisticsHudPlacement(left, top, width, height);
+    }
+
+    /// <summary>
+    /// 计算开荒地图 HUD 的放置：贴附游戏窗口左上角，尺寸按分辨率与覆屏系数缩放。
+    /// 地图只依赖游戏窗口矩形，不依赖角色面板检测；最终位置可在布局编辑态手动调整。
+    /// </summary>
+    public static MapHudPlacement CalculateMapHudPlacement(
+        GameClientWindow window,
+        MapHudSettings settings)
+    {
+        var displayScale = Math.Clamp(window.Height / 1080d, 0.80, 1.50);
+        var width = (int)Math.Round(440 * displayScale * settings.OverlayScale);
+        var height = (int)Math.Round(520 * displayScale * settings.OverlayScale);
+        const int edgeMargin = 12;
+        const int topMargin = 56;
+        var minimumLeft = window.Left + edgeMargin;
+        var maximumLeft = Math.Max(minimumLeft, window.Left + window.Width - width - edgeMargin);
+        var minimumTop = window.Top + edgeMargin;
+        var maximumTop = Math.Max(minimumTop, window.Top + window.Height - height - edgeMargin);
+        var left = Math.Clamp(Quantize(window.Left + edgeMargin, 4), minimumLeft, maximumLeft);
+        var top = Math.Clamp(Quantize(window.Top + topMargin, 4), minimumTop, maximumTop);
+        return new MapHudPlacement(left, top, width, height);
+    }
+
+    public static PixelRect CalculateStatisticsHudOcrExclusion(GameClientWindow window)
+    {
+        // Mask the expanded footprint even in compact mode. During a mode
+        // switch, the captured desktop can still contain the previous expanded
+        // frame until UpdatePlacement is rendered.
+        var placement = CalculateStatisticsHudPlacement(window, compact: false);
+        return new PixelRect(
+            placement.Left - window.Left,
+            placement.Top - window.Top,
+            placement.Width,
+            placement.Height);
     }
 
     private void BeginLayoutEditing()
@@ -1096,6 +1388,16 @@ public sealed class HudViewModel : ObservableObject
             OnPropertyChanged(nameof(HudDisplayMode));
             OnPropertyChanged(nameof(IsCompactHudMode));
             OnPropertyChanged(nameof(IsValuesHudMode));
+        }
+        if (ReferenceEquals(sender, Document.Overlay)
+            && e.PropertyName == nameof(OverlaySettings.DamageStatisticsHudEnabled))
+        {
+            OnPropertyChanged(nameof(IsDamageStatisticsHudEnabled));
+        }
+        if (ReferenceEquals(sender, Document.Overlay)
+            && e.PropertyName == nameof(OverlaySettings.StatisticsHudCompact))
+        {
+            OnPropertyChanged(nameof(IsStatisticsHudCompact));
         }
         Save(false);
     }

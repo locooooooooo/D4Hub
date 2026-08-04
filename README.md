@@ -16,24 +16,43 @@ target affixes for each equipped slot. It does not connect to the game process.
 - A transparent, non-activating, click-through HUD that tracks the game window.
 - Screenshot learning and preview for offline calibration.
 - Automatic local persistence plus portable JSON library import and export.
+- A lazy-loaded embedded Helltides.com workspace for the Owner-requested
+  Helltide location view.
 
 ## Safety boundary
 
 D4Hub does not read or write game memory, inject code, inspect Diablo IV traffic,
-automate input, provide macros, hide itself from detection, or copy assets from
-the downloaded reference package. The only network request is the explicit
+automate input, provide macros, or hide itself from detection. At the user's
+request, 407 Diablo4Companion visual files are retained under
+`third_party/Diablo4Companion/visual-assets` as source-only research inputs with
+per-file SHA-256 evidence. They are not copied into build or publish outputs
+because the upstream MIT notice does not establish redistribution rights for
+underlying game-derived imagery. The only in-app data import is the explicit
 D2Core build import requested by the user; the normalized result is cached and
-subsequent imports resolve from the bundled public library or local cache.
+subsequent imports resolve from the bundled public library or local cache. The
+embedded Helltides page loads only after the user opens the Map Tools workspace.
+Its top-level navigation is pinned to the reviewed `https://helltides.com/` host;
+downloads and web permissions are blocked. The embedded page runs in a WebView2
+InPrivate profile with strict tracking prevention, blocks reviewed CMP,
+advertising, analytics, and bidder requests, and removes only known leftover
+consent/ad UI. D4Hub does not click consent controls or write consent cookies.
 
 The repository verifier scans source files for common process-memory,
 injection, and input-automation APIs and fails if one is introduced.
 
 ## Run
 
-Requirements: Windows 10 or 11 and the .NET 8 SDK.
+Requirements: Windows 10 or 11, the .NET 8 SDK, and Microsoft Edge WebView2
+Runtime for the embedded map.
 
 ```powershell
 dotnet run --project .\src\D4Hub.App\D4Hub.App.csproj
+```
+
+Open directly into the embedded map workspace:
+
+```powershell
+dotnet run --project .\src\D4Hub.App\D4Hub.App.csproj -- --map
 ```
 
 Open a screenshot directly in the calibration preview:
@@ -41,6 +60,45 @@ Open a screenshot directly in the calibration preview:
 ```powershell
 dotnet run --project .\src\D4Hub.App\D4Hub.App.csproj -- --preview C:\path\character-panel.png
 ```
+
+Run the offline combat-text probe against a local recording:
+
+```powershell
+dotnet run --project .\tools\D4Hub.CombatProbe -c Release -- `
+  --video "C:\path\combat.mp4" `
+  --output ".\.artifacts\combat-stats\report.json" `
+  --pipeline windows `
+  --fps 5 --start 0 --duration 20 --crop 100,0,1400,800 `
+  --profile 1080p-zhCN-sdr
+```
+
+The probe requires FFmpeg on `PATH`; the Windows pipeline also requires the
+Windows Chinese OCR language pack. It streams visible video frames through OCR and never connects to the game
+process. The schema-4 JSON separates the requested and active pipelines,
+runtime fallback, parsed candidates, confirmed events, rejection reasons,
+folded duplicates, pending observations, coverage, suspicious small events,
+damage windows, and processing time. `--pipeline paddle` enables a local
+PP-OCRv5 experiment in the offline probe only. On the supplied 3-11 second
+clip it was too slow for the 0.6-second live budget and produced a catastrophic
+overlap merge, so it is not the application default. Dense overlapping combat
+text can be missed or merged by either engine; probe output is calibration
+evidence and a screen-derived estimate, not an exact combat log or production
+DPS meter.
+
+The app exposes the live estimate as a transparent in-game overlay. Under
+`HUD 叠层` -> `统计 HUD`, enable `伤害统计` and choose the expanded or compact
+layout. The overlay shows DPS and recent one-second damage; the expanded layout
+also shows the one-second peak, total damage, and data quality. Values use the
+Diablo IV Chinese units `万`, `亿`, `兆`, and `京`.
+
+Live OCR runs only while Diablo IV is foreground, processes the calibrated
+combat-text region asynchronously, and drops frames while OCR is busy. A
+single frame never enters the totals: spatial and motion tracking must confirm
+the same restricted damage candidate across at least two frames. The HUD labels
+the current path as a baseline estimate, low coverage, or unavailable instead
+of presenting a format heuristic as an accuracy percentage. The experience,
+material, and key switches remain disabled placeholders until their
+visible-screen collection pipelines are implemented.
 
 Open the D4 character panel, select a local profile, then capture the visible BD
 fingerprint from the game or from a screenshot. Future frames are matched only
@@ -58,6 +116,12 @@ and affix. A normal repeat import does not call D2Core. `刷新` is the explicit
 network path when the source build has changed. Before a visual fingerprint is
 captured, the selected imported BD is used as an explicit manual HUD profile;
 automatic build matching starts after screenshot or game fingerprint capture.
+
+Open `地图工具` in the left navigation to load the embedded Helltides map. The
+page is not requested during application startup, and its cookies and history
+are discarded with the temporary WebView session. Top-level links that leave
+`helltides.com` are handed to the system browser only after confirmation, and a
+browser fallback remains available when WebView2 or the site cannot load.
 
 ## Verify
 
@@ -103,6 +167,7 @@ dotnet run --project .\tools\D4Hub.LibraryTool\D4Hub.LibraryTool.csproj -- `
 - `src/D4Hub.App`: screen capture, D4 window tracking, WPF workbench, and click-through HUD.
 - `tests/D4Hub.AcceptanceTests`: dependency-free executable acceptance checks.
 - `tools/D4Hub.LibraryTool`: explicit public-library refresh command.
+- `tools/D4Hub.CombatProbe`: offline screen-OCR combat recording probe.
 - `library`: repository-backed normalized D2Core records (`index.json` plus per-build JSON).
 - `tests/D4Hub.VisionProbe`: read-only diagnostics for supplied screenshots.
 - `tests/D4Hub.GameWindowFixture`: screenshot-hosting window used only for end-to-end HUD acceptance.
