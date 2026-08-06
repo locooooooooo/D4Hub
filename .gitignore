@@ -9,6 +9,12 @@ publish/
 *.user
 *.suo
 
+# Python vision-toolbox local environments and caches.
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+
 # The downloaded reference package is not part of this public project.
 /技术参考/
 

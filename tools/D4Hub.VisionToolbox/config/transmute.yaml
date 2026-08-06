@@ -1,0 +1,28 @@
+# Reference calibration from D4_vrs. Recalibrate for another client surface.
+inventory_monitor:
+  left: 2362
+  top: 1283
+  width: 1402
+  height: 766
+inventory_grid:
+  cols: 11
+  rows: 3
+  x0: 177
+  y0: 166
+  pitch_x: 110
+  pitch_y: 162
+  cell_w: 100
+  cell_h: 153
+  cell_pad: 8
+  auto_detect: true
+  value_thresh: 52
+  auto_min_score: 0.40
+occupied:
+  value_mean: 45
+  bright_ratio: 0.12
+done_marker:
+  region: 0.18
+  x_center: [0.28, 0.72]
+  lower_hsv: [0, 0, 120]
+  upper_hsv: [179, 110, 255]
+  pixel_ratio: 0.06
