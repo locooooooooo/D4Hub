@@ -7,6 +7,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
+from d4hub_vision_toolbox.gold_road import run_gold_road
 from d4hub_vision_toolbox.io import imread_unicode, imwrite_unicode
 from d4hub_vision_toolbox.loot_labels import detect_labels
 from d4hub_vision_toolbox.template_match import find_matches
@@ -69,6 +70,21 @@ class VisionToolboxTests(unittest.TestCase):
             loaded = imread_unicode(path)
         self.assertEqual(loaded.shape, image.shape)
         self.assertEqual(int(loaded[0, 0, 0]), 42)
+
+    def test_gold_road_scene_reports_party_full_without_actions(self) -> None:
+        image = np.zeros((80, 120, 3), dtype=np.uint8)
+        cv2.rectangle(image, (50, 25), (74, 45), (30, 180, 240), -1)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            image_path = root / "scene.png"
+            template_dir = root / "templates"
+            template_dir.mkdir()
+            imwrite_unicode(image_path, image)
+            imwrite_unicode(template_dir / "party_full.png", image[25:46, 50:75])
+            report, _ = run_gold_road(str(image_path), str(template_dir), threshold=0.99)
+        self.assertEqual(report["summary"]["sceneState"], "party_full")
+        self.assertEqual(report["summary"]["signals"]["party_full"], 1)
+        self.assertIn("no action", " ".join(report["warnings"]).lower())
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .gold_road import run_gold_road
 from .io import imwrite_unicode, write_json
 from .loot_labels import run_loot
 from .template_match import run_template
@@ -45,6 +46,13 @@ def build_parser() -> argparse.ArgumentParser:
     loot.add_argument("--image", type=Path, required=True)
     loot.add_argument("--roi", type=_roi)
     _common_output(loot)
+
+    gold_road = commands.add_parser("gold-road", help="classify a yellow-door scene from static templates")
+    gold_road.add_argument("--image", type=Path, required=True)
+    gold_road.add_argument("--template-dir", type=Path, required=True)
+    gold_road.add_argument("--threshold", type=float, default=0.8)
+    gold_road.add_argument("--min-distance", type=int, default=20)
+    _common_output(gold_road)
     return parser
 
 
@@ -78,6 +86,10 @@ def main(argv: list[str] | None = None) -> None:
     if args.command == "loot":
         report, image = run_loot(str(args.image), args.roi)
         _write_outputs(report, image, args.out_dir, args.image.stem, "loot")
+        return
+    if args.command == "gold-road":
+        report, image = run_gold_road(str(args.image), str(args.template_dir), args.threshold, args.min_distance)
+        _write_outputs(report, image, args.out_dir, args.image.stem, "gold-road")
         return
     raise RuntimeError(f"Unsupported command: {args.command}")
 

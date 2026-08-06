@@ -7,6 +7,7 @@
 - `transmute`：识别善变界面的背包网格，区分空格、已善变和待善变物品，并生成网格/待处理遮罩。
 - `template`：对静态截图做单个或多个模板匹配，支持阈值和空间去重。
 - `loot`：按掉落文字颜色和几何密度识别可能的地面掉落标签，只输出候选框和颜色类别。
+- `gold-road`：用用户提供的模板目录识别黄门流程中的可见场景，只输出场景状态和证据。
 
 所有结果都标为 `evidenceClass=diagnostic`、`quality=heuristic`。它们用于调试、标注和离线回放，不代表精度、召回率、精确 DPS 或游戏状态。
 
@@ -40,6 +41,12 @@ python -m d4hub_vision_toolbox template `
 python -m d4hub_vision_toolbox loot `
   --image "C:\path\screen.png" `
   --roi 0,0,1920,1080 `
+  --out-dir "..\..\.artifacts\vision-toolbox"
+
+python -m d4hub_vision_toolbox gold-road `
+  --image "C:\path\screen.png" `
+  --template-dir "C:\path\yellow-door-templates" `
+  --threshold 0.80 `
   --out-dir "..\..\.artifacts\vision-toolbox"
 ```
 

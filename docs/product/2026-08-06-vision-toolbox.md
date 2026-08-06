@@ -31,6 +31,7 @@ tools/D4Hub.VisionToolbox/
     template_match.py  # 静态模板匹配
     loot_labels.py     # 掉落颜色与密度候选
     transmute.py       # 背包网格与善变状态
+    gold_road.py       # 黄门流程场景证据
     cli.py             # 统一命令入口
   tests/test_toolbox.py
 ```
